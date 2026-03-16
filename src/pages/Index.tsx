@@ -151,6 +151,12 @@ const HomePage = () => {
           <p className="text-center text-sm text-muted-foreground mt-6">
             More schools launching soon <ArrowRight className="w-3 h-3 inline" />
           </p>
+          <p className="text-center text-xs text-muted-foreground/70 mt-3 max-w-2xl mx-auto italic">
+            Unofficial Fan Support Site — Not affiliated with, endorsed by, or officially operated by any university, athletic department, NIL collective, conference, or the NCAA.{" "}
+            <Link to="/disclaimer" className="text-primary hover:text-gold-dark font-semibold not-italic underline underline-offset-2">
+              Full Disclaimer
+            </Link>
+          </p>
         </div>
       </section>
 

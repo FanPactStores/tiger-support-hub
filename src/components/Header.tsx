@@ -212,25 +212,14 @@ export function Header() {
         </div>
       </div>
 
-      {/* Search Bar (replaces sub-banner) */}
-      <div className="bg-dark py-2 px-4">
-        <div className="container mx-auto max-w-2xl">
-          <div className="relative w-full flex">
-            <div className="flex items-center bg-dark-muted rounded-l-lg border border-dark-muted px-3">
-              <span className="text-xs font-semibold text-secondary/70 whitespace-nowrap flex items-center gap-1">
-                CATEGORIES <ChevronDown className="w-3 h-3" />
-              </span>
-            </div>
-            <input
-              type="text"
-              placeholder="Search products, schools, players..."
-              className="flex-1 bg-dark-surface text-secondary placeholder:text-muted-foreground px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary border-y border-dark-muted"
-            />
-            <button className="bg-primary text-primary-foreground px-4 rounded-r-lg hover:bg-gold-dark transition-colors">
-              <Search className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
+      {/* Disclaimer Banner */}
+      <div className="bg-dark py-1.5 px-4 text-center">
+        <p className="text-[11px] text-secondary/60 font-body">
+          We donate 50% of net earnings from qualifying purchases to support student-athletes at participating universities.{" "}
+          <Link to="/disclaimer" className="text-primary hover:text-gold-dark font-semibold underline underline-offset-2">
+            [Full Disclaimer ↓]
+          </Link>
+        </p>
       </div>
     </header>
   );
