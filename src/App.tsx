@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Disclaimer from "./pages/Disclaimer";
+import MizzouDisclaimer from "./pages/MizzouDisclaimer";
 import MizzouHome from "./pages/MizzouHome";
 import MizzouFootball from "./pages/MizzouFootball";
 import MizzouVolleyball from "./pages/MizzouVolleyball";
