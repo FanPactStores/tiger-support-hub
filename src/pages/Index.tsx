@@ -54,13 +54,13 @@ const headlines = [
     title: "Top NIL Boosters for 2026",
     source: "CBS Sports",
     time: "2 hours ago",
-    image: "https://images.unsplash.com/photo-1461896836934-bd45ba8c0e78?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=300&h=200&fit=crop",
   },
   {
     title: "Transfer Portal Updates",
     source: "Bleacher Report",
     time: "2 hours ago",
-    image: "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=300&h=200&fit=crop",
   },
 ];
 
@@ -223,9 +223,7 @@ const HomePage = () => {
       </section>
 
       {/* How FanPact Works */}
-      <section id="how-it-works" className="relative py-14 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&h=800&fit=crop')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-amber-400/50 to-orange-500/50 backdrop-blur-[2px]" />
+      <section id="how-it-works" className="relative py-14 overflow-hidden bg-gradient-to-br from-rose-500 via-fuchsia-500 via-violet-500 to-sky-500">
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-8">
             How <span className="text-yellow-100">FanPact</span> Works
