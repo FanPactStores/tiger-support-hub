@@ -114,7 +114,7 @@ const HomePage = () => {
               <HoverCardContent
                 className="w-[700px] p-0 bg-card border-border shadow-2xl z-[100]"
                 align="center"
-                side="bottom"
+                side="top"
                 sideOffset={8}
                 avoidCollisions={false}
               >
