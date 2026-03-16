@@ -14,6 +14,7 @@ import MizzouFootball from "./pages/MizzouFootball";
 import MizzouVolleyball from "./pages/MizzouVolleyball";
 import MizzouSponsors from "./pages/MizzouSponsors";
 import MizzouCart from "./pages/MizzouCart";
+import IndianaHome from "./pages/IndianaHome";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,9 @@ const App = () => (
             <Route path="/mizzou/volleyball" element={<MizzouVolleyball />} />
             <Route path="/mizzou/sponsors" element={<MizzouSponsors />} />
             <Route path="/mizzou/cart" element={<MizzouCart />} />
+
+            {/* Indiana storefront */}
+            <Route path="/indiana" element={<IndianaHome />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
