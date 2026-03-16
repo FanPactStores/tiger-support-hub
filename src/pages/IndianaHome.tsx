@@ -79,6 +79,7 @@ import logoOakley from "@/assets/logo-oakley.png";
 import logoStateFarm from "@/assets/logo-state-farm.png";
 import logoEnterprise from "@/assets/logo-enterprise.png";
 import { useCart } from "@/contexts/CartContext";
+import { IndianaDisclaimerBanner } from "@/components/indiana/IndianaDisclaimerBanner";
 
 const IU_CRIMSON = "#990000";
 const IU_CREAM = "#EEEDEB";
@@ -294,9 +295,7 @@ const IndianaHome = () => {
         </div>
 
         {/* Disclaimer banner */}
-        <div className="text-center py-2 text-sm font-bold text-white tracking-wide" style={{ backgroundColor: "#7A0000" }}>
-          EVERY PURCHASE SUPPORTS INDIANA STUDENT-ATHLETE NIL OPPORTUNITIES
-        </div>
+        <IndianaDisclaimerBanner />
 
         {/* Mobile Menu */}
         {isMenuOpen && (
