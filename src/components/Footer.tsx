@@ -30,11 +30,17 @@ export function Footer() {
           <div>
             <h4 className="font-display font-bold text-sm uppercase tracking-wider text-primary mb-4">Support</h4>
             <ul className="space-y-2">
-              {["Contact Us", "FAQ", "Privacy Policy", "Terms of Service"].map((link) => (
+              {["Contact Us", "FAQ", "Privacy Policy", "Terms of Service", "Disclaimer"].map((link) => (
                 <li key={link}>
-                  <span className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-                    {link}
-                  </span>
+                  {link === "Disclaimer" ? (
+                    <Link to="/disclaimer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                      {link}
+                    </Link>
+                  ) : (
+                    <span className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                      {link}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

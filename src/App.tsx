@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import Schools from "./pages/Schools";
 import About from "./pages/About";
+import Disclaimer from "./pages/Disclaimer";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/schools" element={<Schools />} />
             <Route path="/schools-teams" element={<Navigate to="/schools" replace />} />
             <Route path="/about" element={<About />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Layout>

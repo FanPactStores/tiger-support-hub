@@ -111,6 +111,16 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Disclaimer Banner */}
+      <div className="bg-dark py-2 px-4 text-center">
+        <p className="text-xs text-secondary/70 font-body">
+          We donate 50% of net earnings from qualifying purchases to support student-athletes at participating universities. Thank you for shopping with purpose!{" "}
+          <Link to="/disclaimer" className="text-primary hover:text-gold-dark font-semibold underline underline-offset-2">
+            [Full Disclaimer ↓]
+          </Link>
+        </p>
+      </div>
+
       {/* Select Your School By Conference */}
       <section id="conferences" className="py-14 bg-secondary">
         <div className="container mx-auto px-4">
@@ -140,6 +150,12 @@ const HomePage = () => {
           </div>
           <p className="text-center text-sm text-muted-foreground mt-6">
             More schools launching soon <ArrowRight className="w-3 h-3 inline" />
+          </p>
+          <p className="text-center text-xs text-muted-foreground/70 mt-3 max-w-2xl mx-auto italic">
+            Unofficial Fan Support Site — Not affiliated with, endorsed by, or officially operated by any university, athletic department, NIL collective, conference, or the NCAA.{" "}
+            <Link to="/disclaimer" className="text-primary hover:text-gold-dark font-semibold not-italic underline underline-offset-2">
+              Full Disclaimer
+            </Link>
           </p>
         </div>
       </section>
