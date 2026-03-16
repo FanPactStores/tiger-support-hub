@@ -1,17 +1,23 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, ShoppingCart, Heart, User, Menu, X, ChevronDown } from "lucide-react";
+import { Search, ShoppingCart, Heart, User, Menu, X, ChevronDown, Trophy } from "lucide-react";
+import { schools, getSchoolsByConference, getShortName } from "@/data/schools";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const navItems = [
   { label: "Home", path: "/" },
   { label: "Shop", path: "/shop" },
-  { label: "Schools/Teams", path: "/schools" },
+  { label: "Schools", path: "/schools" },
   { label: "About", path: "/about" },
 ];
 
 const shopCategories = [
   { label: "Electronics", href: "/shop?category=Electronics" },
-  { label: "Fashion & Apparel", href: "/shop?category=Apparel" },
+  { label: "Fashion & Apparel", href: "/shop?category=Fashion" },
   { label: "Home & Garden", href: "/shop?category=Home" },
   { label: "Beauty & Personal Care", href: "/shop?category=Beauty" },
   { label: "Sports & Outdoors", href: "/shop?category=Sports" },
@@ -24,19 +30,6 @@ const shopCategories = [
   { label: "Merchandise", href: "/shop?category=Merchandise" },
 ];
 
-const productCategories = [
-  "Apparel & Footwear & Accessories",
-  "Electronics & Tech Accessories",
-  "Home & Kitchen & Garden",
-  "Health & Beauty",
-  "Sports & Outdoors",
-  "Travel & Bags",
-  "Toys & Games",
-  "Baby & Toddler & Kids",
-  "Pets",
-  "Seasonal & Special Occasions",
-];
-
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -45,7 +38,7 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Main nav — white background like Mizzou FanHub */}
+      {/* Main nav */}
       <nav className="bg-background border-b border-border">
         <div className="container mx-auto flex items-center justify-between h-16 px-4 gap-4">
           {/* Logo */}
@@ -53,7 +46,7 @@ export function Header() {
             <span className="text-2xl font-display font-bold text-primary">FanPact</span>
           </Link>
 
-          {/* Desktop Navigation — adapted from Mizzou FanHub */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             <Link
               to="/"
@@ -63,6 +56,66 @@ export function Header() {
             >
               Home
             </Link>
+
+            {/* Schools Dropdown with HoverCard */}
+            <HoverCard openDelay={100} closeDelay={200}>
+              <HoverCardTrigger asChild>
+                <Link
+                  to="/schools"
+                  className={`flex items-center gap-1 px-4 py-2 font-medium transition-colors duration-200 ${
+                    location.pathname === "/schools" ? "text-primary" : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  <Trophy className="w-4 h-4" />
+                  Schools
+                  <ChevronDown className="w-4 h-4" />
+                </Link>
+              </HoverCardTrigger>
+              <HoverCardContent
+                className="w-[700px] p-0 bg-card border-border shadow-2xl z-[100]"
+                align="center"
+                side="bottom"
+                sideOffset={8}
+                avoidCollisions={false}
+              >
+                <div className="p-4 border-b border-border">
+                  <h3 className="text-lg font-display font-bold text-foreground">Select Your School</h3>
+                  <p className="text-sm text-muted-foreground">Browse by conference</p>
+                </div>
+                <div className="grid grid-cols-3 gap-0 max-h-[60vh] overflow-y-auto">
+                  {Object.entries(getSchoolsByConference()).map(([conference, conferenceSchools]) => (
+                    <div key={conference} className="border-r border-b border-border/30 last:border-r-0">
+                      <div className="px-4 py-2 bg-muted/50 sticky top-0">
+                        <h4 className="font-bold text-primary text-sm">{conference}</h4>
+                      </div>
+                      <div className="py-1">
+                        {conferenceSchools.map((school) => (
+                          <Link
+                            key={school.id}
+                            to="/schools"
+                            className="flex items-center gap-2 px-4 py-1.5 text-sm text-foreground/70 hover:text-primary hover:bg-primary/5 transition-colors"
+                          >
+                            <span
+                              className="w-3 h-3 rounded-full shrink-0"
+                              style={{ backgroundColor: school.primaryColor }}
+                            />
+                            <span className="truncate">{getShortName(school.name)}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="p-3 border-t border-border bg-muted/30">
+                  <Link
+                    to="/schools"
+                    className="text-sm text-primary hover:text-primary/80 font-medium"
+                  >
+                    View all schools →
+                  </Link>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
 
             {/* Shop Dropdown */}
             <div
@@ -95,15 +148,6 @@ export function Header() {
                 </div>
               )}
             </div>
-
-            <Link
-              to="/schools"
-              className={`px-4 py-2 font-medium transition-colors duration-200 ${
-                location.pathname === "/schools" ? "text-primary" : "text-foreground hover:text-primary"
-              }`}
-            >
-              Schools
-            </Link>
 
             <Link
               to="/about"
@@ -197,15 +241,18 @@ export function Header() {
       {/* Product Categories Navigation Bar */}
       <div className="bg-secondary border-b border-border hidden md:block">
         <div className="container mx-auto px-4">
-          <ul className="flex items-center gap-0 overflow-x-auto scrollbar-hide">
-            {productCategories.map((cat) => (
-              <li key={cat}>
+          <ul className="flex items-center justify-center gap-0 overflow-x-auto scrollbar-hide">
+            {shopCategories.map((cat, i) => (
+              <li key={cat.label} className="flex items-center">
                 <Link
-                  to={`/shop?category=${encodeURIComponent(cat)}`}
-                  className="block px-3 py-2.5 text-xs font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 transition-colors whitespace-nowrap"
+                  to={cat.href}
+                  className="block px-3 py-2 text-xs font-medium text-foreground/70 hover:text-primary hover:bg-primary/5 transition-colors whitespace-nowrap"
                 >
-                  {cat}
+                  {cat.label}
                 </Link>
+                {i < shopCategories.length - 1 && (
+                  <span className="text-foreground/20">|</span>
+                )}
               </li>
             ))}
           </ul>
