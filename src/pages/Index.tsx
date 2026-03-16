@@ -103,31 +103,40 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[420px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <img
           src={heroImage}
-          alt="Stadium packed with fans cheering"
+          alt="College sports stadium packed with fans"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-dark/40" />
-        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto animate-fade-in-up">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-secondary mb-4 leading-tight">
-            Turn Everyday Purchases Into{" "}
-            <span className="text-primary text-gold-glow">Support for Your Team.</span>
+        <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/50 to-dark/30" />
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in-up">
+          {/* NCAA Badge */}
+          <div className="inline-flex items-center gap-2 bg-dark/60 backdrop-blur-sm border border-primary/30 rounded-full px-5 py-2 mb-6">
+            <span className="text-primary text-sm">⚡</span>
+            <span className="text-sm font-semibold text-secondary tracking-wide">NCAA • NIL Commerce Platform</span>
+            <span className="text-primary text-sm">⚡</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-black text-secondary mb-5 leading-tight uppercase tracking-tight">
+            Where Every Purchase Powers{" "}
+            <span className="text-primary text-gold-glow">Your College Sports Teams & NIL</span>
           </h1>
-          <p className="text-base sm:text-lg text-secondary/80 mb-8 font-body">
-            Shop the products you already buy and support college athletes through NIL.
+          <p className="text-base sm:text-lg text-secondary/80 mb-8 font-body max-w-2xl mx-auto">
+            Choose Your School and Start Supporting Athletes Through Everyday Shopping. Every Purchase Contributes to NIL Opportunities.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="#conferences"
-              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-display font-bold text-base px-7 py-3.5 rounded-lg transition-all duration-300 gold-glow-hover hover:bg-gold-dark"
+              className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-display font-bold text-base px-8 py-4 rounded-lg transition-all duration-300 hover:bg-secondary/90 shadow-lg"
             >
+              <span className="text-primary">🎓</span>
               Select Your School
+              <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="#how-it-works"
-              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-secondary text-secondary font-display font-bold text-base px-7 py-3.5 rounded-lg transition-all duration-300 hover:bg-secondary/10"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-secondary text-secondary font-display font-bold text-base px-8 py-4 rounded-lg transition-all duration-300 hover:bg-secondary/10"
             >
               How FanPact Works
             </a>
