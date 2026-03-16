@@ -188,6 +188,40 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Latest College Sports Headlines */}
+      <section className="py-14 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-center text-foreground mb-10">
+            Latest College <span className="text-primary">Sports Headlines</span>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
+            {headlines.map((item) => (
+              <div
+                key={item.title}
+                className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-36 object-cover"
+                />
+                <div className="p-4">
+                  <h4 className="font-display font-bold text-sm text-card-foreground leading-snug mb-2">
+                    {item.title}
+                  </h4>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <Newspaper className="w-3 h-3" />
+                    <span className="font-semibold">{item.source}</span>
+                    <span>·</span>
+                    <span>{item.time}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How FanPact Works */}
       <section id="how-it-works" className="relative py-14 overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&h=800&fit=crop')] bg-cover bg-center" />
@@ -217,40 +251,6 @@ const HomePage = () => {
                 <span className="text-xs font-bold text-yellow-100 uppercase tracking-wider">Step {item.step}</span>
                 <h3 className="font-display font-bold text-lg text-white mt-2 mb-2">{item.title}</h3>
                 <p className="text-sm text-white/70 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Latest College Sports Headlines */}
-      <section className="py-14 bg-secondary">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-display font-bold text-center text-foreground mb-10">
-            Latest College <span className="text-primary">Sports Headlines</span>
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
-            {headlines.map((item) => (
-              <div
-                key={item.title}
-                className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-36 object-cover"
-                />
-                <div className="p-4">
-                  <h4 className="font-display font-bold text-sm text-card-foreground leading-snug mb-2">
-                    {item.title}
-                  </h4>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Newspaper className="w-3 h-3" />
-                    <span className="font-semibold">{item.source}</span>
-                    <span>·</span>
-                    <span>{item.time}</span>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
