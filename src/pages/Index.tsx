@@ -8,6 +8,12 @@ import logoAcc from "@/assets/logo-acc.png";
 import logoG5 from "@/assets/logo-g5.png";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
+import { schools, getSchoolsByConference, getShortName, conferenceOrder } from "@/data/schools";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 import {
   ShoppingBag,
   TrendingUp,
@@ -19,14 +25,16 @@ import {
   Dog,
   Dumbbell,
   Newspaper,
+  Trophy,
+  ChevronDown,
 } from "lucide-react";
 
 const conferences = [
-  { name: "SEC", logo: logoSec, schools: 5 },
-  { name: "Big Ten", logo: logoBigten, schools: 2 },
-  { name: "Big 12", logo: logoBig12, schools: 1 },
-  { name: "ACC", logo: logoAcc, schools: 1 },
-  { name: "Group of Five", logo: logoG5, schools: 0 },
+  { name: "SEC", logo: logoSec, key: "SEC" },
+  { name: "Big Ten", logo: logoBigten, key: "Big Ten" },
+  { name: "Big 12", logo: logoBig12, key: "Big 12" },
+  { name: "ACC", logo: logoAcc, key: "ACC" },
+  { name: "Group of Five", logo: logoG5, key: "Big East" },
 ];
 
 const productCategories = [
@@ -67,6 +75,7 @@ const headlines = [
 const HomePage = () => {
   const featuredProducts = products.slice(0, 4);
   const totalGenerated = 18450;
+  const schoolsByConference = getSchoolsByConference();
 
   return (
     <div>
@@ -93,14 +102,58 @@ const HomePage = () => {
             Choose Your School and Start Supporting Athletes Through Everyday Shopping. Every Purchase Contributes to NIL Opportunities.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="#conferences"
-              className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-display font-bold text-base px-8 py-4 rounded-lg transition-all duration-300 hover:bg-secondary/90 shadow-lg"
-            >
-              <span className="text-primary">🎓</span>
-              Select Your School
-              <ArrowRight className="w-4 h-4" />
-            </a>
+            {/* Select Your School with HoverCard popup */}
+            <HoverCard openDelay={100} closeDelay={200}>
+              <HoverCardTrigger asChild>
+                <button className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-display font-bold text-base px-8 py-4 rounded-lg transition-all duration-300 hover:bg-secondary/90 shadow-lg cursor-pointer">
+                  <Trophy className="w-5 h-5 text-primary" />
+                  Select Your School
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+              </HoverCardTrigger>
+              <HoverCardContent
+                className="w-[700px] p-0 bg-card border-border shadow-2xl z-[100]"
+                align="center"
+                side="bottom"
+                sideOffset={8}
+                avoidCollisions={false}
+              >
+                <div className="p-4 border-b border-border">
+                  <h3 className="text-lg font-display font-bold text-foreground">Select Your School</h3>
+                  <p className="text-sm text-muted-foreground">Browse by conference</p>
+                </div>
+                <div className="grid grid-cols-3 gap-0 max-h-[60vh] overflow-y-auto">
+                  {Object.entries(schoolsByConference).map(([conference, confSchools]) => (
+                    <div key={conference} className="border-r border-b border-border/30 last:border-r-0">
+                      <div className="px-4 py-2 bg-muted/50 sticky top-0">
+                        <h4 className="font-bold text-primary text-sm">{conference}</h4>
+                      </div>
+                      <div className="py-1">
+                        {confSchools.map((school) => (
+                          <Link
+                            key={school.id}
+                            to="/schools"
+                            className="flex items-center gap-2 px-4 py-1.5 text-sm text-foreground/70 hover:text-primary hover:bg-primary/5 transition-colors"
+                          >
+                            <span
+                              className="w-3 h-3 rounded-full shrink-0"
+                              style={{ backgroundColor: school.primaryColor }}
+                            />
+                            <span className="truncate">{getShortName(school.name)}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="p-3 border-t border-border bg-muted/30">
+                  <Link to="/schools" className="text-sm text-primary hover:text-primary/80 font-medium">
+                    View all schools →
+                  </Link>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
+
             <a
               href="#how-it-works"
               className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-secondary text-secondary font-display font-bold text-base px-8 py-4 rounded-lg transition-all duration-300 hover:bg-secondary/10"
@@ -121,32 +174,51 @@ const HomePage = () => {
         </p>
       </div>
 
-      {/* Select Your School By Conference */}
+      {/* Select Your School By Conference — with actual schools listed */}
       <section id="conferences" className="py-14 bg-secondary">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-center text-foreground mb-10">
             Select Your School <span className="text-primary">By Conference</span>
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
-            {conferences.map((conf) => (
-              <Link
-                key={conf.name}
-                to="/schools"
-                className="bg-card border border-border rounded-lg p-5 text-center transition-all duration-200 hover:shadow-lg hover:border-primary gold-glow-hover flex flex-col items-center gap-3"
-              >
-                <img
-                  src={conf.logo}
-                  alt={`${conf.name} conference logo`}
-                  className="w-16 h-16 object-contain"
-                />
-                <h3 className="font-display font-bold text-lg text-card-foreground">
-                  {conf.name}
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  {conf.schools} school{conf.schools !== 1 ? "s" : ""}
-                </p>
-              </Link>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-6xl mx-auto">
+            {conferences.map((conf) => {
+              const confSchools = schoolsByConference[conf.key] || [];
+              return (
+                <div
+                  key={conf.name}
+                  className="bg-card border border-border rounded-lg p-5 transition-all duration-200 hover:shadow-lg hover:border-primary gold-glow-hover"
+                >
+                  <div className="flex flex-col items-center gap-3 mb-4">
+                    <img
+                      src={conf.logo}
+                      alt={`${conf.name} conference logo`}
+                      className="w-16 h-16 object-contain"
+                    />
+                    <h3 className="font-display font-bold text-lg text-card-foreground">
+                      {conf.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground">
+                      {confSchools.length} school{confSchools.length !== 1 ? "s" : ""}
+                    </p>
+                  </div>
+                  <div className="border-t border-border pt-3 space-y-1 max-h-48 overflow-y-auto">
+                    {confSchools.map((school) => (
+                      <Link
+                        key={school.id}
+                        to="/schools"
+                        className="flex items-center gap-2 px-2 py-1 text-xs text-foreground/70 hover:text-primary hover:bg-primary/5 rounded transition-colors"
+                      >
+                        <span
+                          className="w-2.5 h-2.5 rounded-full shrink-0"
+                          style={{ backgroundColor: school.primaryColor }}
+                        />
+                        <span className="truncate">{getShortName(school.name)}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <p className="text-center text-sm text-muted-foreground mt-6">
             More schools launching soon <ArrowRight className="w-3 h-3 inline" />
