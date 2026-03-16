@@ -157,7 +157,7 @@ const HomePage = () => {
                     {confSchools.map((school) => (
                       <Link
                         key={school.id}
-                        to="/schools"
+                        to={school.id === "missouri" ? "/mizzou" : "#"}
                         className="flex items-center gap-2 px-2 py-1 text-xs text-foreground/70 hover:text-primary hover:bg-primary/5 rounded transition-colors"
                       >
                         <span
