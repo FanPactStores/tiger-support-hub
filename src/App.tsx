@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Disclaimer from "./pages/Disclaimer";
+import MizzouDisclaimer from "./pages/MizzouDisclaimer";
 import MizzouHome from "./pages/MizzouHome";
 import MizzouFootball from "./pages/MizzouFootball";
 import MizzouVolleyball from "./pages/MizzouVolleyball";
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/mizzou/volleyball" element={<MizzouVolleyball />} />
             <Route path="/mizzou/sponsors" element={<MizzouSponsors />} />
             <Route path="/mizzou/cart" element={<MizzouCart />} />
+            <Route path="/mizzou/disclaimer" element={<MizzouDisclaimer />} />
 
             {/* Indiana storefront */}
             <Route path="/indiana" element={<IndianaHome />} />

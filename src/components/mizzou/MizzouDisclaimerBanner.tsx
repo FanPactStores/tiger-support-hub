@@ -13,7 +13,7 @@ export const MizzouDisclaimerBanner = () => {
           <div className="flex-1 min-w-0">
             <p className="text-background/95 text-sm md:text-base font-semibold leading-relaxed">
               We donate <span className="text-primary font-bold">80%</span> of net earnings from qualifying purchases to support Missouri student-athletes. Thank you for shopping with purpose!{" "}
-              <Link to="/disclaimer" className="text-primary underline hover:text-background transition-colors">(full disclaimer)</Link>
+              <Link to="/mizzou/disclaimer" className="text-primary underline hover:text-background transition-colors">(full disclaimer)</Link>
             </p>
           </div>
           <button onClick={() => setDismissed(true)} className="flex-shrink-0 p-1 text-background/60 hover:text-background transition-colors rounded-full hover:bg-background/10" aria-label="Dismiss disclaimer">
