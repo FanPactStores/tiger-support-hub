@@ -102,57 +102,14 @@ const HomePage = () => {
             Choose Your School and Start Supporting Athletes Through Everyday Shopping. Every Purchase Contributes to NIL Opportunities.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            {/* Select Your School with HoverCard popup */}
-            <HoverCard openDelay={100} closeDelay={200}>
-              <HoverCardTrigger asChild>
-                <button className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-display font-bold text-base px-8 py-4 rounded-lg transition-all duration-300 hover:bg-secondary/90 shadow-lg cursor-pointer">
-                  <Trophy className="w-5 h-5 text-primary" />
-                  Select Your School
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-              </HoverCardTrigger>
-              <HoverCardContent
-                className="w-[700px] p-0 bg-card border-border shadow-2xl z-[100]"
-                align="center"
-                side="top"
-                sideOffset={8}
-                avoidCollisions={false}
-              >
-                <div className="p-4 border-b border-border">
-                  <h3 className="text-lg font-display font-bold text-foreground">Select Your School</h3>
-                  <p className="text-sm text-muted-foreground">Browse by conference</p>
-                </div>
-                <div className="grid grid-cols-3 gap-0 max-h-[60vh] overflow-y-auto">
-                  {Object.entries(schoolsByConference).map(([conference, confSchools]) => (
-                    <div key={conference} className="border-r border-b border-border/30 last:border-r-0">
-                      <div className="px-4 py-2 bg-muted/50 sticky top-0">
-                        <h4 className="font-bold text-primary text-sm">{conference}</h4>
-                      </div>
-                      <div className="py-1">
-                        {confSchools.map((school) => (
-                          <Link
-                            key={school.id}
-                            to="/schools"
-                            className="flex items-center gap-2 px-4 py-1.5 text-sm text-foreground/70 hover:text-primary hover:bg-primary/5 transition-colors"
-                          >
-                            <span
-                              className="w-3 h-3 rounded-full shrink-0"
-                              style={{ backgroundColor: school.primaryColor }}
-                            />
-                            <span className="truncate">{getShortName(school.name)}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="p-3 border-t border-border bg-muted/30">
-                  <Link to="/schools" className="text-sm text-primary hover:text-primary/80 font-medium">
-                    View all schools →
-                  </Link>
-                </div>
-              </HoverCardContent>
-            </HoverCard>
+            <a
+              href="#conferences"
+              className="inline-flex items-center justify-center gap-2 bg-secondary text-foreground font-display font-bold text-base px-8 py-4 rounded-lg transition-all duration-300 hover:bg-secondary/90 shadow-lg"
+            >
+              <Trophy className="w-5 h-5 text-primary" />
+              Select Your School
+              <ChevronDown className="w-4 h-4" />
+            </a>
 
             <a
               href="#how-it-works"
