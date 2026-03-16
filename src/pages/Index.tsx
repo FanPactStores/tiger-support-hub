@@ -10,11 +10,6 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { schools, getSchoolsByConference, getShortName, conferenceOrder } from "@/data/schools";
 import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
-import {
   ShoppingBag,
   TrendingUp,
   BarChart3,
