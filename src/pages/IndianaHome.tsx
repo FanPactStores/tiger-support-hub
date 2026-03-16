@@ -79,6 +79,7 @@ import logoOakley from "@/assets/logo-oakley.png";
 import logoStateFarm from "@/assets/logo-state-farm.png";
 import logoEnterprise from "@/assets/logo-enterprise.png";
 import { useCart } from "@/contexts/CartContext";
+import { IndianaDisclaimerBanner } from "@/components/indiana/IndianaDisclaimerBanner";
 
 const IU_CRIMSON = "#990000";
 const IU_CREAM = "#EEEDEB";
