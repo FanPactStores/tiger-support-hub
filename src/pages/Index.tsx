@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-stadium.jpg";
+import heroImage from "@/assets/hero-fanpact.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import {
