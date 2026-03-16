@@ -39,6 +39,7 @@ const App = () => (
             <Route path="/mizzou/volleyball" element={<MizzouVolleyball />} />
             <Route path="/mizzou/sponsors" element={<MizzouSponsors />} />
             <Route path="/mizzou/cart" element={<MizzouCart />} />
+            <Route path="/mizzou/disclaimer" element={<MizzouDisclaimer />} />
 
             {/* Indiana storefront */}
             <Route path="/indiana" element={<IndianaHome />} />
