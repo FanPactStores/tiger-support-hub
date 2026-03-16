@@ -188,39 +188,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* How FanPact Works */}
-      <section id="how-it-works" className="py-14 bg-gradient-to-br from-amber-500 via-orange-500 to-red-500">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-8">
-            How <span className="text-yellow-100">FanPact</span> Works
-          </h2>
-
-          <div className="inline-block bg-white/15 backdrop-blur-sm border-2 border-white/30 rounded-xl px-10 py-6 mb-10">
-            <div className="text-4xl sm:text-5xl font-display font-black text-white animate-count-up">
-              ${totalGenerated.toLocaleString()}
-            </div>
-            <p className="text-white/80 text-sm mt-1">FanPact Fans Have Generated</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { icon: ShoppingBag, step: "1", title: "Shop Goods", desc: "Browse everyday products from top brands — apparel, tech, gear, and more." },
-              { icon: TrendingUp, step: "2", title: "80% Profits Shared", desc: "Most of every dollar earned goes directly to your school's NIL collective." },
-              { icon: BarChart3, step: "3", title: "Track Your Impact", desc: "See exactly how your purchases support student-athletes via your dashboard." },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-white/20 border-2 border-white/40 flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xs font-bold text-yellow-100 uppercase tracking-wider">Step {item.step}</span>
-                <h3 className="font-display font-bold text-lg text-white mt-2 mb-2">{item.title}</h3>
-                <p className="text-sm text-white/70 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Latest College Sports Headlines */}
       <section className="py-14 bg-secondary">
         <div className="container mx-auto px-4">
@@ -249,6 +216,41 @@ const HomePage = () => {
                     <span>{item.time}</span>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How FanPact Works */}
+      <section id="how-it-works" className="relative py-14 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&h=800&fit=crop')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-amber-400/50 to-orange-500/50 backdrop-blur-[2px]" />
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-8">
+            How <span className="text-yellow-100">FanPact</span> Works
+          </h2>
+
+          <div className="inline-block bg-white/15 backdrop-blur-sm border-2 border-white/30 rounded-xl px-10 py-6 mb-10">
+            <div className="text-4xl sm:text-5xl font-display font-black text-white animate-count-up">
+              ${totalGenerated.toLocaleString()}
+            </div>
+            <p className="text-white/80 text-sm mt-1">FanPact Fans Have Generated</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              { icon: ShoppingBag, step: "1", title: "Shop Goods", desc: "Browse everyday products from top brands — apparel, tech, gear, and more." },
+              { icon: TrendingUp, step: "2", title: "80% Profits Shared", desc: "Most of every dollar earned goes directly to your school's NIL collective." },
+              { icon: BarChart3, step: "3", title: "Track Your Impact", desc: "See exactly how your purchases support student-athletes via your dashboard." },
+            ].map((item) => (
+              <div key={item.step} className="text-center">
+                <div className="w-14 h-14 rounded-full bg-white/20 border-2 border-white/40 flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-6 h-6 text-white" />
+                </div>
+                <span className="text-xs font-bold text-yellow-100 uppercase tracking-wider">Step {item.step}</span>
+                <h3 className="font-display font-bold text-lg text-white mt-2 mb-2">{item.title}</h3>
+                <p className="text-sm text-white/70 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
