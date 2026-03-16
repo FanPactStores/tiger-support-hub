@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import Schools from "./pages/Schools";
 import About from "./pages/About";
+import Disclaimer from "./pages/Disclaimer";
 
 const queryClient = new QueryClient();
 

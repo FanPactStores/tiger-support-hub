@@ -111,6 +111,16 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Disclaimer Banner */}
+      <div className="bg-dark py-2 px-4 text-center">
+        <p className="text-xs text-secondary/70 font-body">
+          We donate 50% of net earnings from qualifying purchases to support student-athletes at participating universities. Thank you for shopping with purpose!{" "}
+          <Link to="/disclaimer" className="text-primary hover:text-gold-dark font-semibold underline underline-offset-2">
+            [Full Disclaimer ↓]
+          </Link>
+        </p>
+      </div>
+
       {/* Select Your School By Conference */}
       <section id="conferences" className="py-14 bg-secondary">
         <div className="container mx-auto px-4">
