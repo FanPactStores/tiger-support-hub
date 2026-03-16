@@ -54,13 +54,13 @@ const headlines = [
     title: "Top NIL Boosters for 2026",
     source: "CBS Sports",
     time: "2 hours ago",
-    image: "https://images.unsplash.com/photo-1461896836934-bd45ba8c0e78?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=300&h=200&fit=crop",
   },
   {
     title: "Transfer Portal Updates",
     source: "Bleacher Report",
     time: "2 hours ago",
-    image: "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=300&h=200&fit=crop",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=300&h=200&fit=crop",
   },
 ];
 
