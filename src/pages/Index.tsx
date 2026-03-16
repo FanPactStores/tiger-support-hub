@@ -223,9 +223,7 @@ const HomePage = () => {
       </section>
 
       {/* How FanPact Works */}
-      <section id="how-it-works" className="relative py-14 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1920&h=800&fit=crop')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-amber-400/50 to-orange-500/50 backdrop-blur-[2px]" />
+      <section id="how-it-works" className="relative py-14 overflow-hidden bg-gradient-to-br from-rose-500 via-fuchsia-500 via-violet-500 to-sky-500">
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-8">
             How <span className="text-yellow-100">FanPact</span> Works
