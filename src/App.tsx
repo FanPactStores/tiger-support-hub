@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
-import Schools from "./pages/Schools";
+
 import About from "./pages/About";
 import Disclaimer from "./pages/Disclaimer";
 
@@ -22,8 +22,6 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/shop" element={<Shop />} />
-            <Route path="/schools" element={<Schools />} />
-            <Route path="/schools-teams" element={<Navigate to="/schools" replace />} />
             <Route path="/about" element={<About />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="*" element={<Navigate to="/" replace />} />
