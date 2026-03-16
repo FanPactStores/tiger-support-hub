@@ -295,9 +295,7 @@ const IndianaHome = () => {
         </div>
 
         {/* Disclaimer banner */}
-        <div className="text-center py-2 text-sm font-bold text-white tracking-wide" style={{ backgroundColor: "#7A0000" }}>
-          EVERY PURCHASE SUPPORTS INDIANA STUDENT-ATHLETE NIL OPPORTUNITIES
-        </div>
+        <IndianaDisclaimerBanner />
 
         {/* Mobile Menu */}
         {isMenuOpen && (
