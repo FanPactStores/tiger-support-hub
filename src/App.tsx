@@ -39,6 +39,9 @@ const App = () => (
             <Route path="/mizzou/sponsors" element={<MizzouSponsors />} />
             <Route path="/mizzou/cart" element={<MizzouCart />} />
 
+            {/* Indiana storefront */}
+            <Route path="/indiana" element={<IndianaHome />} />
+
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </BrowserRouter>
