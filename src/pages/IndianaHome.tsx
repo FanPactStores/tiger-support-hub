@@ -330,6 +330,19 @@ const IndianaHome = () => {
 
           <div className="relative z-10 container mx-auto px-4 py-16 lg:py-24">
             <div className="max-w-3xl">
+
+              {/* Search - centered above heading */}
+              <div className="max-w-lg mx-auto mb-8">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/50" />
+                  <input
+                    type="text"
+                    placeholder="Search Products"
+                    className="w-full pl-12 pr-4 py-4 bg-transparent border border-white/30 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300/50 transition-all"
+                  />
+                </div>
+              </div>
+
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight">
                 Shop Everyday Products.
                 <br />
@@ -359,24 +372,12 @@ const IndianaHome = () => {
                 </a>
               </div>
 
-              {/* Search */}
-              <div className="max-w-lg mt-8">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/50" />
-                  <input
-                    type="text"
-                    placeholder="Search products, athletes, or teams..."
-                    className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300/50 transition-all"
-                  />
-                </div>
-              </div>
-
               <p className="text-xs text-white/50 font-semibold mt-6">
                 Unofficial Fan Support Site – Not affiliated with or endorsed by Indiana University.{" "}
                 <Link to="/indiana/disclaimer" className="text-yellow-300 hover:underline">Full Disclaimer</Link>
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 mt-6 pt-4 border-t border-white/10 max-w-2xl">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 mt-4 pt-4 border-t border-white/10 max-w-2xl">
                 <div className="col-span-2 sm:col-span-1 bg-yellow-300/10 rounded-xl p-4 border border-yellow-300/20">
                   <div className="flex items-center gap-2 mb-1">
                     <TrendingUp className="w-4 h-4 text-yellow-300" />
