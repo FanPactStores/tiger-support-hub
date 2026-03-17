@@ -148,6 +148,7 @@ const navTabs = [
   { label: "Teams", href: "#teams" },
   { label: "Athletes", href: "#athletes" },
   { label: "NIL Impact", href: "#nil-impact" },
+  { label: "News & Blogs", href: "#news" },
   { label: "Sponsors", href: "/sponsors" },
 ];
 
