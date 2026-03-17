@@ -44,6 +44,7 @@ const App = () => (
 
             {/* Indiana storefront */}
             <Route path="/indiana" element={<IndianaHome />} />
+            <Route path="/indiana/disclaimer" element={<IndianaDisclaimer />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

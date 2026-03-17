@@ -13,7 +13,7 @@ export const IndianaDisclaimerBanner = () => {
           <div className="flex-1 min-w-0">
             <p className="text-background/95 text-sm md:text-base font-semibold leading-relaxed">
               We donate <span className="text-[#990000] font-bold">50%</span> of net earnings from qualifying purchases to support Indiana student-athletes. Thank you for shopping with purpose!{" "}
-              <Link to="/disclaimer" className="text-[#990000] underline hover:text-background transition-colors">(full disclaimer)</Link>
+              <Link to="/indiana/disclaimer" className="text-[#990000] underline hover:text-background transition-colors">(full disclaimer)</Link>
             </p>
           </div>
           <button onClick={() => setDismissed(true)} className="flex-shrink-0 p-1 text-background/60 hover:text-background transition-colors rounded-full hover:bg-background/10" aria-label="Dismiss disclaimer">
