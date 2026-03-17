@@ -78,6 +78,10 @@ import logoUnderArmour from "@/assets/logo-under-armour.png";
 import logoOakley from "@/assets/logo-oakley.png";
 import logoStateFarm from "@/assets/logo-state-farm.png";
 import logoEnterprise from "@/assets/logo-enterprise.png";
+import newsFootball from "@/assets/news-indiana-football.jpg";
+import newsBasketball from "@/assets/news-indiana-basketball.jpg";
+import newsVolleyball from "@/assets/news-indiana-volleyball.jpg";
+import newsTrack from "@/assets/news-indiana-track.jpg";
 import { useCart } from "@/contexts/CartContext";
 import { IndianaDisclaimerBanner } from "@/components/indiana/IndianaDisclaimerBanner";
 
