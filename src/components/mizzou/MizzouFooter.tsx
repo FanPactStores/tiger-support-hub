@@ -75,7 +75,7 @@ const MizzouFooter = () => {
         <div className="py-6 border-b border-background/10">
           <p className="text-background/50 text-xs font-semibold leading-relaxed text-center max-w-2xl mx-auto">
             Unofficial Fan Support Site – Fanpact is not affiliated with or endorsed by the University of Missouri. We donate 80% of net earnings from purchases here to support Missouri student-athletes.{" "}
-            <Link to="/disclaimer" className="text-primary hover:underline">Full Disclaimer →</Link>
+            <Link to="/mizzou/disclaimer" className="text-primary hover:underline">Full Disclaimer →</Link>
           </p>
         </div>
         <div className="flex flex-col sm:flex-row justify-between items-center pt-6 gap-4">
