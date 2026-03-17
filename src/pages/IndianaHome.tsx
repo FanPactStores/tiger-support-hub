@@ -370,6 +370,11 @@ const IndianaHome = () => {
                   />
                 </div>
               </div>
+
+              <p className="text-xs text-white/50 font-semibold mt-6">
+                Unofficial Fan Support Site – Not affiliated with or endorsed by Indiana University.{" "}
+                <Link to="/indiana/disclaimer" className="text-yellow-300 hover:underline">Full Disclaimer</Link>
+              </p>
             </div>
           </div>
         </section>

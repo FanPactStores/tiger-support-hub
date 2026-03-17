@@ -118,7 +118,7 @@ const MizzouHome = () => {
 
             <p className="text-xs text-background/50 font-semibold w-full mb-4">
               Unofficial Fan Support Site – Not affiliated with or endorsed by the University of Missouri.{" "}
-              <Link to="/disclaimer" className="text-primary hover:underline">Full Disclaimer</Link>
+              <Link to="/mizzou/disclaimer" className="text-primary hover:underline">Full Disclaimer</Link>
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 mt-4 pt-4 border-t border-background/10 max-w-2xl">
