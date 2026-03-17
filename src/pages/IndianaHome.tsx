@@ -608,15 +608,55 @@ const IndianaHome = () => {
           </div>
         </section>
 
-        {/* ===== SPONSOR LOGOS ===== */}
-        <section className="py-8 bg-gray-50 border-y border-gray-200">
+        {/* ===== NEWS & BLOGS ===== */}
+        <section id="news" className="py-14 lg:py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <p className="text-center text-xs text-gray-400 uppercase tracking-widest mb-4">Trusted Brand Partners</p>
-            <div className="flex items-center justify-center gap-6 md:gap-10 flex-wrap">
-              {sponsorLogos.map((sponsor) => (
-                <Link key={sponsor.name} to={sponsor.link} className="hover:opacity-70 transition-opacity">
-                  <img src={sponsor.logo} alt={sponsor.name} className="h-8 md:h-10 w-auto object-contain grayscale hover:grayscale-0 transition-all" />
-                </Link>
+            <div className="text-center mb-10">
+              <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: IU_CRIMSON }}>
+                Indiana Sports News
+              </h2>
+              <p className="text-gray-500 text-lg">Stay up to date with the latest from Hoosier athletics</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  image: newsFootball,
+                  title: "Hoosiers Dominate in Big Ten Opener with Record-Breaking Performance",
+                  date: "March 15, 2026",
+                  category: "Football",
+                },
+                {
+                  image: newsBasketball,
+                  title: "Indiana Basketball Secures Top Seed Heading into Conference Tournament",
+                  date: "March 12, 2026",
+                  category: "Basketball",
+                },
+                {
+                  image: newsVolleyball,
+                  title: "Volleyball Team Celebrates Historic Season with NCAA Tournament Berth",
+                  date: "March 10, 2026",
+                  category: "Volleyball",
+                },
+                {
+                  image: newsTrack,
+                  title: "Track & Field Star Sets New School Record at Big Ten Championships",
+                  date: "March 8, 2026",
+                  category: "Track & Field",
+                },
+              ].map((story, i) => (
+                <a key={i} href="#" className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img src={story.image} alt={story.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xs font-bold uppercase tracking-wider text-white px-2 py-0.5 rounded" style={{ backgroundColor: IU_CRIMSON }}>{story.category}</span>
+                      <span className="text-xs text-gray-400">{story.date}</span>
+                    </div>
+                    <h3 className="font-semibold text-gray-900 leading-snug group-hover:opacity-70 transition-opacity">{story.title}</h3>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
