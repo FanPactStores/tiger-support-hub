@@ -101,6 +101,18 @@ const MizzouHome = () => {
           </div>
 
           <div className="relative z-10 w-full px-4 sm:px-6 lg:px-10 pt-10 lg:pt-14">
+            {/* Search Bar */}
+            <div className="max-w-lg mx-auto mb-8">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search Products"
+                  className="w-full pl-12 pr-4 py-4 bg-white border border-white/30 rounded-xl text-foreground placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                />
+              </div>
+            </div>
+
             <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl text-background leading-[0.9] mb-5 w-full tracking-tight">
               <span className="block">SUPPORT MISSOURI ATHLETICS AND</span>
               <span className="block text-primary">STUDENT-ATHLETES WITH EVERY PURCHASE</span>
