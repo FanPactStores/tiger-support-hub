@@ -375,6 +375,20 @@ const IndianaHome = () => {
                 Unofficial Fan Support Site – Not affiliated with or endorsed by Indiana University.{" "}
                 <Link to="/indiana/disclaimer" className="text-yellow-300 hover:underline">Full Disclaimer</Link>
               </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 mt-6 pt-4 border-t border-white/10 max-w-2xl">
+                <div className="col-span-2 sm:col-span-1 bg-yellow-300/10 rounded-xl p-4 border border-yellow-300/20">
+                  <div className="flex items-center gap-2 mb-1">
+                    <TrendingUp className="w-4 h-4 text-yellow-300" />
+                    <span className="text-xs text-yellow-300 font-semibold uppercase tracking-wider">Live NIL</span>
+                  </div>
+                  <div className="font-display text-2xl lg:text-3xl text-yellow-300">${nilCounter.toLocaleString()}</div>
+                  <div className="text-xs text-white/60">Earned by athletes</div>
+                </div>
+                <div><div className="font-display text-3xl lg:text-4xl text-yellow-300">600+</div><div className="text-sm text-white/60">Athletes</div></div>
+                <div><div className="font-display text-3xl lg:text-4xl text-yellow-300">24</div><div className="text-sm text-white/60">Sports</div></div>
+                <div><div className="font-display text-3xl lg:text-4xl text-yellow-300">50K+</div><div className="text-sm text-white/60">Products</div></div>
+              </div>
             </div>
           </div>
         </section>
