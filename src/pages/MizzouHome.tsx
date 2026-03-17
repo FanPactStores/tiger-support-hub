@@ -130,9 +130,9 @@ const MizzouHome = () => {
                 <div className="font-display text-2xl lg:text-3xl text-primary">${nilCounter.toLocaleString()}</div>
                 <div className="text-xs text-background/60">Earned by athletes</div>
               </div>
-              <div><div className="font-display text-3xl lg:text-4xl text-primary">50+</div><div className="text-sm text-background/60">Athletes</div></div>
-              <div><div className="font-display text-3xl lg:text-4xl text-primary">15</div><div className="text-sm text-background/60">Sports</div></div>
-              <div><div className="font-display text-3xl lg:text-4xl text-primary">12K+</div><div className="text-sm text-background/60">Products</div></div>
+              <div><div className="font-display text-3xl lg:text-4xl text-primary">600+</div><div className="text-sm text-background/60">Athletes</div></div>
+              <div><div className="font-display text-3xl lg:text-4xl text-primary">20</div><div className="text-sm text-background/60">Sports</div></div>
+              <div><div className="font-display text-3xl lg:text-4xl text-primary">50K+</div><div className="text-sm text-background/60">Products</div></div>
             </div>
           </div>
         </section>
