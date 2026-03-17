@@ -5,7 +5,7 @@ import MizzouHeader from "@/components/mizzou/MizzouHeader";
 import MizzouFooter from "@/components/mizzou/MizzouFooter";
 import { MizzouDisclaimerBanner } from "@/components/mizzou/MizzouDisclaimerBanner";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Mail } from "lucide-react";
+import { ArrowRight, TrendingUp, Mail, Search } from "lucide-react";
 import { useState, useEffect } from "react";
 
 import heroFootball from "@/assets/hero-football.jpg";
