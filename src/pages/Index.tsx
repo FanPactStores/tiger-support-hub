@@ -6,6 +6,7 @@ import logoBigten from "@/assets/logo-bigten.png";
 import logoBig12 from "@/assets/logo-big12.png";
 import logoAcc from "@/assets/logo-acc.png";
 import logoBigeast from "@/assets/logo-bigeast.png";
+import newsBigtenFootball from "@/assets/news-bigten-football.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { schools, getSchoolsByConference, getShortName, conferenceOrder } from "@/data/schools";
@@ -45,7 +46,7 @@ const headlines = [
     title: "Big Ten Football Playoff Picture",
     source: "ESPN",
     time: "1 hour ago",
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=300&h=200&fit=crop",
+    image: newsBigtenFootball,
   },
   {
     title: "SEC Basketball Power Rankings",
