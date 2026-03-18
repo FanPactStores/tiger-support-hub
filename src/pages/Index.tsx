@@ -5,7 +5,7 @@ import logoSec from "@/assets/logo-sec.png";
 import logoBigten from "@/assets/logo-bigten.png";
 import logoBig12 from "@/assets/logo-big12.png";
 import logoAcc from "@/assets/logo-acc.png";
-import logoG5 from "@/assets/logo-g5.png";
+import logoBigeast from "@/assets/logo-bigeast.png";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { schools, getSchoolsByConference, getShortName, conferenceOrder } from "@/data/schools";
