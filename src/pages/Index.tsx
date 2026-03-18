@@ -29,7 +29,7 @@ const conferences = [
   { name: "Big Ten", logo: logoBigten, key: "Big Ten" },
   { name: "Big 12", logo: logoBig12, key: "Big 12" },
   { name: "ACC", logo: logoAcc, key: "ACC" },
-  { name: "Group of Five", logo: logoG5, key: "Big East" },
+  { name: "Big East", logo: logoBigeast, key: "Big East" },
 ];
 
 const productCategories = [
