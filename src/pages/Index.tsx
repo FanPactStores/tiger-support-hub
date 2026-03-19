@@ -45,7 +45,10 @@ const HomePage = () => {
           </h1>
           <p className="text-base sm:text-lg text-secondary/80 mb-8 font-body max-w-2xl mx-auto">
             Choose your school and shop everyday products that support student-athletes.
-          </p>
+           </p>
+           <p className="text-sm sm:text-base text-secondary/60 mb-8 font-body max-w-2xl mx-auto">
+             Shop the products you already buy — now they support your team.
+           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="#conferences"
