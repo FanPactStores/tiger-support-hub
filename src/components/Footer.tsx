@@ -60,7 +60,7 @@ export function Footer() {
 
         <div className="border-t border-dark-muted mt-10 pt-6 text-center">
           <p className="text-xs text-muted-foreground">
-            Fanpact.net © 2026. Supporting Mizzou as Beta Partner. All rights reserved.
+            FanPact.net © 2026. Empowering fans to support college athletes through everyday shopping.
           </p>
         </div>
       </div>
