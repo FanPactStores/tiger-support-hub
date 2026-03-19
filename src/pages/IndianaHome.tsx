@@ -31,6 +31,8 @@ import {
   Users,
   DollarSign,
   ArrowRight,
+  Shield,
+  CheckCircle,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -40,15 +42,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
-import { Footer } from "@/components/Footer";
 import fanpactPennantMark from "@/assets/fanpact-pennant-mark.png";
-import logoDod from "@/assets/logo-dod.png";
-import logoArmy from "@/assets/logo-army.png";
-import logoMarines from "@/assets/logo-marines.png";
-import logoNavy from "@/assets/logo-navy.png";
-import logoAirforce from "@/assets/logo-airforce.png";
-import logoSpaceforce from "@/assets/logo-spaceforce.png";
-import logoCoastguard from "@/assets/logo-coastguard.png";
 import heroStadium from "@/assets/hero-stadium-bg.jpg";
 import catElectronics from "@/assets/cat-electronics.jpg";
 import catHomeLiving from "@/assets/cat-home-living.jpg";
@@ -72,12 +66,6 @@ import productEarbuds from "@/assets/product-earbuds.jpg";
 import productMonitor from "@/assets/product-monitor.jpg";
 import productSunglasses from "@/assets/product-sunglasses.jpg";
 import productHeadphones from "@/assets/product-headphones.jpg";
-import logoNike from "@/assets/logo-nike.png";
-import logoGatorade from "@/assets/logo-gatorade.png";
-import logoUnderArmour from "@/assets/logo-under-armour.png";
-import logoOakley from "@/assets/logo-oakley.png";
-import logoStateFarm from "@/assets/logo-state-farm.png";
-import logoEnterprise from "@/assets/logo-enterprise.png";
 import newsFootball from "@/assets/news-indiana-football.jpg";
 import newsBasketball from "@/assets/news-indiana-basketball.jpg";
 import newsVolleyball from "@/assets/news-indiana-volleyball.jpg";
@@ -138,22 +126,13 @@ const popularFanCategories = [
   { name: "Electronics Accessories", products: 420, link: "/category/electronics", image: categoryElectronics },
 ];
 
-const sponsorLogos = [
-  { name: "Nike", logo: logoNike, link: "/sponsor/nike" },
-  { name: "Gatorade", logo: logoGatorade, link: "/sponsor/gatorade" },
-  { name: "Under Armour", logo: logoUnderArmour, link: "/sponsor/under-armour" },
-  { name: "Oakley", logo: logoOakley, link: "/sponsor/oakley" },
-  { name: "State Farm", logo: logoStateFarm, link: "/enterprise/state-farm" },
-  { name: "Enterprise", logo: logoEnterprise, link: "/enterprise" },
-];
-
 const navTabs = [
-  { label: "Shop", href: "#shop-categories" },
-  { label: "Teams", href: "#teams" },
-  { label: "Athletes", href: "#athletes" },
-  { label: "NIL Impact", href: "#nil-impact" },
-  { label: "News & Blogs", href: "#news" },
-  { label: "Sponsors", href: "/sponsors" },
+  { label: "Shop", href: "#shop-categories", primary: true },
+  { label: "Teams", href: "#teams", primary: false },
+  { label: "Athletes", href: "#athletes", primary: false },
+  { label: "NIL Impact", href: "#nil-impact", primary: true },
+  { label: "News & Blogs", href: "#news", primary: false },
+  { label: "Sponsors", href: "/sponsors", primary: false },
 ];
 
 const IndianaHome = () => {
@@ -168,16 +147,6 @@ const IndianaHome = () => {
     }, 2500);
     return () => clearInterval(interval);
   }, []);
-
-  const militaryBranches = [
-    { logo: logoDod, name: "Department of Defense" },
-    { logo: logoArmy, name: "US Army" },
-    { logo: logoMarines, name: "US Marine Corps" },
-    { logo: logoNavy, name: "US Navy" },
-    { logo: logoAirforce, name: "US Air Force" },
-    { logo: logoSpaceforce, name: "US Space Force" },
-    { logo: logoCoastguard, name: "US Coast Guard" },
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -209,27 +178,8 @@ const IndianaHome = () => {
               <nav className="hidden md:flex items-center gap-1">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <button className="flex items-center gap-1 px-3 py-2 font-medium transition-colors" style={{ color: IU_CRIMSON }}>
-                      Sports <ChevronDown className="w-4 h-4" />
-                    </button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-48 bg-white border-border">
-                    {["Football", "Men's Basketball", "Women's Basketball", "Soccer", "Swimming", "Baseball", "Softball"].map((sport) => (
-                      <DropdownMenuItem key={sport} className="cursor-pointer">{sport}</DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-
-                <Link to="/rewards" className="px-3 py-2 font-medium transition-colors hover:opacity-70" style={{ color: IU_CRIMSON }}>
-                  Rewards
-                </Link>
-                <Link to="/members" className="px-3 py-2 font-medium transition-colors hover:opacity-70" style={{ color: IU_CRIMSON }}>
-                  Members
-                </Link>
-
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <button className="flex items-center gap-1 px-3 py-2 font-medium transition-colors" style={{ color: IU_CRIMSON }}>
+                    <button className="flex items-center gap-1 px-4 py-2 font-bold text-base transition-colors" style={{ color: IU_CRIMSON }}>
+                      <ShoppingBag className="w-4 h-4" />
                       Shop <ChevronDown className="w-4 h-4" />
                     </button>
                   </DropdownMenuTrigger>
@@ -244,12 +194,20 @@ const IndianaHome = () => {
                   </DropdownMenuContent>
                 </DropdownMenu>
 
-                <Link to="/sponsors" className="px-3 py-2 font-medium transition-colors hover:opacity-70" style={{ color: IU_CRIMSON }}>
-                  Sponsors
+                <Link to="/rewards" className="px-3 py-2 font-medium transition-colors hover:opacity-70" style={{ color: IU_CRIMSON }}>
+                  Rewards
                 </Link>
-                <Link to="/enterprise" className="px-3 py-2 font-medium transition-colors hover:opacity-70" style={{ color: IU_CRIMSON }}>
-                  Enterprise
-                </Link>
+
+                {/* De-emphasized nav items */}
+                {["Teams", "Athletes", "Sponsors"].map((item) => (
+                  <span
+                    key={item}
+                    className="px-3 py-2 text-sm transition-colors cursor-pointer hover:opacity-70 text-gray-400"
+                    title="Coming Soon"
+                  >
+                    {item}
+                  </span>
+                ))}
               </nav>
 
               {/* Desktop Actions */}
@@ -289,10 +247,15 @@ const IndianaHome = () => {
                   className={`px-6 py-2.5 text-sm font-semibold uppercase tracking-wider transition-all border-b-2 ${
                     activeTab === tab.label
                       ? "text-white border-yellow-300 bg-white/10"
-                      : "text-white/70 border-transparent hover:text-white hover:bg-white/5"
+                      : tab.primary
+                        ? "text-white/90 border-transparent hover:text-white hover:bg-white/5"
+                        : "text-white/40 border-transparent hover:text-white/60 hover:bg-white/5 text-xs"
                   }`}
                 >
                   {tab.label}
+                  {!tab.primary && tab.label !== "NIL Impact" && (
+                    <span className="ml-1.5 text-[9px] text-yellow-300/60 uppercase">Soon</span>
+                  )}
                 </a>
               ))}
             </div>
@@ -306,12 +269,19 @@ const IndianaHome = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-border animate-fade-in">
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-              {navTabs.map((tab) => (
-                <a key={tab.label} href={tab.href} className="font-medium py-1" style={{ color: IU_CRIMSON }} onClick={() => setIsMenuOpen(false)}>
-                  {tab.label}
-                </a>
-              ))}
-              <div className="border-t pt-4 mt-2">
+              <a href="#shop-categories" className="font-bold py-1 text-lg" style={{ color: IU_CRIMSON }} onClick={() => setIsMenuOpen(false)}>
+                Shop
+              </a>
+              <a href="#nil-impact" className="font-medium py-1" style={{ color: IU_CRIMSON }} onClick={() => setIsMenuOpen(false)}>
+                NIL Impact
+              </a>
+              <div className="border-t pt-3 mt-1">
+                <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Coming Soon</p>
+                {["Teams", "Athletes", "News & Blogs", "Sponsors"].map((item) => (
+                  <span key={item} className="block font-medium py-1 text-gray-400">{item}</span>
+                ))}
+              </div>
+              <div className="border-t pt-3 mt-1">
                 {shopCategories.slice(0, 6).map((cat) => (
                   <Link key={cat.label} to={cat.href} className="block font-medium py-1 text-gray-600" onClick={() => setIsMenuOpen(false)}>
                     {cat.label}
@@ -319,7 +289,6 @@ const IndianaHome = () => {
                 ))}
               </div>
               <Link to="/rewards" className="font-medium py-1" style={{ color: IU_CRIMSON }} onClick={() => setIsMenuOpen(false)}>Fan Rewards</Link>
-              <Link to="/members" className="font-medium py-1" style={{ color: IU_CRIMSON }} onClick={() => setIsMenuOpen(false)}>Fan Portal</Link>
             </nav>
           </div>
         )}
@@ -329,37 +298,44 @@ const IndianaHome = () => {
       <main className="pt-32 lg:pt-40">
 
         {/* ===== 1. HERO SECTION ===== */}
-        <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <section className="relative min-h-[65vh] flex items-center overflow-hidden">
           <img src={heroStadium} alt="Indiana Stadium" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${IU_CRIMSON}ee 0%, ${IU_CRIMSON}bb 40%, ${IU_CRIMSON}88 100%)` }} />
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${IU_CRIMSON}ee 0%, ${IU_CRIMSON}cc 40%, ${IU_CRIMSON}99 100%)` }} />
 
           <div className="relative z-10 container mx-auto px-4 py-16 lg:py-24">
             <div className="max-w-3xl">
-
-              {/* Search - centered above heading */}
-              <div className="max-w-lg mx-auto mb-8">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search Products"
-                    className="w-full pl-12 pr-4 py-4 bg-white border border-white/30 rounded-xl text-foreground placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-300/50 transition-all"
-                  />
-                </div>
-              </div>
 
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight">
                 Shop Everyday Products.
                 <br />
                 <span className="text-yellow-300">Support Indiana Athletes.</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed max-w-2xl">
+              <p className="text-lg md:text-xl text-white/90 mb-3 leading-relaxed max-w-2xl">
                 Every purchase made through the Indiana FanPact storefront contributes to NIL opportunities for Hoosier student-athletes and supports Indiana athletics.
               </p>
-              <p className="text-white/70 mb-8 max-w-2xl">
+              <p className="text-white/70 mb-6 max-w-2xl">
                 FanPact allows fans to shop the products they already buy — electronics, home goods, pet supplies, kitchen products, and more — while helping Indiana athletes succeed.
               </p>
-              <div className="flex flex-wrap gap-4">
+
+              {/* Search Bar - prominent, conversion-focused */}
+              <div className="max-w-xl mb-8">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search 50,000+ products that support Indiana athletes"
+                    className="w-full pl-12 pr-32 py-4 bg-white rounded-xl text-foreground placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-300/50 transition-all shadow-lg text-sm md:text-base"
+                  />
+                  <button
+                    className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 text-white font-bold text-sm rounded-lg"
+                    style={{ backgroundColor: IU_CRIMSON }}
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-4 mb-6">
                 <a href="#shop-categories">
                   <button
                     className="px-8 py-3.5 text-white font-bold text-lg rounded-lg shadow-lg hover:opacity-90 transition-opacity flex items-center gap-2"
@@ -377,12 +353,13 @@ const IndianaHome = () => {
                 </a>
               </div>
 
-              <p className="text-xs text-white/50 font-semibold mt-6">
+              {/* Disclaimer - clean secondary treatment */}
+              <p className="text-xs text-white/40 mt-2">
                 Unofficial Fan Support Site – Not affiliated with or endorsed by Indiana University.{" "}
-                <Link to="/indiana/disclaimer" className="text-yellow-300 hover:underline">Full Disclaimer</Link>
+                <Link to="/indiana/disclaimer" className="text-yellow-300/60 hover:text-yellow-300 hover:underline transition-colors">Full Disclaimer</Link>
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 mt-4 pt-4 border-t border-white/10 max-w-2xl">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 mt-6 pt-4 border-t border-white/10 max-w-2xl">
                 <div className="col-span-2 sm:col-span-1 bg-yellow-300/10 rounded-xl p-4 border border-yellow-300/20">
                   <div className="flex items-center gap-2 mb-1">
                     <TrendingUp className="w-4 h-4 text-yellow-300" />
@@ -399,19 +376,21 @@ const IndianaHome = () => {
           </div>
         </section>
 
-        {/* ===== MILITARY BANNER ===== */}
-        <div className="py-3" style={{ backgroundColor: "#7A0000" }}>
+        {/* ===== TRUST / VALUE STRIP (replaces military banner) ===== */}
+        <div className="py-4 bg-white border-b border-gray-100">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
-              <span className="text-sm font-semibold text-yellow-300 italic">
-                "Today's Students are Tomorrow's Heroes"
-              </span>
-              <div className="flex items-center gap-1">
-                {militaryBranches.map((branch) => (
-                  <a key={branch.name} href="https://www.military.com/join-armed-forces" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" title={branch.name}>
-                    <img src={branch.logo} alt={branch.name} className="h-6 w-6 object-contain" />
-                  </a>
-                ))}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+              <div className="flex items-center gap-2 text-gray-700">
+                <Truck className="w-5 h-5" style={{ color: IU_CRIMSON }} />
+                <span className="text-sm font-semibold">Fast U.S. Shipping</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-700">
+                <Shield className="w-5 h-5" style={{ color: IU_CRIMSON }} />
+                <span className="text-sm font-semibold">Trusted Product Sources</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-700">
+                <Heart className="w-5 h-5" style={{ color: IU_CRIMSON }} />
+                <span className="text-sm font-semibold">Every Purchase Supports Indiana NIL</span>
               </div>
             </div>
           </div>
@@ -422,7 +401,7 @@ const IndianaHome = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: IU_CRIMSON }}>
-                Shop by Category
+                Start Shopping by Category
               </h2>
               <p className="text-gray-500 text-lg">Browse thousands of everyday products from trusted brands</p>
             </div>
@@ -432,11 +411,14 @@ const IndianaHome = () => {
                 <Link
                   key={cat.name}
                   to={cat.link}
-                  className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 aspect-square"
+                  className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 aspect-square border-2 border-transparent hover:border-[#990000]/40"
                 >
                   <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-3 text-center">
+                    <p className="text-xs font-bold text-yellow-300 uppercase tracking-wider mb-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Shop
+                    </p>
                     <p className="text-sm font-bold text-white leading-tight drop-shadow-md">
                       {cat.name}
                     </p>
@@ -447,15 +429,15 @@ const IndianaHome = () => {
           </div>
         </section>
 
-        {/* ===== 3. FEATURED PRODUCTS ===== */}
+        {/* ===== 3. EVERYDAY ESSENTIALS (Featured Products) ===== */}
         <section className="py-14 lg:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h2 className="font-display text-3xl md:text-4xl" style={{ color: IU_CRIMSON }}>
-                  Featured Products
+                  Everyday Essentials Supporting Indiana Athletes
                 </h2>
-                <p className="text-gray-500 mt-1">Everyday essentials that support Indiana athletes</p>
+                <p className="text-gray-500 mt-1">Shop the products you already love — every purchase makes a difference</p>
               </div>
               <Link to="/category/electronics" className="hidden md:flex items-center gap-1 font-semibold hover:opacity-70 transition-opacity" style={{ color: IU_CRIMSON }}>
                 View All <ChevronRight className="w-4 h-4" />
@@ -473,7 +455,7 @@ const IndianaHome = () => {
                     <h3 className="font-semibold text-gray-900 mb-2">{product.name}</h3>
                     <div className="flex items-center justify-between">
                       <span className="text-xl font-bold" style={{ color: IU_CRIMSON }}>{product.price}</span>
-                      <span className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Supports NIL</span>
+                      <span className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Supports Indiana NIL</span>
                     </div>
                   </div>
                 </Link>
@@ -498,46 +480,46 @@ const IndianaHome = () => {
               Every purchase made through the Indiana FanPact storefront contributes to NIL opportunities for Hoosier athletes.
             </p>
 
-            <div className="max-w-md mx-auto mb-10 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <p className="text-white/70 text-sm uppercase tracking-widest mb-2">Fans have generated</p>
-              <p className="text-5xl md:text-6xl font-display font-bold text-yellow-300 mb-2">
+            <div className="max-w-lg mx-auto mb-12 bg-white/10 backdrop-blur-sm rounded-2xl p-10 border border-white/20 shadow-2xl">
+              <p className="text-white/60 text-xs uppercase tracking-[0.2em] mb-3">Indiana fans have generated</p>
+              <p className="text-6xl md:text-7xl font-display font-bold text-yellow-300 mb-3 leading-none">
                 ${nilCounter.toLocaleString()}
               </p>
-              <p className="text-white/80 text-lg">for Indiana student-athletes through everyday purchases.</p>
+              <p className="text-white/80 text-lg">for Hoosier student-athletes through everyday purchases.</p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white max-w-3xl mx-auto">
-              <div>
-                <p className="text-3xl font-display font-bold">460+</p>
-                <p className="text-white/60 text-sm">Athletes Supported</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white max-w-3xl mx-auto">
+              <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                <p className="text-3xl font-display font-bold text-yellow-300">460+</p>
+                <p className="text-white/60 text-sm mt-1">Athletes Supported</p>
               </div>
-              <div>
-                <p className="text-3xl font-display font-bold">1,200+</p>
-                <p className="text-white/60 text-sm">Products Available</p>
+              <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                <p className="text-3xl font-display font-bold text-yellow-300">1,200+</p>
+                <p className="text-white/60 text-sm mt-1">Products Available</p>
               </div>
-              <div>
-                <p className="text-3xl font-display font-bold">45K+</p>
-                <p className="text-white/60 text-sm">Active Fans</p>
+              <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                <p className="text-3xl font-display font-bold text-yellow-300">45K+</p>
+                <p className="text-white/60 text-sm mt-1">Active Fans</p>
               </div>
-              <div>
-                <p className="text-3xl font-display font-bold">24</p>
-                <p className="text-white/60 text-sm">Sports Programs</p>
+              <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                <p className="text-3xl font-display font-bold text-yellow-300">24</p>
+                <p className="text-white/60 text-sm mt-1">Sports Programs</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* ===== 5. HOW FANPACT WORKS ===== */}
-        <section id="how-it-works" className="py-14 lg:py-20 bg-gray-50">
+        <section id="how-it-works" className="py-12 lg:py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <div className="text-center mb-10">
               <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: IU_CRIMSON }}>
                 How FanPact Works
               </h2>
-              <p className="text-gray-500 text-lg">Three simple steps to support Indiana athletes</p>
+              <p className="text-gray-500">Three simple steps to support Indiana athletes</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {[
                 {
                   step: 1,
@@ -560,14 +542,14 @@ const IndianaHome = () => {
               ].map((item) => {
                 const IconComp = item.icon;
                 return (
-                  <div key={item.step} className="text-center bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}12` }}>
-                      <IconComp className="w-8 h-8" style={{ color: IU_CRIMSON }} />
+                  <div key={item.step} className="text-center bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <div className="w-14 h-14 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}12` }}>
+                      <IconComp className="w-7 h-7" style={{ color: IU_CRIMSON }} />
                     </div>
                     <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: IU_CRIMSON }}>
                       Step {item.step}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                    <h3 className="text-base font-bold text-gray-900 mb-1">{item.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 );
@@ -576,14 +558,14 @@ const IndianaHome = () => {
           </div>
         </section>
 
-        {/* ===== 6. POPULAR CATEGORIES FOR INDIANA FANS ===== */}
+        {/* ===== 6. TRENDING FOR INDIANA FANS ===== */}
         <section className="py-14 lg:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: IU_CRIMSON }}>
-                Popular Categories for Indiana Fans
+                Trending for Indiana Fans
               </h2>
-              <p className="text-gray-500 text-lg">Everyday shopping that makes a difference</p>
+              <p className="text-gray-500 text-lg">Curated picks our fans are loving right now</p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
@@ -608,17 +590,52 @@ const IndianaHome = () => {
           </div>
         </section>
 
-        {/* ===== NEWS & BLOGS ===== */}
-        <section id="news" className="py-14 lg:py-20 bg-gray-50">
+        {/* ===== TRUST & CONVENIENCE STRIP ===== */}
+        <section className="py-6 border-y border-gray-100 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: IU_CRIMSON }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="flex items-center gap-3 justify-center md:justify-start">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}10` }}>
+                  <Truck className="w-5 h-5" style={{ color: IU_CRIMSON }} />
+                </div>
+                <div>
+                  <p className="font-bold text-sm" style={{ color: IU_CRIMSON }}>Free Shipping on Orders Over $59</p>
+                  <p className="text-xs text-gray-500">Fast delivery to your door</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 justify-center">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}10` }}>
+                  <Star className="w-5 h-5" style={{ color: IU_CRIMSON }} />
+                </div>
+                <div>
+                  <p className="font-bold text-sm" style={{ color: IU_CRIMSON }}>Fan Rewards Program</p>
+                  <p className="text-xs text-gray-500">Earn points on every purchase</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 justify-center md:justify-end">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}10` }}>
+                  <Award className="w-5 h-5" style={{ color: IU_CRIMSON }} />
+                </div>
+                <div>
+                  <p className="font-bold text-sm" style={{ color: IU_CRIMSON }}>Every Purchase Funds Indiana NIL</p>
+                  <p className="text-xs text-gray-500">Support Hoosier student-athletes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== NEWS & BLOGS (de-emphasized) ===== */}
+        <section id="news" className="py-10 lg:py-14 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8">
+              <h2 className="font-display text-2xl md:text-3xl mb-1 text-gray-700">
                 Indiana Sports News
               </h2>
-              <p className="text-gray-500 text-lg">Stay up to date with the latest from Hoosier athletics</p>
+              <p className="text-gray-400 text-sm">Stay up to date with the latest from Hoosier athletics</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 {
                   image: newsFootball,
@@ -645,54 +662,19 @@ const IndianaHome = () => {
                   category: "Track & Field",
                 },
               ].map((story, i) => (
-                <a key={i} href="#" className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <a key={i} href="#" className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
                   <div className="aspect-[16/10] overflow-hidden">
                     <img src={story.image} alt={story.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <div className="p-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs font-bold uppercase tracking-wider text-white px-2 py-0.5 rounded" style={{ backgroundColor: IU_CRIMSON }}>{story.category}</span>
-                      <span className="text-xs text-gray-400">{story.date}</span>
+                  <div className="p-3">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-white px-1.5 py-0.5 rounded" style={{ backgroundColor: IU_CRIMSON }}>{story.category}</span>
+                      <span className="text-[10px] text-gray-400">{story.date}</span>
                     </div>
-                    <h3 className="font-semibold text-gray-900 leading-snug group-hover:opacity-70 transition-opacity">{story.title}</h3>
+                    <h3 className="font-semibold text-gray-700 text-sm leading-snug group-hover:opacity-70 transition-opacity">{story.title}</h3>
                   </div>
                 </a>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ===== BENEFITS BAR ===== */}
-        <section className="py-6 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-center gap-3 justify-center md:justify-start">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}10` }}>
-                  <Truck className="w-5 h-5" style={{ color: IU_CRIMSON }} />
-                </div>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: IU_CRIMSON }}>Free Shipping</p>
-                  <p className="text-xs text-gray-500">on orders over $59</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 justify-center">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}10` }}>
-                  <Star className="w-5 h-5" style={{ color: IU_CRIMSON }} />
-                </div>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: IU_CRIMSON }}>Fan Rewards Program</p>
-                  <p className="text-xs text-gray-500">Earn points on every purchase</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 justify-center md:justify-end">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}10` }}>
-                  <Award className="w-5 h-5" style={{ color: IU_CRIMSON }} />
-                </div>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: IU_CRIMSON }}>Support Athletes</p>
-                  <p className="text-xs text-gray-500">Every purchase funds NIL opportunities</p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -725,23 +707,78 @@ const IndianaHome = () => {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-center gap-4 flex-wrap text-white/80">
               <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-bold text-white text-xs">IU</div>
-              <a href="#athletes" className="hover:text-white transition-colors">Athletes</a>
+              <a href="#shop-categories" className="hover:text-white transition-colors">Shop</a>
               <span className="text-white/30">|</span>
-              <Link to="/sponsors" className="hover:text-white transition-colors">NIL Partners</Link>
+              <a href="#nil-impact" className="hover:text-white transition-colors">NIL Impact</a>
               <span className="text-white/30">|</span>
               <Link to="/rewards" className="hover:text-white transition-colors">Fan Rewards</Link>
               <span className="text-white/30">|</span>
-              <Link to="/members" className="hover:text-white transition-colors">Fan Portal</Link>
-              <span className="text-white/30">|</span>
               <Link to="/cart" className="hover:text-white transition-colors">My Account</Link>
               <span className="text-white/30">|</span>
-              <Link to="/disclaimer" className="hover:text-white transition-colors">Help</Link>
+              <Link to="/indiana/disclaimer" className="hover:text-white transition-colors">Help</Link>
             </div>
           </div>
         </div>
       </main>
 
-      <Footer />
+      {/* ===== FOOTER ===== */}
+      <footer className="bg-gray-900 text-gray-300">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="md:col-span-1">
+              <span className="text-2xl font-display font-bold text-white">FanPact</span>
+              <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+                Empowering fans to support college athletes through everyday shopping.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-display font-bold text-sm uppercase tracking-wider text-white mb-4">Navigate</h4>
+              <ul className="space-y-2">
+                {["Home", "Shop", "About"].map((link) => (
+                  <li key={link}>
+                    <Link to={link === "Home" ? "/indiana" : `/${link.toLowerCase()}`} className="text-sm text-gray-400 hover:text-white transition-colors">
+                      {link}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-display font-bold text-sm uppercase tracking-wider text-white mb-4">Support</h4>
+              <ul className="space-y-2">
+                {["Contact Us", "FAQ", "Privacy Policy", "Terms of Service", "Disclaimer"].map((link) => (
+                  <li key={link}>
+                    {link === "Disclaimer" ? (
+                      <Link to="/indiana/disclaimer" className="text-sm text-gray-400 hover:text-white transition-colors">
+                        {link}
+                      </Link>
+                    ) : (
+                      <span className="text-sm text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        {link}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-display font-bold text-sm uppercase tracking-wider text-white mb-4">Connect</h4>
+              <div className="flex gap-4">
+                {["X (Twitter)", "Instagram", "Facebook"].map((social) => (
+                  <span key={social} className="text-sm text-gray-400 hover:text-white transition-colors cursor-pointer">
+                    {social.split(" ")[0]}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-10 pt-6 text-center">
+            <p className="text-xs text-gray-500">
+              FanPact.net © 2026. Empowering fans to support college athletes through everyday shopping. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
