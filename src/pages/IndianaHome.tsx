@@ -118,12 +118,12 @@ const featuredProducts = [
 ];
 
 const popularFanCategories = [
-  { name: "Kitchen Essentials", products: 240, link: "/category/food", image: categoryFood },
-  { name: "Pet Supplies", products: 180, link: "/category/pets", image: categoryPets },
-  { name: "Home Organization", products: 310, link: "/category/home", image: categoryHome },
-  { name: "Fitness Gear", products: 195, link: "/category/sports", image: categorySports },
-  { name: "Car Accessories", products: 150, link: "/category/automotive", image: categoryAutomotive },
-  { name: "Electronics Accessories", products: 420, link: "/category/electronics", image: categoryElectronics },
+  { name: "Kitchen Essentials", products: 240, link: "/indiana/category/food", image: categoryFood },
+  { name: "Pet Supplies", products: 180, link: "/indiana/category/pets", image: categoryPets },
+  { name: "Home Organization", products: 310, link: "/indiana/category/home", image: categoryHome },
+  { name: "Fitness Gear", products: 195, link: "/indiana/category/sports", image: categorySports },
+  { name: "Car Accessories", products: 150, link: "/indiana/category/automotive", image: categoryAutomotive },
+  { name: "Electronics Accessories", products: 420, link: "/indiana/category/electronics", image: categoryElectronics },
 ];
 
 const navTabs = [
