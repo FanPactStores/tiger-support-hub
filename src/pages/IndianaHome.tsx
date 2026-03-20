@@ -262,6 +262,23 @@ const IndianaHome = () => {
           </div>
         </div>
 
+        {/* Product Category Navigation Bar */}
+        <div className="hidden md:block border-b border-border/50" style={{ backgroundColor: `${IU_CRIMSON}f2` }}>
+          <div className="container mx-auto px-4 py-1.5">
+            <div className="flex items-center justify-center gap-1 flex-wrap">
+              {shopCategories.map((cat) => (
+                <Link
+                  key={cat.label}
+                  to={cat.href}
+                  className="text-[11px] font-medium px-2.5 py-1 rounded transition-colors text-white/70 hover:text-white hover:bg-white/10"
+                >
+                  {cat.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Disclaimer banner */}
         <IndianaDisclaimerBanner />
 
