@@ -77,18 +77,18 @@ const IU_CRIMSON = "#990000";
 const IU_CREAM = "#EEEDEB";
 
 const shopCategories = [
-  { label: "Electronics", href: "/category/electronics" },
-  { label: "Fashion & Apparel", href: "/category/fashion" },
-  { label: "Home & Garden", href: "/category/home" },
-  { label: "Beauty & Personal Care", href: "/category/beauty" },
-  { label: "Sports & Outdoors", href: "/category/sports" },
-  { label: "Toys & Games", href: "/category/toys" },
-  { label: "Food & Grocery", href: "/category/food" },
-  { label: "Pet Supplies", href: "/category/pets" },
-  { label: "Automotive", href: "/category/automotive" },
-  { label: "Health & Wellness", href: "/category/health" },
-  { label: "Jewelry & Watches", href: "/category/jewelry" },
-  { label: "Merchandise", href: "/category/merchandise" },
+  { label: "Electronics", href: "/indiana/category/electronics" },
+  { label: "Fashion & Apparel", href: "/indiana/category/fashion" },
+  { label: "Home & Garden", href: "/indiana/category/home" },
+  { label: "Beauty & Personal Care", href: "/indiana/category/beauty" },
+  { label: "Sports & Outdoors", href: "/indiana/category/sports" },
+  { label: "Toys & Games", href: "/indiana/category/toys" },
+  { label: "Food & Grocery", href: "/indiana/category/food" },
+  { label: "Pet Supplies", href: "/indiana/category/pets" },
+  { label: "Automotive", href: "/indiana/category/automotive" },
+  { label: "Health & Wellness", href: "/indiana/category/health" },
+  { label: "Jewelry & Watches", href: "/indiana/category/jewelry" },
+  { label: "Merchandise", href: "/indiana/category/merchandise" },
 ];
 
 const categoryGrid = [
