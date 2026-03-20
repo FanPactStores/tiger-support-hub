@@ -18,6 +18,7 @@ import MizzouCart from "./pages/MizzouCart";
 import MizzouCategoryPage from "./pages/MizzouCategoryPage";
 import IndianaHome from "./pages/IndianaHome";
 import IndianaDisclaimer from "./pages/IndianaDisclaimer";
+import IndianaCategoryPage from "./pages/IndianaCategoryPage";
 
 const queryClient = new QueryClient();
 
