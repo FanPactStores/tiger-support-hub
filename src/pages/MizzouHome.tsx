@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MizzouFooter from "@/components/mizzou/MizzouFooter";
 import { MizzouDisclaimerBanner } from "@/components/mizzou/MizzouDisclaimerBanner";
+import SearchAutocomplete from "@/components/search/SearchAutocomplete";
+import { allCategories as mizzouSearchCategories } from "@/data/mizzouCategoryData";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
 import {
