@@ -337,22 +337,15 @@ const IndianaHome = () => {
               </p>
 
               {/* Search Bar - prominent, conversion-focused */}
-              <div className="max-w-xl mb-8">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search 50,000+ products that support Indiana athletes"
-                    className="w-full pl-12 pr-32 py-4 bg-white rounded-xl text-foreground placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-300/50 transition-all shadow-lg text-sm md:text-base"
-                  />
-                  <button
-                    className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 text-white font-bold text-sm rounded-lg"
-                    style={{ backgroundColor: IU_CRIMSON }}
-                  >
-                    Search
-                  </button>
-                </div>
-              </div>
+              <SearchAutocomplete
+                categories={indianaSearchCategories}
+                schoolPrefix="/indiana"
+                accentColor={IU_CRIMSON}
+                accentTextColor="#fff"
+                placeholder="Search 50,000+ products that support Indiana athletes"
+                className="max-w-xl mb-8"
+                buttonStyle={{ backgroundColor: IU_CRIMSON, color: "#fff" }}
+              />
 
               <div className="flex flex-wrap gap-4 mb-6">
                 <a href="#shop-categories">
