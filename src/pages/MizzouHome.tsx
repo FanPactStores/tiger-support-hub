@@ -43,7 +43,7 @@ import {
   DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 import fanpactPennantMark from "@/assets/fanpact-pennant-mark.png";
-import heroStadium from "@/assets/hero-stadium-bg.jpg";
+import heroStadium from "@/assets/hero-mizzou-stadium.jpg";
 import catElectronics from "@/assets/cat-electronics.jpg";
 import catHomeLiving from "@/assets/cat-home-living.jpg";
 import catKitchenDining from "@/assets/cat-kitchen-dining.jpg";
@@ -69,10 +69,10 @@ import productMonitor from "@/assets/product-monitor.jpg";
 import productSunglasses from "@/assets/product-sunglasses.jpg";
 import productHeadphones from "@/assets/product-headphones.jpg";
 
-import newsFootball from "@/assets/news-indiana-football.jpg";
-import newsBasketball from "@/assets/news-indiana-basketball.jpg";
-import newsVolleyball from "@/assets/news-indiana-volleyball.jpg";
-import newsTrack from "@/assets/news-indiana-track.jpg";
+import newsFootball from "@/assets/news-mizzou-football.jpg";
+import newsBasketball from "@/assets/news-mizzou-basketball.jpg";
+import newsVolleyball from "@/assets/news-mizzou-volleyball.jpg";
+import newsTrack from "@/assets/news-mizzou-track.jpg";
 
 const MZ_GOLD = "#F1B82D";
 const MZ_BLACK = "#000000";
