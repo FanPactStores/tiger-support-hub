@@ -92,18 +92,18 @@ const shopCategories = [
 ];
 
 const categoryGrid = [
-  { name: "Electronics", icon: Smartphone, image: catElectronics, link: "/category/electronics" },
-  { name: "Home & Living", icon: Home, image: catHomeLiving, link: "/category/home" },
-  { name: "Kitchen & Dining", icon: UtensilsCrossed, image: catKitchenDining, link: "/category/food" },
-  { name: "Beauty & Personal Care", icon: Sparkles, image: catBeautyCare, link: "/category/beauty" },
-  { name: "Pet Supplies", icon: Dog, image: catPetSupplies, link: "/category/pets" },
-  { name: "Fitness & Outdoor", icon: Dumbbell, image: catFitnessOutdoor, link: "/category/sports" },
-  { name: "Auto Accessories", icon: Car, image: catAutoAccessories, link: "/category/automotive" },
-  { name: "Tools & Home Improvement", icon: Wrench, image: catToolsImprovement, link: "/category/health" },
-  { name: "Office & School", icon: Briefcase, image: catOfficeSchool, link: "/category/home" },
-  { name: "Baby & Kids", icon: Baby, image: catBabyKids, link: "/category/toys" },
-  { name: "Apparel", icon: Shirt, image: catApparel, link: "/category/fashion" },
-  { name: "Toys & Hobby", icon: Gamepad2, image: catToysHobby, link: "/category/toys" },
+  { name: "Electronics", icon: Smartphone, image: catElectronics, link: "/indiana/category/electronics" },
+  { name: "Home & Living", icon: Home, image: catHomeLiving, link: "/indiana/category/home" },
+  { name: "Kitchen & Dining", icon: UtensilsCrossed, image: catKitchenDining, link: "/indiana/category/food" },
+  { name: "Beauty & Personal Care", icon: Sparkles, image: catBeautyCare, link: "/indiana/category/beauty" },
+  { name: "Pet Supplies", icon: Dog, image: catPetSupplies, link: "/indiana/category/pets" },
+  { name: "Fitness & Outdoor", icon: Dumbbell, image: catFitnessOutdoor, link: "/indiana/category/sports" },
+  { name: "Auto Accessories", icon: Car, image: catAutoAccessories, link: "/indiana/category/automotive" },
+  { name: "Tools & Home Improvement", icon: Wrench, image: catToolsImprovement, link: "/indiana/category/health" },
+  { name: "Office & School", icon: Briefcase, image: catOfficeSchool, link: "/indiana/category/home" },
+  { name: "Baby & Kids", icon: Baby, image: catBabyKids, link: "/indiana/category/toys" },
+  { name: "Apparel", icon: Shirt, image: catApparel, link: "/indiana/category/fashion" },
+  { name: "Toys & Hobby", icon: Gamepad2, image: catToysHobby, link: "/indiana/category/toys" },
 ];
 
 const featuredProducts = [
