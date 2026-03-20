@@ -72,6 +72,8 @@ import newsVolleyball from "@/assets/news-indiana-volleyball.jpg";
 import newsTrack from "@/assets/news-indiana-track.jpg";
 import { useCart } from "@/contexts/CartContext";
 import { IndianaDisclaimerBanner } from "@/components/indiana/IndianaDisclaimerBanner";
+import SearchAutocomplete from "@/components/search/SearchAutocomplete";
+import { allCategories as indianaSearchCategories } from "@/data/indianaCategoryData";
 
 const IU_CRIMSON = "#990000";
 const IU_CREAM = "#EEEDEB";
