@@ -44,17 +44,6 @@ export default function MizzouCategoryPage() {
   const [activeFilters, setActiveFilters] = useState<Record<string, string[]>>({});
   const [gridView, setGridView] = useState(true);
 
-  if (!category) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-2">Category Not Found</h1>
-          <Link to="/mizzou" className="underline" style={{ color: MZ_GOLD }}>Back to Store</Link>
-        </div>
-      </div>
-    );
-  }
-
   const activeSubcategory = subSlug || "all";
 
   const toggleFilter = (filterKey: string, option: string) => {
@@ -70,6 +59,7 @@ export default function MizzouCategoryPage() {
   const clearFilters = () => setActiveFilters({});
 
   const filteredProducts = useMemo(() => {
+    if (!category) return [];
     let items = [...category.products];
 
     // Sort name-brands first always
