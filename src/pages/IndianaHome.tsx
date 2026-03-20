@@ -107,14 +107,14 @@ const categoryGrid = [
 ];
 
 const featuredProducts = [
-  { name: "Wireless Earbuds", brand: "Top Rated", price: "$29.99", image: productEarbuds, link: "/category/electronics" },
-  { name: "Air Fryer", brand: "Kitchen Essential", price: "$89.99", image: productMonitor, link: "/category/food" },
-  { name: "Pet Bed", brand: "Cozy Living", price: "$34.99", image: productSunglasses, link: "/category/pets" },
-  { name: "Kitchen Storage Set", brand: "Organization", price: "$24.99", image: productHeadphones, link: "/category/home" },
-  { name: "Phone Mount", brand: "Auto Essentials", price: "$15.99", image: productEarbuds, link: "/category/automotive" },
-  { name: "Bluetooth Speaker", brand: "Top Rated", price: "$49.99", image: productHeadphones, link: "/category/electronics" },
-  { name: "Resistance Bands", brand: "Fitness Gear", price: "$19.99", image: productSunglasses, link: "/category/sports" },
-  { name: "Storage Organizer", brand: "Home Solutions", price: "$39.99", image: productMonitor, link: "/category/home" },
+  { name: "Wireless Earbuds", brand: "Top Rated", price: "$29.99", image: productEarbuds, link: "/indiana/category/electronics" },
+  { name: "Air Fryer", brand: "Kitchen Essential", price: "$89.99", image: productMonitor, link: "/indiana/category/food" },
+  { name: "Pet Bed", brand: "Cozy Living", price: "$34.99", image: productSunglasses, link: "/indiana/category/pets" },
+  { name: "Kitchen Storage Set", brand: "Organization", price: "$24.99", image: productHeadphones, link: "/indiana/category/home" },
+  { name: "Phone Mount", brand: "Auto Essentials", price: "$15.99", image: productEarbuds, link: "/indiana/category/automotive" },
+  { name: "Bluetooth Speaker", brand: "Top Rated", price: "$49.99", image: productHeadphones, link: "/indiana/category/electronics" },
+  { name: "Resistance Bands", brand: "Fitness Gear", price: "$19.99", image: productSunglasses, link: "/indiana/category/sports" },
+  { name: "Storage Organizer", brand: "Home Solutions", price: "$39.99", image: productMonitor, link: "/indiana/category/home" },
 ];
 
 const popularFanCategories = [
