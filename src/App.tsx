@@ -52,6 +52,7 @@ const App = () => (
             <Route path="/indiana" element={<IndianaHome />} />
             <Route path="/indiana/category/:slug" element={<IndianaCategoryPage />} />
             <Route path="/indiana/category/:slug/:subcategory" element={<IndianaCategoryPage />} />
+            <Route path="/indiana/search" element={<SearchResults school="indiana" />} />
             <Route path="/indiana/disclaimer" element={<IndianaDisclaimer />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
