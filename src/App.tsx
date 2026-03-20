@@ -41,6 +41,7 @@ const App = () => (
             <Route path="/mizzou" element={<MizzouHome />} />
             <Route path="/mizzou/category/:slug" element={<MizzouCategoryPage />} />
             <Route path="/mizzou/category/:slug/:subcategory" element={<MizzouCategoryPage />} />
+            <Route path="/mizzou/search" element={<SearchResults school="mizzou" />} />
             <Route path="/mizzou/football" element={<MizzouFootball />} />
             <Route path="/mizzou/volleyball" element={<MizzouVolleyball />} />
             <Route path="/mizzou/sponsors" element={<MizzouSponsors />} />
