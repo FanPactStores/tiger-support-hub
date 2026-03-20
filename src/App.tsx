@@ -18,6 +18,7 @@ import MizzouCart from "./pages/MizzouCart";
 import MizzouCategoryPage from "./pages/MizzouCategoryPage";
 import IndianaHome from "./pages/IndianaHome";
 import IndianaDisclaimer from "./pages/IndianaDisclaimer";
+import IndianaCategoryPage from "./pages/IndianaCategoryPage";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,8 @@ const App = () => (
 
             {/* Indiana storefront */}
             <Route path="/indiana" element={<IndianaHome />} />
+            <Route path="/indiana/category/:slug" element={<IndianaCategoryPage />} />
+            <Route path="/indiana/category/:slug/:subcategory" element={<IndianaCategoryPage />} />
             <Route path="/indiana/disclaimer" element={<IndianaDisclaimer />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />

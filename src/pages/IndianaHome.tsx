@@ -77,53 +77,53 @@ const IU_CRIMSON = "#990000";
 const IU_CREAM = "#EEEDEB";
 
 const shopCategories = [
-  { label: "Electronics", href: "/category/electronics" },
-  { label: "Fashion & Apparel", href: "/category/fashion" },
-  { label: "Home & Garden", href: "/category/home" },
-  { label: "Beauty & Personal Care", href: "/category/beauty" },
-  { label: "Sports & Outdoors", href: "/category/sports" },
-  { label: "Toys & Games", href: "/category/toys" },
-  { label: "Food & Grocery", href: "/category/food" },
-  { label: "Pet Supplies", href: "/category/pets" },
-  { label: "Automotive", href: "/category/automotive" },
-  { label: "Health & Wellness", href: "/category/health" },
-  { label: "Jewelry & Watches", href: "/category/jewelry" },
-  { label: "Merchandise", href: "/category/merchandise" },
+  { label: "Electronics", href: "/indiana/category/electronics" },
+  { label: "Fashion & Apparel", href: "/indiana/category/fashion" },
+  { label: "Home & Garden", href: "/indiana/category/home" },
+  { label: "Beauty & Personal Care", href: "/indiana/category/beauty" },
+  { label: "Sports & Outdoors", href: "/indiana/category/sports" },
+  { label: "Toys & Games", href: "/indiana/category/toys" },
+  { label: "Food & Grocery", href: "/indiana/category/food" },
+  { label: "Pet Supplies", href: "/indiana/category/pets" },
+  { label: "Automotive", href: "/indiana/category/automotive" },
+  { label: "Health & Wellness", href: "/indiana/category/health" },
+  { label: "Jewelry & Watches", href: "/indiana/category/jewelry" },
+  { label: "Merchandise", href: "/indiana/category/merchandise" },
 ];
 
 const categoryGrid = [
-  { name: "Electronics", icon: Smartphone, image: catElectronics, link: "/category/electronics" },
-  { name: "Home & Living", icon: Home, image: catHomeLiving, link: "/category/home" },
-  { name: "Kitchen & Dining", icon: UtensilsCrossed, image: catKitchenDining, link: "/category/food" },
-  { name: "Beauty & Personal Care", icon: Sparkles, image: catBeautyCare, link: "/category/beauty" },
-  { name: "Pet Supplies", icon: Dog, image: catPetSupplies, link: "/category/pets" },
-  { name: "Fitness & Outdoor", icon: Dumbbell, image: catFitnessOutdoor, link: "/category/sports" },
-  { name: "Auto Accessories", icon: Car, image: catAutoAccessories, link: "/category/automotive" },
-  { name: "Tools & Home Improvement", icon: Wrench, image: catToolsImprovement, link: "/category/health" },
-  { name: "Office & School", icon: Briefcase, image: catOfficeSchool, link: "/category/home" },
-  { name: "Baby & Kids", icon: Baby, image: catBabyKids, link: "/category/toys" },
-  { name: "Apparel", icon: Shirt, image: catApparel, link: "/category/fashion" },
-  { name: "Toys & Hobby", icon: Gamepad2, image: catToysHobby, link: "/category/toys" },
+  { name: "Electronics", icon: Smartphone, image: catElectronics, link: "/indiana/category/electronics" },
+  { name: "Home & Living", icon: Home, image: catHomeLiving, link: "/indiana/category/home" },
+  { name: "Kitchen & Dining", icon: UtensilsCrossed, image: catKitchenDining, link: "/indiana/category/food" },
+  { name: "Beauty & Personal Care", icon: Sparkles, image: catBeautyCare, link: "/indiana/category/beauty" },
+  { name: "Pet Supplies", icon: Dog, image: catPetSupplies, link: "/indiana/category/pets" },
+  { name: "Fitness & Outdoor", icon: Dumbbell, image: catFitnessOutdoor, link: "/indiana/category/sports" },
+  { name: "Auto Accessories", icon: Car, image: catAutoAccessories, link: "/indiana/category/automotive" },
+  { name: "Tools & Home Improvement", icon: Wrench, image: catToolsImprovement, link: "/indiana/category/health" },
+  { name: "Office & School", icon: Briefcase, image: catOfficeSchool, link: "/indiana/category/home" },
+  { name: "Baby & Kids", icon: Baby, image: catBabyKids, link: "/indiana/category/toys" },
+  { name: "Apparel", icon: Shirt, image: catApparel, link: "/indiana/category/fashion" },
+  { name: "Toys & Hobby", icon: Gamepad2, image: catToysHobby, link: "/indiana/category/toys" },
 ];
 
 const featuredProducts = [
-  { name: "Wireless Earbuds", brand: "Top Rated", price: "$29.99", image: productEarbuds, link: "/category/electronics" },
-  { name: "Air Fryer", brand: "Kitchen Essential", price: "$89.99", image: productMonitor, link: "/category/food" },
-  { name: "Pet Bed", brand: "Cozy Living", price: "$34.99", image: productSunglasses, link: "/category/pets" },
-  { name: "Kitchen Storage Set", brand: "Organization", price: "$24.99", image: productHeadphones, link: "/category/home" },
-  { name: "Phone Mount", brand: "Auto Essentials", price: "$15.99", image: productEarbuds, link: "/category/automotive" },
-  { name: "Bluetooth Speaker", brand: "Top Rated", price: "$49.99", image: productHeadphones, link: "/category/electronics" },
-  { name: "Resistance Bands", brand: "Fitness Gear", price: "$19.99", image: productSunglasses, link: "/category/sports" },
-  { name: "Storage Organizer", brand: "Home Solutions", price: "$39.99", image: productMonitor, link: "/category/home" },
+  { name: "Wireless Earbuds", brand: "Top Rated", price: "$29.99", image: productEarbuds, link: "/indiana/category/electronics" },
+  { name: "Air Fryer", brand: "Kitchen Essential", price: "$89.99", image: productMonitor, link: "/indiana/category/food" },
+  { name: "Pet Bed", brand: "Cozy Living", price: "$34.99", image: productSunglasses, link: "/indiana/category/pets" },
+  { name: "Kitchen Storage Set", brand: "Organization", price: "$24.99", image: productHeadphones, link: "/indiana/category/home" },
+  { name: "Phone Mount", brand: "Auto Essentials", price: "$15.99", image: productEarbuds, link: "/indiana/category/automotive" },
+  { name: "Bluetooth Speaker", brand: "Top Rated", price: "$49.99", image: productHeadphones, link: "/indiana/category/electronics" },
+  { name: "Resistance Bands", brand: "Fitness Gear", price: "$19.99", image: productSunglasses, link: "/indiana/category/sports" },
+  { name: "Storage Organizer", brand: "Home Solutions", price: "$39.99", image: productMonitor, link: "/indiana/category/home" },
 ];
 
 const popularFanCategories = [
-  { name: "Kitchen Essentials", products: 240, link: "/category/food", image: categoryFood },
-  { name: "Pet Supplies", products: 180, link: "/category/pets", image: categoryPets },
-  { name: "Home Organization", products: 310, link: "/category/home", image: categoryHome },
-  { name: "Fitness Gear", products: 195, link: "/category/sports", image: categorySports },
-  { name: "Car Accessories", products: 150, link: "/category/automotive", image: categoryAutomotive },
-  { name: "Electronics Accessories", products: 420, link: "/category/electronics", image: categoryElectronics },
+  { name: "Kitchen Essentials", products: 240, link: "/indiana/category/food", image: categoryFood },
+  { name: "Pet Supplies", products: 180, link: "/indiana/category/pets", image: categoryPets },
+  { name: "Home Organization", products: 310, link: "/indiana/category/home", image: categoryHome },
+  { name: "Fitness Gear", products: 195, link: "/indiana/category/sports", image: categorySports },
+  { name: "Car Accessories", products: 150, link: "/indiana/category/automotive", image: categoryAutomotive },
+  { name: "Electronics Accessories", products: 420, link: "/indiana/category/electronics", image: categoryElectronics },
 ];
 
 const navTabs = [
@@ -257,6 +257,23 @@ const IndianaHome = () => {
                     <span className="ml-1.5 text-[9px] text-yellow-300/60 uppercase">Soon</span>
                   )}
                 </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Product Category Navigation Bar */}
+        <div className="hidden md:block border-b border-border/50" style={{ backgroundColor: `${IU_CRIMSON}f2` }}>
+          <div className="container mx-auto px-4 py-1.5">
+            <div className="flex items-center justify-center gap-1 flex-wrap">
+              {shopCategories.map((cat) => (
+                <Link
+                  key={cat.label}
+                  to={cat.href}
+                  className="text-[11px] font-medium px-2.5 py-1 rounded transition-colors text-white/70 hover:text-white hover:bg-white/10"
+                >
+                  {cat.label}
+                </Link>
               ))}
             </div>
           </div>
