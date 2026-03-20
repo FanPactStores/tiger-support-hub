@@ -271,6 +271,20 @@ const MizzouHome = () => {
           </div>
         </div>
 
+        {/* Categories Banner */}
+        <div className="hidden md:block border-b border-border/50" style={{ backgroundColor: `${MZ_BLACK}f2` }}>
+          <div className="container mx-auto px-4 py-1.5">
+            <div className="flex items-center justify-center gap-1 flex-wrap">
+              {shopCategories.map((cat, i) => (
+                <Link key={cat.label} to={cat.href} className="text-xs text-white/70 hover:transition-colors whitespace-nowrap px-2 py-0.5" style={{ ["--tw-text-opacity" as string]: 1 }} onMouseEnter={(e) => (e.currentTarget.style.color = MZ_GOLD)} onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}>
+                  {cat.label}
+                  {i < shopCategories.length - 1 && <span className="ml-2 text-white/30">|</span>}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Disclaimer banner */}
         <MizzouDisclaimerBanner />
 
