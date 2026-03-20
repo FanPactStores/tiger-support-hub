@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MizzouFooter from "@/components/mizzou/MizzouFooter";
 import { MizzouDisclaimerBanner } from "@/components/mizzou/MizzouDisclaimerBanner";
+import SearchAutocomplete from "@/components/search/SearchAutocomplete";
+import { allCategories as mizzouSearchCategories } from "@/data/mizzouCategoryData";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
 import {
@@ -343,23 +345,15 @@ const MizzouHome = () => {
               </p>
 
               {/* Search Bar */}
-              <div className="max-w-xl mb-8">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search 50,000+ products that support Missouri athletes"
-                    className="w-full pl-12 pr-32 py-4 bg-white rounded-xl text-foreground placeholder:text-gray-400 focus:outline-none focus:ring-2 transition-all shadow-lg text-sm md:text-base"
-                    style={{ "--tw-ring-color": `${MZ_GOLD}80` } as React.CSSProperties}
-                  />
-                  <button
-                    className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 font-bold text-sm rounded-lg"
-                    style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}
-                  >
-                    Search
-                  </button>
-                </div>
-              </div>
+              <SearchAutocomplete
+                categories={mizzouSearchCategories}
+                schoolPrefix="/mizzou"
+                accentColor={MZ_GOLD}
+                accentTextColor={MZ_BLACK}
+                placeholder="Search 50,000+ products that support Missouri athletes"
+                className="max-w-xl mb-8"
+                buttonStyle={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}
+              />
 
               <div className="flex flex-wrap gap-4 mb-6">
                 <a href="#shop-categories">

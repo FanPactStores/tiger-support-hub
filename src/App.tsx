@@ -19,6 +19,7 @@ import MizzouCategoryPage from "./pages/MizzouCategoryPage";
 import IndianaHome from "./pages/IndianaHome";
 import IndianaDisclaimer from "./pages/IndianaDisclaimer";
 import IndianaCategoryPage from "./pages/IndianaCategoryPage";
+import SearchResults from "./pages/SearchResults";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/mizzou" element={<MizzouHome />} />
             <Route path="/mizzou/category/:slug" element={<MizzouCategoryPage />} />
             <Route path="/mizzou/category/:slug/:subcategory" element={<MizzouCategoryPage />} />
+            <Route path="/mizzou/search" element={<SearchResults school="mizzou" />} />
             <Route path="/mizzou/football" element={<MizzouFootball />} />
             <Route path="/mizzou/volleyball" element={<MizzouVolleyball />} />
             <Route path="/mizzou/sponsors" element={<MizzouSponsors />} />
@@ -50,6 +52,7 @@ const App = () => (
             <Route path="/indiana" element={<IndianaHome />} />
             <Route path="/indiana/category/:slug" element={<IndianaCategoryPage />} />
             <Route path="/indiana/category/:slug/:subcategory" element={<IndianaCategoryPage />} />
+            <Route path="/indiana/search" element={<SearchResults school="indiana" />} />
             <Route path="/indiana/disclaimer" element={<IndianaDisclaimer />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
