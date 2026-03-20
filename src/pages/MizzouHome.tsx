@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import MizzouHeader from "@/components/mizzou/MizzouHeader";
 import MizzouFooter from "@/components/mizzou/MizzouFooter";
 import { MizzouDisclaimerBanner } from "@/components/mizzou/MizzouDisclaimerBanner";
+import { Button } from "@/components/ui/button";
+import { useCart } from "@/contexts/CartContext";
 import {
+  Menu,
+  X,
   Search,
+  ShoppingCart,
   ShoppingBag,
+  ChevronDown,
+  ChevronRight,
   TrendingUp,
   Truck,
   Shield,
   Heart,
   ArrowRight,
-  ChevronRight,
   Star,
   Award,
   Users,
@@ -28,9 +33,16 @@ import {
   Baby,
   Shirt,
   Gamepad2,
-  Mail,
 } from "lucide-react";
-
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
+} from "@/components/ui/dropdown-menu";
+import fanpactPennantMark from "@/assets/fanpact-pennant-mark.png";
 import heroStadium from "@/assets/hero-stadium-bg.jpg";
 import catElectronics from "@/assets/cat-electronics.jpg";
 import catHomeLiving from "@/assets/cat-home-living.jpg";
@@ -64,6 +76,30 @@ import newsTrack from "@/assets/news-indiana-track.jpg";
 
 const MZ_GOLD = "#F1B82D";
 const MZ_BLACK = "#000000";
+
+const shopCategories = [
+  { label: "Electronics", href: "/mizzou/category/electronics" },
+  { label: "Fashion & Apparel", href: "/mizzou/category/fashion" },
+  { label: "Home & Garden", href: "/mizzou/category/home" },
+  { label: "Beauty & Personal Care", href: "/mizzou/category/beauty" },
+  { label: "Sports & Outdoors", href: "/mizzou/category/sports" },
+  { label: "Toys & Games", href: "/mizzou/category/toys" },
+  { label: "Food & Grocery", href: "/mizzou/category/food" },
+  { label: "Pet Supplies", href: "/mizzou/category/pets" },
+  { label: "Automotive", href: "/mizzou/category/automotive" },
+  { label: "Health & Wellness", href: "/mizzou/category/health" },
+  { label: "Jewelry & Watches", href: "/mizzou/category/jewelry" },
+  { label: "Merchandise", href: "/mizzou/category/merchandise" },
+];
+
+const navTabs = [
+  { label: "Shop", href: "#shop-categories", primary: true },
+  { label: "Teams", href: "#teams", primary: false },
+  { label: "Athletes", href: "#athletes", primary: false },
+  { label: "NIL Impact", href: "#nil-impact", primary: true },
+  { label: "News & Blogs", href: "#news", primary: false },
+  { label: "Sponsors", href: "/mizzou/sponsors", primary: false },
+];
 
 const categoryGrid = [
   { name: "Electronics", icon: Smartphone, image: catElectronics, link: "/mizzou/category/electronics" },
@@ -100,7 +136,17 @@ const popularFanCategories = [
   { name: "Electronics Accessories", products: 420, link: "/mizzou/category/electronics", image: categoryElectronics },
 ];
 
+const mizzouNews = [
+  { image: newsFootball, title: "Tigers Roll to Dominant SEC Victory Behind Record Rushing Attack", date: "March 15, 2026", category: "Football" },
+  { image: newsBasketball, title: "Mizzou Basketball Clinches Top-4 Seed in SEC Tournament", date: "March 12, 2026", category: "Basketball" },
+  { image: newsVolleyball, title: "Tiger Volleyball Earns Program-Best NCAA Tournament Seed", date: "March 10, 2026", category: "Volleyball" },
+  { image: newsTrack, title: "Mizzou Track Star Breaks School Record at SEC Indoor Championships", date: "March 8, 2026", category: "Track & Field" },
+];
+
 const MizzouHome = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("Shop");
+  const { totalItems } = useCart();
   const [nilCounter, setNilCounter] = useState(127450);
 
   useEffect(() => {
@@ -112,9 +158,153 @@ const MizzouHome = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <MizzouHeader />
-      <main className="pt-28 lg:pt-32">
+      {/* ===== HEADER ===== */}
+      <header className="fixed top-0 left-0 right-0 z-50">
+        {/* Top bar */}
+        <div className="bg-background border-b border-border shadow-sm">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between h-16 lg:h-20">
+              {/* Logo */}
+              <div className="flex items-center gap-3">
+                <Link to="/" className="flex items-center">
+                  <img src={fanpactPennantMark} alt="FanPact pennant" className="h-10 lg:h-14 w-auto object-contain" />
+                </Link>
+                <Link to="/mizzou" className="hidden sm:flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <span className="font-display text-xl lg:text-2xl tracking-wide" style={{ color: MZ_GOLD }}>
+                    MISSOURI
+                  </span>
+                  <div
+                    className="w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center font-bold text-lg"
+                    style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}
+                  >
+                    MU
+                  </div>
+                </Link>
+              </div>
+
+              {/* Desktop Navigation */}
+              <nav className="hidden md:flex items-center gap-1">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <button className="flex items-center gap-1 px-4 py-2 font-bold text-base transition-colors" style={{ color: MZ_GOLD }}>
+                      <ShoppingBag className="w-4 h-4" />
+                      Shop <ChevronDown className="w-4 h-4" />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56 bg-background border-border">
+                    <DropdownMenuLabel className="text-xs uppercase tracking-wider" style={{ color: MZ_GOLD }}>Categories</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    {shopCategories.map((cat) => (
+                      <DropdownMenuItem key={cat.label} asChild>
+                        <Link to={cat.href} className="cursor-pointer">{cat.label}</Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+
+                <Link to="/mizzou/rewards" className="px-3 py-2 font-medium transition-colors hover:opacity-70" style={{ color: MZ_GOLD }}>
+                  Rewards
+                </Link>
+
+                {/* De-emphasized nav items */}
+                {["Teams", "Athletes", "Sponsors"].map((item) => (
+                  <span
+                    key={item}
+                    className="px-3 py-2 text-sm transition-colors cursor-pointer hover:opacity-70 text-muted-foreground/50"
+                    title="Coming Soon"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </nav>
+
+              {/* Desktop Actions */}
+              <div className="hidden md:flex items-center gap-2">
+                <Button variant="ghost" size="icon">
+                  <Search className="w-5 h-5" />
+                </Button>
+                <Link to="/mizzou/cart">
+                  <Button variant="ghost" size="icon" className="relative">
+                    <ShoppingCart className="w-5 h-5" />
+                    {totalItems > 0 && (
+                      <span className="absolute -top-1 -right-1 w-5 h-5 text-xs rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}>
+                        {totalItems}
+                      </span>
+                    )}
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Mobile */}
+              <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} style={{ color: MZ_GOLD }}>
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation Tabs */}
+        <div className="hidden md:block" style={{ backgroundColor: MZ_BLACK }}>
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-center gap-0">
+              {navTabs.map((tab) => (
+                <a
+                  key={tab.label}
+                  href={tab.href}
+                  onClick={() => setActiveTab(tab.label)}
+                  className={`px-6 py-2.5 text-sm font-semibold uppercase tracking-wider transition-all border-b-2 ${
+                    activeTab === tab.label
+                      ? "text-white border-b-2 bg-white/10"
+                      : tab.primary
+                        ? "text-white/90 border-transparent hover:text-white hover:bg-white/5"
+                        : "text-white/40 border-transparent hover:text-white/60 hover:bg-white/5 text-xs"
+                  }`}
+                  style={activeTab === tab.label ? { borderBottomColor: MZ_GOLD } : undefined}
+                >
+                  {tab.label}
+                  {!tab.primary && tab.label !== "NIL Impact" && (
+                    <span className="ml-1.5 text-[9px] uppercase" style={{ color: `${MZ_GOLD}99` }}>Soon</span>
+                  )}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Disclaimer banner */}
         <MizzouDisclaimerBanner />
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-background border-t border-border animate-fade-in">
+            <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
+              <a href="#shop-categories" className="font-bold py-1 text-lg" style={{ color: MZ_GOLD }} onClick={() => setIsMenuOpen(false)}>
+                Shop
+              </a>
+              <a href="#nil-impact" className="font-medium py-1" style={{ color: MZ_GOLD }} onClick={() => setIsMenuOpen(false)}>
+                NIL Impact
+              </a>
+              <div className="border-t pt-3 mt-1">
+                <p className="text-xs text-muted-foreground/50 uppercase tracking-wider mb-2">Coming Soon</p>
+                {["Teams", "Athletes", "News & Blogs", "Sponsors"].map((item) => (
+                  <span key={item} className="block font-medium py-1 text-muted-foreground/50">{item}</span>
+                ))}
+              </div>
+              <div className="border-t pt-3 mt-1">
+                {shopCategories.slice(0, 6).map((cat) => (
+                  <Link key={cat.label} to={cat.href} className="block font-medium py-1 text-muted-foreground" onClick={() => setIsMenuOpen(false)}>
+                    {cat.label}
+                  </Link>
+                ))}
+              </div>
+              <Link to="/mizzou/rewards" className="font-medium py-1" style={{ color: MZ_GOLD }} onClick={() => setIsMenuOpen(false)}>Fan Rewards</Link>
+            </nav>
+          </div>
+        )}
+      </header>
+
+      {/* ===== MAIN CONTENT ===== */}
+      <main className="pt-32 lg:pt-40">
 
         {/* ===== 1. HERO SECTION ===== */}
         <section className="relative min-h-[65vh] flex items-center overflow-hidden">
@@ -149,8 +339,8 @@ const MizzouHome = () => {
                     style={{ "--tw-ring-color": `${MZ_GOLD}80` } as React.CSSProperties}
                   />
                   <button
-                    className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 text-black font-bold text-sm rounded-lg"
-                    style={{ backgroundColor: MZ_GOLD }}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 font-bold text-sm rounded-lg"
+                    style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}
                   >
                     Search
                   </button>
@@ -160,8 +350,8 @@ const MizzouHome = () => {
               <div className="flex flex-wrap gap-4 mb-6">
                 <a href="#shop-categories">
                   <button
-                    className="px-8 py-3.5 text-black font-bold text-lg rounded-lg shadow-lg hover:opacity-90 transition-opacity flex items-center gap-2"
-                    style={{ backgroundColor: MZ_GOLD }}
+                    className="px-8 py-3.5 font-bold text-lg rounded-lg shadow-lg hover:opacity-90 transition-opacity flex items-center gap-2"
+                    style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}
                   >
                     <ShoppingBag className="w-5 h-5" />
                     Start Shopping
@@ -234,7 +424,6 @@ const MizzouHome = () => {
                   key={cat.name}
                   to={cat.link}
                   className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 aspect-square border-2 border-transparent"
-                  style={{ "--hover-border": `${MZ_GOLD}66` } as React.CSSProperties}
                   onMouseEnter={(e) => (e.currentTarget.style.borderColor = MZ_GOLD + "66")}
                   onMouseLeave={(e) => (e.currentTarget.style.borderColor = "transparent")}
                 >
@@ -346,24 +535,9 @@ const MizzouHome = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {[
-                {
-                  step: 1,
-                  icon: ShoppingBag,
-                  title: "Shop Everyday Products",
-                  desc: "Browse thousands of everyday consumer products from trusted brands.",
-                },
-                {
-                  step: 2,
-                  icon: Users,
-                  title: "Buy Through Your School Storefront",
-                  desc: "Purchases are attributed to the Missouri FanPact storefront.",
-                },
-                {
-                  step: 3,
-                  icon: DollarSign,
-                  title: "Revenue Supports Missouri Athletes",
-                  desc: "A portion of every purchase supports NIL opportunities for Tiger student-athletes.",
-                },
+                { step: 1, icon: ShoppingBag, title: "Shop Everyday Products", desc: "Browse thousands of everyday consumer products from trusted brands." },
+                { step: 2, icon: Users, title: "Buy Through Your School Storefront", desc: "Purchases are attributed to the Missouri FanPact storefront." },
+                { step: 3, icon: DollarSign, title: "Revenue Supports Missouri Athletes", desc: "A portion of every purchase supports NIL opportunities for Tiger student-athletes." },
               ].map((item) => {
                 const IconComp = item.icon;
                 return (
@@ -371,9 +545,7 @@ const MizzouHome = () => {
                     <div className="w-14 h-14 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: `${MZ_GOLD}18` }}>
                       <IconComp className="w-7 h-7" style={{ color: MZ_GOLD }} />
                     </div>
-                    <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: MZ_GOLD }}>
-                      Step {item.step}
-                    </div>
+                    <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: MZ_GOLD }}>Step {item.step}</div>
                     <h3 className="text-base font-bold text-foreground mb-1">{item.title}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                   </div>
@@ -395,11 +567,7 @@ const MizzouHome = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
               {popularFanCategories.map((cat) => (
-                <Link
-                  key={cat.name}
-                  to={cat.link}
-                  className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 aspect-[16/10]"
-                >
+                <Link key={cat.name} to={cat.link} className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 aspect-[16/10]">
                   <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -450,7 +618,7 @@ const MizzouHome = () => {
           </div>
         </section>
 
-        {/* ===== NEWS (de-emphasized) ===== */}
+        {/* ===== MIZZOU NEWS (de-emphasized) ===== */}
         <section id="news" className="py-10 lg:py-14 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8">
@@ -461,19 +629,14 @@ const MizzouHome = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { image: newsFootball, title: "Tigers Dominate in SEC Opener with Record-Breaking Performance", date: "March 15, 2026", category: "Football" },
-                { image: newsBasketball, title: "Missouri Basketball Secures Top Seed Heading into Conference Tournament", date: "March 12, 2026", category: "Basketball" },
-                { image: newsVolleyball, title: "Volleyball Team Celebrates Historic Season with NCAA Tournament Berth", date: "March 10, 2026", category: "Volleyball" },
-                { image: newsTrack, title: "Track & Field Star Sets New School Record at SEC Championships", date: "March 8, 2026", category: "Track & Field" },
-              ].map((story, i) => (
+              {mizzouNews.map((story, i) => (
                 <a key={i} href="#" className="group bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-border">
                   <div className="aspect-[16/10] overflow-hidden">
                     <img src={story.image} alt={story.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="p-3">
                     <div className="flex items-center gap-2 mb-1.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-black px-1.5 py-0.5 rounded" style={{ backgroundColor: MZ_GOLD }}>{story.category}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}>{story.category}</span>
                       <span className="text-[10px] text-muted-foreground">{story.date}</span>
                     </div>
                     <h3 className="font-semibold text-foreground/70 text-sm leading-snug group-hover:opacity-70 transition-opacity">{story.title}</h3>
@@ -500,7 +663,7 @@ const MizzouHome = () => {
                 className="flex-1 h-12 px-4 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2"
                 style={{ "--tw-ring-color": MZ_GOLD } as React.CSSProperties}
               />
-              <button className="h-12 px-6 text-black font-bold rounded-lg" style={{ backgroundColor: MZ_GOLD }}>
+              <button className="h-12 px-6 font-bold rounded-lg" style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}>
                 Subscribe
               </button>
             </div>
@@ -511,7 +674,7 @@ const MizzouHome = () => {
         <div className="py-3 text-center text-sm" style={{ backgroundColor: MZ_BLACK }}>
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-center gap-4 flex-wrap text-white/80">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-black text-xs" style={{ backgroundColor: MZ_GOLD }}>MU</div>
+              <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs" style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}>MU</div>
               <a href="#shop-categories" className="hover:text-white transition-colors">Shop</a>
               <span className="text-white/30">|</span>
               <a href="#nil-impact" className="hover:text-white transition-colors">NIL Impact</a>
