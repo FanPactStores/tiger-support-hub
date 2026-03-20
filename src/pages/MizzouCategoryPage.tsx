@@ -97,9 +97,20 @@ export default function MizzouCategoryPage() {
     if (sortBy === "reviews") items.sort((a, b) => b.reviews - a.reviews);
 
     return items;
-  }, [category.products, activeSubcategory, searchQuery, activeFilters, sortBy]);
+  }, [category, activeSubcategory, searchQuery, activeFilters, sortBy]);
 
   const totalActiveFilters = Object.values(activeFilters).reduce((s, a) => s + a.length, 0);
+
+  if (!category) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-2">Category Not Found</h1>
+          <Link to="/mizzou" className="underline" style={{ color: MZ_GOLD }}>Back to Store</Link>
+        </div>
+      </div>
+    );
+  }
 
   const renderStars = (rating: number) => (
     <div className="flex items-center gap-0.5">
