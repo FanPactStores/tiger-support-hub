@@ -15,6 +15,7 @@ import MizzouFootball from "./pages/MizzouFootball";
 import MizzouVolleyball from "./pages/MizzouVolleyball";
 import MizzouSponsors from "./pages/MizzouSponsors";
 import MizzouCart from "./pages/MizzouCart";
+import MizzouCategoryPage from "./pages/MizzouCategoryPage";
 import IndianaHome from "./pages/IndianaHome";
 import IndianaDisclaimer from "./pages/IndianaDisclaimer";
 
@@ -36,6 +37,8 @@ const App = () => (
 
             {/* Mizzou storefront routes (own header/footer) */}
             <Route path="/mizzou" element={<MizzouHome />} />
+            <Route path="/mizzou/category/:slug" element={<MizzouCategoryPage />} />
+            <Route path="/mizzou/category/:slug/:subcategory" element={<MizzouCategoryPage />} />
             <Route path="/mizzou/football" element={<MizzouFootball />} />
             <Route path="/mizzou/volleyball" element={<MizzouVolleyball />} />
             <Route path="/mizzou/sponsors" element={<MizzouSponsors />} />
