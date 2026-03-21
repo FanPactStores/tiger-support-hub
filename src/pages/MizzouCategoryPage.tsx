@@ -36,7 +36,7 @@ const shopCategories = [
 export default function MizzouCategoryPage() {
   const { slug, subcategory: subSlug } = useParams<{ slug: string; subcategory?: string }>();
   const category = getCategoryBySlug(slug || "");
-  const { totalItems } = useCart();
+  const { totalItems, addItem } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -427,6 +427,7 @@ export default function MizzouCategoryPage() {
                     product={product}
                     gridView={gridView}
                     renderStars={renderStars}
+                    onAddToCart={(p) => addItem({ id: p.id, name: p.name, price: p.price, image: p.image, category: slug || "" })}
                   />
                 ))}
               </div>
@@ -456,10 +457,12 @@ function ProductCard({
   product,
   gridView,
   renderStars,
+  onAddToCart,
 }: {
   product: CategoryProduct;
   gridView: boolean;
   renderStars: (r: number) => JSX.Element;
+  onAddToCart: (product: CategoryProduct) => void;
 }) {
   if (!gridView) {
     // List view
@@ -490,6 +493,13 @@ function ProductCard({
               FanPact NIL Contribution: ${product.nilDonation.toFixed(2)}
             </p>
           </div>
+          <button
+            onClick={() => onAddToCart(product)}
+            className="mt-2 text-xs font-semibold px-4 py-1.5 rounded-lg transition-all duration-200 hover:opacity-90 active:scale-[0.97]"
+            style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     );
@@ -528,6 +538,7 @@ function ProductCard({
           </p>
         </div>
         <button
+          onClick={() => onAddToCart(product)}
           className="w-full text-xs font-semibold py-2 rounded-lg transition-all duration-200 hover:opacity-90 active:scale-[0.97]"
           style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}
         >

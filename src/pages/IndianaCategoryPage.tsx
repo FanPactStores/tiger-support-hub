@@ -34,7 +34,7 @@ const shopCategories = [
 export default function IndianaCategoryPage() {
   const { slug, subcategory: subSlug } = useParams<{ slug: string; subcategory?: string }>();
   const category = getCategoryBySlug(slug || "");
-  const { totalItems } = useCart();
+  const { totalItems, addItem } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -144,7 +144,7 @@ export default function IndianaCategoryPage() {
             </div>
           </div>
 
-          <Link to="/cart" className="relative text-white hover:opacity-80 transition-opacity">
+          <Link to="/indiana/cart" className="relative text-white hover:opacity-80 transition-opacity">
             <ShoppingCart className="w-6 h-6" />
             {totalItems > 0 && (
               <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center bg-yellow-300" style={{ color: IU_CRIMSON }}>
@@ -403,6 +403,7 @@ export default function IndianaCategoryPage() {
                     product={product}
                     gridView={gridView}
                     renderStars={renderStars}
+                    onAddToCart={(p) => addItem({ id: p.id, name: p.name, price: p.price, image: p.image, category: slug || "" })}
                   />
                 ))}
               </div>
@@ -438,10 +439,12 @@ function ProductCard({
   product,
   gridView,
   renderStars,
+  onAddToCart,
 }: {
   product: CategoryProduct;
   gridView: boolean;
   renderStars: (r: number) => JSX.Element;
+  onAddToCart: (product: CategoryProduct) => void;
 }) {
   const IU_CRIMSON = "#990000";
 
@@ -473,6 +476,13 @@ function ProductCard({
               FanPact NIL Contribution: ${product.nilDonation.toFixed(2)}
             </p>
           </div>
+          <button
+            onClick={() => onAddToCart(product)}
+            className="mt-2 text-xs font-semibold px-4 py-1.5 rounded-lg transition-all duration-200 hover:opacity-90 active:scale-[0.97] text-white"
+            style={{ backgroundColor: IU_CRIMSON }}
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     );
@@ -510,6 +520,7 @@ function ProductCard({
           </p>
         </div>
         <button
+          onClick={() => onAddToCart(product)}
           className="w-full text-xs font-semibold py-2 rounded-lg transition-all duration-200 hover:opacity-90 active:scale-[0.97] text-white"
           style={{ backgroundColor: IU_CRIMSON }}
         >

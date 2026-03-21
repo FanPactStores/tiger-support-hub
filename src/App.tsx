@@ -19,6 +19,7 @@ import MizzouCategoryPage from "./pages/MizzouCategoryPage";
 import IndianaHome from "./pages/IndianaHome";
 import IndianaDisclaimer from "./pages/IndianaDisclaimer";
 import IndianaCategoryPage from "./pages/IndianaCategoryPage";
+import IndianaCart from "./pages/IndianaCart";
 import SearchResults from "./pages/SearchResults";
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/indiana" element={<IndianaHome />} />
             <Route path="/indiana/category/:slug" element={<IndianaCategoryPage />} />
             <Route path="/indiana/category/:slug/:subcategory" element={<IndianaCategoryPage />} />
+            <Route path="/indiana/cart" element={<IndianaCart />} />
             <Route path="/indiana/search" element={<SearchResults school="indiana" />} />
             <Route path="/indiana/disclaimer" element={<IndianaDisclaimer />} />
 
