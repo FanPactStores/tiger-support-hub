@@ -54,6 +54,7 @@ const App = () => (
             {/* Indiana storefront */}
             <Route path="/indiana" element={<IndianaHome />} />
             <Route path="/indiana/category/:slug" element={<IndianaCategoryPage />} />
+            <Route path="/indiana/category/:slug/product/:productId" element={<ProductDetail school="indiana" />} />
             <Route path="/indiana/category/:slug/:subcategory" element={<IndianaCategoryPage />} />
             <Route path="/indiana/cart" element={<IndianaCart />} />
             <Route path="/indiana/search" element={<SearchResults school="indiana" />} />
