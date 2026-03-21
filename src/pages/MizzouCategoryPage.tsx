@@ -458,12 +458,15 @@ function ProductCard({
   gridView,
   renderStars,
   onAddToCart,
+  categorySlug,
 }: {
   product: CategoryProduct;
   gridView: boolean;
   renderStars: (r: number) => JSX.Element;
   onAddToCart: (product: CategoryProduct) => void;
+  categorySlug: string;
 }) {
+  const productLink = `/mizzou/category/${categorySlug}/product/${product.id}`;
   if (!gridView) {
     // List view
     return (
