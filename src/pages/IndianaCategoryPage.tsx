@@ -493,7 +493,7 @@ function ProductCard({
 
   return (
     <div className="group rounded-lg border border-border bg-card overflow-hidden hover:shadow-lg transition-all duration-300">
-      <div className="relative aspect-square overflow-hidden bg-secondary">
+      <Link to={productLink} className="relative aspect-square overflow-hidden bg-secondary block">
         <img
           src={product.image}
           alt={product.name}
