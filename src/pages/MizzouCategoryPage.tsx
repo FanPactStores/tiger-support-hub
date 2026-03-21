@@ -428,6 +428,7 @@ export default function MizzouCategoryPage() {
                     gridView={gridView}
                     renderStars={renderStars}
                     onAddToCart={(p) => addItem({ id: p.id, name: p.name, price: p.price, image: p.image, category: slug || "" })}
+                    categorySlug={slug || ""}
                   />
                 ))}
               </div>
