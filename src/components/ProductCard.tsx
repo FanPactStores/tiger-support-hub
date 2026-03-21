@@ -38,11 +38,11 @@ export function ProductCard({ product }: ProductCardProps) {
         </h3>
         <p className="text-xs text-muted-foreground mb-2">{product.brand}</p>
 
-        <div className="flex items-center justify-between mb-3">
+        <div className="mb-3">
           <span className="text-lg font-bold text-card-foreground">${product.price.toFixed(2)}</span>
-          <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full">
-            Your Donation: ${donation.toFixed(2)}
-          </span>
+          <p className="text-xs font-semibold text-primary mt-1">
+            FanPact NIL Contribution: ${donation.toFixed(2)}
+          </p>
         </div>
 
         {/* Rating */}

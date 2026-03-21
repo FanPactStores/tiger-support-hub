@@ -56,5 +56,5 @@ export const products: Product[] = [
 ];
 
 export function calculateDonation(price: number): number {
-  return Math.round(price * 0.035 * 100) / 100; // ~3.5% of price
+  return Math.round(0.5 * (price * 0.25) * 100) / 100; // 0.5 * (price * 0.25)
 }

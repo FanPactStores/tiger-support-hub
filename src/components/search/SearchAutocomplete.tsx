@@ -239,7 +239,7 @@ export default function SearchAutocomplete({
                     <div className="text-right shrink-0">
                       <p className="text-sm font-bold text-gray-900">${result.product.price.toFixed(2)}</p>
                       <p className="text-[9px] font-medium" style={{ color: accentColor }}>
-                        NIL: ${result.product.nilDonation.toFixed(2)}
+                        FanPact NIL Contribution: ${result.product.nilDonation.toFixed(2)}
                       </p>
                     </div>
                   </button>

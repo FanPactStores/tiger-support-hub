@@ -365,11 +365,11 @@ function ResultCard({
             {renderStars(product.rating)}
             <span className="text-[10px] text-muted-foreground">({product.reviews.toLocaleString()})</span>
           </div>
-          <div className="flex items-center gap-3 mt-2">
+          <div className="mt-2">
             <span className="text-base font-bold">${product.price.toFixed(2)}</span>
-            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: `${accent}15`, color: accent }}>
-              NIL Donation: ${product.nilDonation.toFixed(2)}
-            </span>
+            <p className="text-[10px] font-semibold mt-0.5" style={{ color: accent }}>
+              FanPact NIL Contribution: ${product.nilDonation.toFixed(2)}
+            </p>
           </div>
           <p className="text-[10px] text-muted-foreground mt-1">in {result.categoryName}</p>
         </div>
@@ -402,11 +402,11 @@ function ResultCard({
           {renderStars(product.rating)}
           <span className="text-[10px] text-muted-foreground">({product.reviews.toLocaleString()})</span>
         </div>
-        <div className="flex items-center justify-between mb-1">
+        <div className="mb-1">
           <span className="text-base font-bold">${product.price.toFixed(2)}</span>
-          <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full" style={{ backgroundColor: `${accent}15`, color: accent }}>
-            NIL: ${product.nilDonation.toFixed(2)}
-          </span>
+          <p className="text-[9px] font-semibold mt-0.5" style={{ color: accent }}>
+            FanPact NIL Contribution: ${product.nilDonation.toFixed(2)}
+          </p>
         </div>
         <p className="text-[9px] text-muted-foreground mb-2">in {result.categoryName}</p>
       </div>
