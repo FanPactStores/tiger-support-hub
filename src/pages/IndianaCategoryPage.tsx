@@ -461,7 +461,7 @@ function ProductCard({
           <div className="flex items-start justify-between gap-2">
             <div>
               <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">{product.brand}</p>
-              <h3 className="text-sm font-semibold leading-tight line-clamp-2">{product.name}</h3>
+              <Link to={productLink} className="hover:underline"><h3 className="text-sm font-semibold leading-tight line-clamp-2">{product.name}</h3></Link>
             </div>
             {product.isNameBrand && (
               <span className="shrink-0 text-[9px] font-bold px-1.5 py-0.5 rounded" style={{ backgroundColor: `${IU_CRIMSON}20`, color: IU_CRIMSON }}>
