@@ -36,7 +36,7 @@ const shopCategories = [
 export default function MizzouCategoryPage() {
   const { slug, subcategory: subSlug } = useParams<{ slug: string; subcategory?: string }>();
   const category = getCategoryBySlug(slug || "");
-  const { totalItems } = useCart();
+  const { totalItems, addItem } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
