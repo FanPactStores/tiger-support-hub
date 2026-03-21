@@ -3,9 +3,16 @@ import MizzouFooter from "@/components/mizzou/MizzouFooter";
 import { useCart } from "@/contexts/CartContext";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Trash2, Plus, Minus, ShoppingCart, ChevronRight, CreditCard, Shield, Truck, Tag } from "lucide-react";
+import { Trash2, Plus, Minus, ShoppingCart, ChevronRight, CreditCard, Shield, Truck, Heart } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+
+const MZ_GOLD = "#F1B82D";
+const MZ_BLACK = "#000000";
+
+function calculateNILContribution(price: number) {
+  return Math.round(0.5 * (price * 0.25) * 100) / 100;
+}
 
 const MizzouCart = () => {
   const { items, removeItem, updateQuantity, subtotal, clearCart } = useCart();
@@ -14,6 +21,10 @@ const MizzouCart = () => {
   const shipping = subtotal > 75 ? 0 : 9.99;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
+  const nilContribution = items.reduce(
+    (sum, item) => sum + calculateNILContribution(item.price) * item.quantity,
+    0
+  );
 
   if (items.length === 0) {
     return (
@@ -26,8 +37,10 @@ const MizzouCart = () => {
                 <ShoppingCart className="w-12 h-12 text-muted-foreground" />
               </div>
               <h1 className="font-display text-3xl text-foreground mb-4">Your Cart is Empty</h1>
-              <p className="text-muted-foreground mb-8">Start shopping to support your favorite athletes!</p>
-              <Link to="/mizzou#shop"><Button variant="gold" size="lg" className="gap-2">Start Shopping <ChevronRight className="w-4 h-4" /></Button></Link>
+              <p className="text-muted-foreground mb-8">Start shopping to support Missouri athletes!</p>
+              <Link to="/mizzou">
+                <Button variant="gold" size="lg" className="gap-2">Start Shopping <ChevronRight className="w-4 h-4" /></Button>
+              </Link>
             </div>
           </div>
         </main>
@@ -41,7 +54,10 @@ const MizzouCart = () => {
       <MizzouHeader />
       <main className="pt-28 lg:pt-32">
         <div className="container mx-auto px-4 py-8 lg:py-12">
-          <h1 className="font-display text-3xl lg:text-4xl text-foreground mb-8">Shopping Cart ({items.length} {items.length === 1 ? 'item' : 'items'})</h1>
+          <div className="flex items-center justify-between mb-8">
+            <h1 className="font-display text-3xl lg:text-4xl text-foreground">Shopping Cart ({items.length} {items.length === 1 ? 'item' : 'items'})</h1>
+            <button onClick={clearCart} className="text-sm text-muted-foreground hover:text-destructive transition-colors">Clear Cart</button>
+          </div>
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-4">
               {items.map((item) => (
@@ -53,11 +69,14 @@ const MizzouCart = () => {
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between gap-4">
                         <div>
-                          <span className="text-xs font-medium text-primary uppercase tracking-wider">{item.category}</span>
+                          <span className="text-xs font-medium uppercase tracking-wider" style={{ color: MZ_GOLD }}>{item.category}</span>
                           <p className="font-semibold text-foreground mt-1 line-clamp-2">{item.name}</p>
                         </div>
                         <p className="font-display text-xl text-foreground">${(item.price * item.quantity).toFixed(2)}</p>
                       </div>
+                      <p className="text-xs mt-1" style={{ color: MZ_GOLD }}>
+                        FanPact NIL Contribution: ${(calculateNILContribution(item.price) * item.quantity).toFixed(2)}
+                      </p>
                       <div className="flex items-center justify-between mt-4">
                         <div className="flex items-center gap-2">
                           <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className="w-8 h-8 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"><Minus className="w-4 h-4" /></button>
@@ -83,6 +102,19 @@ const MizzouCart = () => {
                   <span className="font-semibold text-foreground">Total</span>
                   <span className="font-display text-2xl text-foreground">${total.toFixed(2)}</span>
                 </div>
+
+                {/* FanPact NIL Contribution */}
+                <div className="mt-4 p-3 rounded-lg" style={{ backgroundColor: `${MZ_GOLD}12` }}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <Heart className="w-4 h-4" style={{ color: MZ_GOLD }} />
+                    <span className="text-sm font-semibold" style={{ color: MZ_GOLD }}>FanPact NIL Contribution</span>
+                  </div>
+                  <p className="text-lg font-bold" style={{ color: MZ_GOLD }}>${nilContribution.toFixed(2)}</p>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">
+                    Calculated from your pre-tax &amp; shipping subtotal to support Missouri athletes
+                  </p>
+                </div>
+
                 <Button variant="gold" size="lg" className="w-full mt-6 gap-2" onClick={() => toast({ title: "Checkout", description: "Stripe checkout integration coming soon!" })}>
                   <CreditCard className="w-5 h-5" /> Proceed to Checkout
                 </Button>
