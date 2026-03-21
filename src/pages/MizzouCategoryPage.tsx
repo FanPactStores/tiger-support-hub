@@ -521,11 +521,11 @@ function ProductCard({
           {renderStars(product.rating)}
           <span className="text-[10px] text-muted-foreground">({product.reviews.toLocaleString()})</span>
         </div>
-        <div className="flex items-center justify-between mb-2.5">
+        <div className="mb-2.5">
           <span className="text-base font-bold">${product.price.toFixed(2)}</span>
-          <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full" style={{ backgroundColor: `${MZ_GOLD}15`, color: MZ_GOLD }}>
-            NIL: ${product.nilDonation.toFixed(2)}
-          </span>
+          <p className="text-[9px] font-semibold mt-0.5" style={{ color: MZ_GOLD }}>
+            FanPact NIL Contribution: ${product.nilDonation.toFixed(2)}
+          </p>
         </div>
         <button
           className="w-full text-xs font-semibold py-2 rounded-lg transition-all duration-200 hover:opacity-90 active:scale-[0.97]"

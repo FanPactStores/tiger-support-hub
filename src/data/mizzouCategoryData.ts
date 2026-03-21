@@ -32,7 +32,7 @@ export interface CategoryData {
 }
 
 function don(price: number) {
-  return Math.round(price * 0.035 * 100) / 100;
+  return Math.round(0.5 * (price * 0.25) * 100) / 100;
 }
 
 let _pid = 1000;
