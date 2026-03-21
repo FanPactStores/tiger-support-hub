@@ -144,7 +144,7 @@ export default function IndianaCategoryPage() {
             </div>
           </div>
 
-          <Link to="/cart" className="relative text-white hover:opacity-80 transition-opacity">
+          <Link to="/indiana/cart" className="relative text-white hover:opacity-80 transition-opacity">
             <ShoppingCart className="w-6 h-6" />
             {totalItems > 0 && (
               <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center bg-yellow-300" style={{ color: IU_CRIMSON }}>
