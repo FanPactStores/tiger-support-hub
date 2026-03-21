@@ -440,13 +440,16 @@ function ProductCard({
   gridView,
   renderStars,
   onAddToCart,
+  categorySlug,
 }: {
   product: CategoryProduct;
   gridView: boolean;
   renderStars: (r: number) => JSX.Element;
   onAddToCart: (product: CategoryProduct) => void;
+  categorySlug: string;
 }) {
   const IU_CRIMSON = "#990000";
+  const productLink = `/indiana/category/${categorySlug}/product/${product.id}`;
 
   if (!gridView) {
     return (
