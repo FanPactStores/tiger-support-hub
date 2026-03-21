@@ -471,9 +471,9 @@ function ProductCard({
     // List view
     return (
       <div className="flex gap-4 p-3 rounded-lg border border-border bg-card hover:shadow-md transition-shadow">
-        <div className="w-28 h-28 shrink-0 rounded-md overflow-hidden bg-secondary">
+        <Link to={productLink} className="w-28 h-28 shrink-0 rounded-md overflow-hidden bg-secondary">
           <img src={product.image} alt={product.name} className="w-full h-full object-cover" loading="lazy" />
-        </div>
+        </Link>
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between gap-2">
             <div>
