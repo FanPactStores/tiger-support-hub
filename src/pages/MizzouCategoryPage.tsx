@@ -428,6 +428,7 @@ export default function MizzouCategoryPage() {
                     gridView={gridView}
                     renderStars={renderStars}
                     onAddToCart={(p) => addItem({ id: p.id, name: p.name, price: p.price, image: p.image, category: slug || "" })}
+                    categorySlug={slug || ""}
                   />
                 ))}
               </div>
@@ -458,24 +459,27 @@ function ProductCard({
   gridView,
   renderStars,
   onAddToCart,
+  categorySlug,
 }: {
   product: CategoryProduct;
   gridView: boolean;
   renderStars: (r: number) => JSX.Element;
   onAddToCart: (product: CategoryProduct) => void;
+  categorySlug: string;
 }) {
+  const productLink = `/mizzou/category/${categorySlug}/product/${product.id}`;
   if (!gridView) {
     // List view
     return (
       <div className="flex gap-4 p-3 rounded-lg border border-border bg-card hover:shadow-md transition-shadow">
-        <div className="w-28 h-28 shrink-0 rounded-md overflow-hidden bg-secondary">
+        <Link to={productLink} className="w-28 h-28 shrink-0 rounded-md overflow-hidden bg-secondary">
           <img src={product.image} alt={product.name} className="w-full h-full object-cover" loading="lazy" />
-        </div>
+        </Link>
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between gap-2">
             <div>
               <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">{product.brand}</p>
-              <h3 className="text-sm font-semibold leading-tight line-clamp-2">{product.name}</h3>
+              <Link to={productLink} className="hover:underline"><h3 className="text-sm font-semibold leading-tight line-clamp-2">{product.name}</h3></Link>
             </div>
             {product.isNameBrand && (
               <span className="shrink-0 text-[9px] font-bold px-1.5 py-0.5 rounded" style={{ backgroundColor: `${MZ_GOLD}20`, color: MZ_GOLD }}>
@@ -508,7 +512,7 @@ function ProductCard({
   // Grid view
   return (
     <div className="group rounded-lg border border-border bg-card overflow-hidden hover:shadow-lg transition-all duration-300">
-      <div className="relative aspect-square overflow-hidden bg-secondary">
+      <Link to={productLink} className="relative aspect-square overflow-hidden bg-secondary block">
         <img
           src={product.image}
           alt={product.name}
@@ -523,10 +527,10 @@ function ProductCard({
             Name Brand
           </span>
         )}
-      </div>
+      </Link>
       <div className="p-3">
         <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">{product.brand}</p>
-        <h3 className="text-xs font-semibold leading-tight line-clamp-2 mt-0.5 mb-1.5">{product.name}</h3>
+        <Link to={productLink} className="hover:underline"><h3 className="text-xs font-semibold leading-tight line-clamp-2 mt-0.5 mb-1.5">{product.name}</h3></Link>
         <div className="flex items-center gap-1.5 mb-2">
           {renderStars(product.rating)}
           <span className="text-[10px] text-muted-foreground">({product.reviews.toLocaleString()})</span>

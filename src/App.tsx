@@ -21,6 +21,7 @@ import IndianaDisclaimer from "./pages/IndianaDisclaimer";
 import IndianaCategoryPage from "./pages/IndianaCategoryPage";
 import IndianaCart from "./pages/IndianaCart";
 import SearchResults from "./pages/SearchResults";
+import ProductDetail from "./pages/ProductDetail";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
             {/* Mizzou storefront routes (own header/footer) */}
             <Route path="/mizzou" element={<MizzouHome />} />
             <Route path="/mizzou/category/:slug" element={<MizzouCategoryPage />} />
+            <Route path="/mizzou/category/:slug/product/:productId" element={<ProductDetail school="mizzou" />} />
             <Route path="/mizzou/category/:slug/:subcategory" element={<MizzouCategoryPage />} />
             <Route path="/mizzou/search" element={<SearchResults school="mizzou" />} />
             <Route path="/mizzou/football" element={<MizzouFootball />} />
@@ -52,6 +54,7 @@ const App = () => (
             {/* Indiana storefront */}
             <Route path="/indiana" element={<IndianaHome />} />
             <Route path="/indiana/category/:slug" element={<IndianaCategoryPage />} />
+            <Route path="/indiana/category/:slug/product/:productId" element={<ProductDetail school="indiana" />} />
             <Route path="/indiana/category/:slug/:subcategory" element={<IndianaCategoryPage />} />
             <Route path="/indiana/cart" element={<IndianaCart />} />
             <Route path="/indiana/search" element={<SearchResults school="indiana" />} />
