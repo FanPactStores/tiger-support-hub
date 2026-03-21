@@ -526,10 +526,10 @@ function ProductCard({
             Name Brand
           </span>
         )}
-      </div>
+      </Link>
       <div className="p-3">
         <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">{product.brand}</p>
-        <h3 className="text-xs font-semibold leading-tight line-clamp-2 mt-0.5 mb-1.5">{product.name}</h3>
+        <Link to={productLink} className="hover:underline"><h3 className="text-xs font-semibold leading-tight line-clamp-2 mt-0.5 mb-1.5">{product.name}</h3></Link>
         <div className="flex items-center gap-1.5 mb-2">
           {renderStars(product.rating)}
           <span className="text-[10px] text-muted-foreground">({product.reviews.toLocaleString()})</span>
