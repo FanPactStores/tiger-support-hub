@@ -21,6 +21,7 @@ import IndianaDisclaimer from "./pages/IndianaDisclaimer";
 import IndianaCategoryPage from "./pages/IndianaCategoryPage";
 import IndianaCart from "./pages/IndianaCart";
 import SearchResults from "./pages/SearchResults";
+import ProductDetail from "./pages/ProductDetail";
 
 const queryClient = new QueryClient();
 
