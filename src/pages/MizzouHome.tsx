@@ -334,14 +334,8 @@ const MizzouHome = () => {
                 <br />
                 <span style={{ color: MZ_GOLD }}>Support Missouri Athletes.</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/90 mb-3 leading-relaxed max-w-2xl">
-                Every purchase made through the Missouri FanPact storefront contributes to NIL opportunities for Tiger student-athletes and supports Missouri athletics.
-              </p>
-              <p className="text-white/70 mb-2 max-w-2xl">
-                FanPact allows fans to shop the products they already buy — electronics, home goods, pet supplies, kitchen products, and more — while helping Missouri athletes succeed.
-              </p>
-              <p className="text-sm text-white/50 mb-6 max-w-2xl">
-                Shop the products you already buy — now they support your team.
+              <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed max-w-2xl">
+                Every purchase you make through the Missouri FanPact™ storefront lets you shop the everyday products you already buy — electronics, home goods, pet supplies, kitchen essentials, and more — while directly supporting NIL opportunities and the success of Tiger student-athletes.
               </p>
 
               {/* Search Bar */}
