@@ -330,8 +330,6 @@ const MizzouHome = () => {
           <div className="relative z-10 container mx-auto px-4 py-16 lg:py-24">
             <div className="max-w-3xl">
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight">
-                Shop Everyday Products.
-                <br />
                 <span style={{ color: MZ_GOLD }}>Support Missouri Athletes.</span>
               </h1>
               <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed max-w-2xl">

@@ -325,8 +325,6 @@ const IndianaHome = () => {
             <div className="max-w-3xl">
 
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight">
-                Shop Everyday Products.
-                <br />
                 <span className="text-yellow-300">Support Indiana Athletes.</span>
               </h1>
               <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed max-w-2xl">
