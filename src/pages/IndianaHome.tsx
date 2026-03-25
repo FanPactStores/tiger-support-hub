@@ -329,11 +329,8 @@ const IndianaHome = () => {
                 <br />
                 <span className="text-yellow-300">Support Indiana Athletes.</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/90 mb-3 leading-relaxed max-w-2xl">
-                Every purchase made through the Indiana FanPact storefront contributes to NIL opportunities for Hoosier student-athletes and supports Indiana athletics.
-              </p>
-              <p className="text-white/70 mb-6 max-w-2xl">
-                FanPact allows fans to shop the products they already buy — electronics, home goods, pet supplies, kitchen products, and more — while helping Indiana athletes succeed.
+              <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed max-w-2xl">
+                Every purchase you make through the Indiana FanPact™ storefront lets you shop the everyday products you already buy — electronics, home goods, pet supplies, kitchen essentials, and more — while directly supporting NIL opportunities and the success of Hoosier student-athletes.
               </p>
 
               {/* Search Bar - prominent, conversion-focused */}
