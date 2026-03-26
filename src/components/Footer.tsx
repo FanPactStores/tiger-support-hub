@@ -9,7 +9,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <span className="text-2xl font-display font-bold text-primary">FanPact</span>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Empowering fans to support university athletics through everyday shopping. 80% of net earnings shared.
+              Empowering fans to support university athletics through everyday shopping. 50% of net earnings shared.
             </p>
           </div>
 
