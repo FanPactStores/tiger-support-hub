@@ -15,12 +15,8 @@ import {
   ChevronDown,
   ChevronRight,
   TrendingUp,
-  Truck,
-  Shield,
   Heart,
   ArrowRight,
-  Star,
-  Award,
   Users,
   DollarSign,
   Smartphone,
@@ -71,11 +67,6 @@ import productMonitor from "@/assets/product-monitor.jpg";
 import productSunglasses from "@/assets/product-sunglasses.jpg";
 import productHeadphones from "@/assets/product-headphones.jpg";
 
-import newsFootball from "@/assets/news-mizzou-football.jpg";
-import newsBasketball from "@/assets/news-mizzou-basketball.jpg";
-import newsVolleyball from "@/assets/news-mizzou-volleyball.jpg";
-import newsTrack from "@/assets/news-mizzou-track.jpg";
-
 const MZ_GOLD = "#F1B82D";
 const MZ_BLACK = "#000000";
 
@@ -119,14 +110,14 @@ const categoryGrid = [
 ];
 
 const featuredProducts = [
-  { name: "Wireless Earbuds", brand: "Top Rated", price: "$29.99", image: productEarbuds, link: "/mizzou/category/electronics" },
-  { name: "Air Fryer", brand: "Kitchen Essential", price: "$89.99", image: productMonitor, link: "/mizzou/category/food" },
-  { name: "Pet Bed", brand: "Cozy Living", price: "$34.99", image: productSunglasses, link: "/mizzou/category/pets" },
-  { name: "Kitchen Storage Set", brand: "Organization", price: "$24.99", image: productHeadphones, link: "/mizzou/category/home" },
-  { name: "Phone Mount", brand: "Auto Essentials", price: "$15.99", image: productEarbuds, link: "/mizzou/category/automotive" },
-  { name: "Bluetooth Speaker", brand: "Top Rated", price: "$49.99", image: productHeadphones, link: "/mizzou/category/electronics" },
-  { name: "Resistance Bands", brand: "Fitness Gear", price: "$19.99", image: productSunglasses, link: "/mizzou/category/sports" },
-  { name: "Storage Organizer", brand: "Home Solutions", price: "$39.99", image: productMonitor, link: "/mizzou/category/home" },
+  { name: "Wireless Earbuds", brand: "Top Rated", price: "$29.99", nilContribution: "$1.50", image: productEarbuds, link: "/mizzou/category/electronics" },
+  { name: "Air Fryer", brand: "Kitchen Essential", price: "$89.99", nilContribution: "$4.50", image: productMonitor, link: "/mizzou/category/food" },
+  { name: "Pet Bed", brand: "Cozy Living", price: "$34.99", nilContribution: "$1.75", image: productSunglasses, link: "/mizzou/category/pets" },
+  { name: "Kitchen Storage Set", brand: "Organization", price: "$24.99", nilContribution: "$1.25", image: productHeadphones, link: "/mizzou/category/home" },
+  { name: "Phone Mount", brand: "Auto Essentials", price: "$15.99", nilContribution: "$0.80", image: productEarbuds, link: "/mizzou/category/automotive" },
+  { name: "Bluetooth Speaker", brand: "Top Rated", price: "$49.99", nilContribution: "$2.50", image: productHeadphones, link: "/mizzou/category/electronics" },
+  { name: "Resistance Bands", brand: "Fitness Gear", price: "$19.99", nilContribution: "$1.00", image: productSunglasses, link: "/mizzou/category/sports" },
+  { name: "Storage Organizer", brand: "Home Solutions", price: "$39.99", nilContribution: "$2.00", image: productMonitor, link: "/mizzou/category/home" },
 ];
 
 const popularFanCategories = [
@@ -136,13 +127,6 @@ const popularFanCategories = [
   { name: "Fitness Gear", products: 195, link: "/mizzou/category/sports", image: categorySports },
   { name: "Car Accessories", products: 150, link: "/mizzou/category/automotive", image: categoryAutomotive },
   { name: "Electronics Accessories", products: 420, link: "/mizzou/category/electronics", image: categoryElectronics },
-];
-
-const mizzouNews = [
-  { image: newsFootball, title: "Tigers Roll to Dominant SEC Victory Behind Record Rushing Attack", date: "March 15, 2026", category: "Football" },
-  { image: newsBasketball, title: "Mizzou Basketball Clinches Top-4 Seed in SEC Tournament", date: "March 12, 2026", category: "Basketball" },
-  { image: newsVolleyball, title: "Tiger Volleyball Earns Program-Best NCAA Tournament Seed", date: "March 10, 2026", category: "Volleyball" },
-  { image: newsTrack, title: "Mizzou Track Star Breaks School Record at SEC Indoor Championships", date: "March 8, 2026", category: "Track & Field" },
 ];
 
 const MizzouHome = () => {
@@ -357,9 +341,9 @@ const MizzouHome = () => {
                     Start Shopping
                   </button>
                 </a>
-                <a href="#how-it-works">
+                <a href="#shop-categories">
                   <button className="px-8 py-3.5 font-bold text-lg rounded-lg border-2 border-white/40 text-white hover:bg-white/10 transition-colors flex items-center gap-2">
-                    See How It Works
+                    Shop Categories
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 </a>
@@ -387,26 +371,6 @@ const MizzouHome = () => {
             </div>
           </div>
         </section>
-
-        {/* ===== TRUST / VALUE STRIP ===== */}
-        <div className="py-4 bg-background border-b border-border">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
-              <div className="flex items-center gap-2 text-foreground">
-                <Truck className="w-5 h-5" style={{ color: MZ_GOLD }} />
-                <span className="text-sm font-semibold">Fast U.S. Shipping</span>
-              </div>
-              <div className="flex items-center gap-2 text-foreground">
-                <Shield className="w-5 h-5" style={{ color: MZ_GOLD }} />
-                <span className="text-sm font-semibold">Trusted Product Sources</span>
-              </div>
-              <div className="flex items-center gap-2 text-foreground">
-                <Heart className="w-5 h-5" style={{ color: MZ_GOLD }} />
-                <span className="text-sm font-semibold">Every Purchase Supports Missouri NIL</span>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* ===== 2. SHOP BY CATEGORY ===== */}
         <section id="shop-categories" className="py-14 lg:py-20 bg-muted/50">
@@ -444,7 +408,7 @@ const MizzouHome = () => {
           </div>
         </section>
 
-        {/* ===== 3. EVERYDAY ESSENTIALS ===== */}
+        {/* ===== 3. FEATURED PRODUCTS ===== */}
         <section className="py-14 lg:py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between mb-8">
@@ -470,7 +434,7 @@ const MizzouHome = () => {
                     <h3 className="font-semibold text-foreground mb-2">{product.name}</h3>
                     <div className="flex items-center justify-between">
                       <span className="text-xl font-bold" style={{ color: MZ_GOLD }}>{product.price}</span>
-                      <span className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Supports Mizzou NIL</span>
+                      <span className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">{product.nilContribution} NIL</span>
                     </div>
                   </div>
                 </Link>
@@ -485,7 +449,7 @@ const MizzouHome = () => {
           </div>
         </section>
 
-        {/* ===== 4. MIZZOU FAN IMPACT TRACKER ===== */}
+        {/* ===== 4. NIL IMPACT TRACKER ===== */}
         <section id="nil-impact" className="py-14 lg:py-20" style={{ backgroundColor: MZ_BLACK }}>
           <div className="container mx-auto px-4 text-center">
             <h2 className="font-display text-3xl md:text-4xl text-white mb-3">
@@ -524,7 +488,35 @@ const MizzouHome = () => {
           </div>
         </section>
 
-        {/* ===== 5. HOW FANPACT WORKS ===== */}
+        {/* ===== 5. TRENDING FOR MISSOURI FANS ===== */}
+        <section className="py-14 lg:py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-10">
+              <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: MZ_GOLD }}>
+                Trending for Missouri Fans
+              </h2>
+              <p className="text-muted-foreground text-lg">Curated picks our fans are loving right now</p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+              {popularFanCategories.map((cat) => (
+                <Link key={cat.name} to={cat.link} className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 aspect-[16/10]">
+                  <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-white font-bold text-lg mb-1">{cat.name}</h3>
+                    <p className="text-white/60 text-sm">{cat.products} products</p>
+                  </div>
+                  <div className="absolute top-3 right-3 bg-white/90 text-xs font-bold px-2 py-1 rounded-full" style={{ color: MZ_BLACK }}>
+                    Shop Now
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== 6. HOW FANPACT WORKS ===== */}
         <section id="how-it-works" className="py-12 lg:py-16 bg-muted/50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
@@ -556,106 +548,14 @@ const MizzouHome = () => {
           </div>
         </section>
 
-        {/* ===== 6. TRENDING FOR MISSOURI FANS ===== */}
-        <section className="py-14 lg:py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: MZ_GOLD }}>
-                Trending for Missouri Fans
-              </h2>
-              <p className="text-muted-foreground text-lg">Curated picks our fans are loving right now</p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-              {popularFanCategories.map((cat) => (
-                <Link key={cat.name} to={cat.link} className="group relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 aspect-[16/10]">
-                  <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white font-bold text-lg mb-1">{cat.name}</h3>
-                    <p className="text-white/60 text-sm">{cat.products} products</p>
-                  </div>
-                  <div className="absolute top-3 right-3 bg-white/90 text-xs font-bold px-2 py-1 rounded-full" style={{ color: MZ_BLACK }}>
-                    Shop Now
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ===== TRUST & CONVENIENCE STRIP ===== */}
-        <section className="py-6 border-y border-border bg-muted/50">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-center gap-3 justify-center md:justify-start">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${MZ_GOLD}15` }}>
-                  <Truck className="w-5 h-5" style={{ color: MZ_GOLD }} />
-                </div>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: MZ_GOLD }}>Free Shipping on Orders Over $59</p>
-                  <p className="text-xs text-muted-foreground">Fast delivery to your door</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 justify-center">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${MZ_GOLD}15` }}>
-                  <Star className="w-5 h-5" style={{ color: MZ_GOLD }} />
-                </div>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: MZ_GOLD }}>Fan Rewards Program</p>
-                  <p className="text-xs text-muted-foreground">Earn points on every purchase</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 justify-center md:justify-end">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${MZ_GOLD}15` }}>
-                  <Award className="w-5 h-5" style={{ color: MZ_GOLD }} />
-                </div>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: MZ_GOLD }}>Every Purchase Funds Missouri NIL</p>
-                  <p className="text-xs text-muted-foreground">Support Tiger student-athletes</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ===== MIZZOU NEWS (de-emphasized) ===== */}
-        <section id="news" className="py-10 lg:py-14 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-8">
-              <h2 className="font-display text-2xl md:text-3xl mb-1 text-muted-foreground">
-                Missouri Sports News
-              </h2>
-              <p className="text-muted-foreground/60 text-sm">Stay up to date with the latest from Tiger athletics</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {mizzouNews.map((story, i) => (
-                <a key={i} href="#" className="group bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-border">
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img src={story.image} alt={story.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                  <div className="p-3">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ backgroundColor: MZ_GOLD, color: MZ_BLACK }}>{story.category}</span>
-                      <span className="text-[10px] text-muted-foreground">{story.date}</span>
-                    </div>
-                    <h3 className="font-semibold text-foreground/70 text-sm leading-snug group-hover:opacity-70 transition-opacity">{story.title}</h3>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ===== CTA / EMAIL ===== */}
-        <section className="py-14 bg-muted/50">
+        <section className="py-14 bg-background">
           <div className="container mx-auto px-4 text-center max-w-2xl">
             <h2 className="font-display text-3xl md:text-4xl mb-3" style={{ color: MZ_GOLD }}>
               Join the Tiger Nation
             </h2>
             <p className="text-muted-foreground mb-6">
-              Get exclusive deals, track your fan impact, and stay connected with Missouri athletics. Every purchase makes a difference.
+              Get exclusive deals, track your fan impact, and stay connected with Missouri athletics.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
