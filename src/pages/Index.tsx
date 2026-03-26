@@ -47,7 +47,7 @@ const HomePage = () => {
             Choose your school and shop everyday products that support student-athletes.
            </p>
            <p className="text-sm sm:text-base text-secondary/60 mb-8 font-body max-w-2xl mx-auto">
-             Shop the products you already buy — now they support your team.
+             You're not spending more — just switching where you shop.
            </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

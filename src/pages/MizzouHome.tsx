@@ -416,6 +416,7 @@ const MizzouHome = () => {
                 Start Shopping by Category
               </h2>
               <p className="text-muted-foreground text-lg">Browse thousands of everyday products from trusted brands</p>
+              <p className="text-muted-foreground text-base mt-1">You're not spending more — just switching where you shop.</p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
