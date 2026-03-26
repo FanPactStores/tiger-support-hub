@@ -8,14 +8,12 @@ import {
   ShoppingCart,
   ChevronDown,
   ChevronRight,
-  Trophy,
-  Truck,
-  Star,
-  Award,
   TrendingUp,
   ShoppingBag,
-  Package,
   Heart,
+  ArrowRight,
+  Users,
+  DollarSign,
   Smartphone,
   Home,
   UtensilsCrossed,
@@ -28,11 +26,6 @@ import {
   Baby,
   Shirt,
   Gamepad2,
-  Users,
-  DollarSign,
-  ArrowRight,
-  Shield,
-  CheckCircle,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -66,10 +59,6 @@ import productEarbuds from "@/assets/product-earbuds.jpg";
 import productMonitor from "@/assets/product-monitor.jpg";
 import productSunglasses from "@/assets/product-sunglasses.jpg";
 import productHeadphones from "@/assets/product-headphones.jpg";
-import newsFootball from "@/assets/news-indiana-football.jpg";
-import newsBasketball from "@/assets/news-indiana-basketball.jpg";
-import newsVolleyball from "@/assets/news-indiana-volleyball.jpg";
-import newsTrack from "@/assets/news-indiana-track.jpg";
 import { useCart } from "@/contexts/CartContext";
 import { IndianaDisclaimerBanner } from "@/components/indiana/IndianaDisclaimerBanner";
 import SearchAutocomplete from "@/components/search/SearchAutocomplete";
@@ -109,14 +98,14 @@ const categoryGrid = [
 ];
 
 const featuredProducts = [
-  { name: "Wireless Earbuds", brand: "Top Rated", price: "$29.99", image: productEarbuds, link: "/indiana/category/electronics" },
-  { name: "Air Fryer", brand: "Kitchen Essential", price: "$89.99", image: productMonitor, link: "/indiana/category/food" },
-  { name: "Pet Bed", brand: "Cozy Living", price: "$34.99", image: productSunglasses, link: "/indiana/category/pets" },
-  { name: "Kitchen Storage Set", brand: "Organization", price: "$24.99", image: productHeadphones, link: "/indiana/category/home" },
-  { name: "Phone Mount", brand: "Auto Essentials", price: "$15.99", image: productEarbuds, link: "/indiana/category/automotive" },
-  { name: "Bluetooth Speaker", brand: "Top Rated", price: "$49.99", image: productHeadphones, link: "/indiana/category/electronics" },
-  { name: "Resistance Bands", brand: "Fitness Gear", price: "$19.99", image: productSunglasses, link: "/indiana/category/sports" },
-  { name: "Storage Organizer", brand: "Home Solutions", price: "$39.99", image: productMonitor, link: "/indiana/category/home" },
+  { name: "Wireless Earbuds", brand: "Top Rated", price: "$29.99", nilContribution: "$1.50", image: productEarbuds, link: "/indiana/category/electronics" },
+  { name: "Air Fryer", brand: "Kitchen Essential", price: "$89.99", nilContribution: "$4.50", image: productMonitor, link: "/indiana/category/food" },
+  { name: "Pet Bed", brand: "Cozy Living", price: "$34.99", nilContribution: "$1.75", image: productSunglasses, link: "/indiana/category/pets" },
+  { name: "Kitchen Storage Set", brand: "Organization", price: "$24.99", nilContribution: "$1.25", image: productHeadphones, link: "/indiana/category/home" },
+  { name: "Phone Mount", brand: "Auto Essentials", price: "$15.99", nilContribution: "$0.80", image: productEarbuds, link: "/indiana/category/automotive" },
+  { name: "Bluetooth Speaker", brand: "Top Rated", price: "$49.99", nilContribution: "$2.50", image: productHeadphones, link: "/indiana/category/electronics" },
+  { name: "Resistance Bands", brand: "Fitness Gear", price: "$19.99", nilContribution: "$1.00", image: productSunglasses, link: "/indiana/category/sports" },
+  { name: "Storage Organizer", brand: "Home Solutions", price: "$39.99", nilContribution: "$2.00", image: productMonitor, link: "/indiana/category/home" },
 ];
 
 const popularFanCategories = [
@@ -331,7 +320,7 @@ const IndianaHome = () => {
                 Every purchase you make through the Indiana FanPact™ storefront lets you shop the everyday products you already buy — electronics, home goods, pet supplies, kitchen essentials, and more — while directly supporting NIL opportunities and the success of Hoosier student-athletes.
               </p>
 
-              {/* Search Bar - prominent, conversion-focused */}
+              {/* Search Bar */}
               <SearchAutocomplete
                 categories={indianaSearchCategories}
                 schoolPrefix="/indiana"
@@ -352,15 +341,15 @@ const IndianaHome = () => {
                     Start Shopping
                   </button>
                 </a>
-                <a href="#how-it-works">
+                <a href="#shop-categories">
                   <button className="px-8 py-3.5 font-bold text-lg rounded-lg border-2 border-white/40 text-white hover:bg-white/10 transition-colors flex items-center gap-2">
-                    See How It Works
+                    Shop Categories
                     <ArrowRight className="w-5 h-5" />
                   </button>
                 </a>
               </div>
 
-              {/* Disclaimer - clean secondary treatment */}
+              {/* Disclaimer */}
               <p className="text-xs text-white/40 mt-2">
                 Unofficial Fan Support Site – Not affiliated with or endorsed by Indiana University.{" "}
                 <Link to="/indiana/disclaimer" className="text-yellow-300/60 hover:text-yellow-300 hover:underline transition-colors">Full Disclaimer</Link>
@@ -382,26 +371,6 @@ const IndianaHome = () => {
             </div>
           </div>
         </section>
-
-        {/* ===== TRUST / VALUE STRIP (replaces military banner) ===== */}
-        <div className="py-4 bg-white border-b border-gray-100">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
-              <div className="flex items-center gap-2 text-gray-700">
-                <Truck className="w-5 h-5" style={{ color: IU_CRIMSON }} />
-                <span className="text-sm font-semibold">Fast U.S. Shipping</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <Shield className="w-5 h-5" style={{ color: IU_CRIMSON }} />
-                <span className="text-sm font-semibold">Trusted Product Sources</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <Heart className="w-5 h-5" style={{ color: IU_CRIMSON }} />
-                <span className="text-sm font-semibold">Every Purchase Supports Indiana NIL</span>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* ===== 2. SHOP BY CATEGORY ===== */}
         <section id="shop-categories" className="py-14 lg:py-20 bg-gray-50">
@@ -437,7 +406,7 @@ const IndianaHome = () => {
           </div>
         </section>
 
-        {/* ===== 3. EVERYDAY ESSENTIALS (Featured Products) ===== */}
+        {/* ===== 3. FEATURED PRODUCTS ===== */}
         <section className="py-14 lg:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between mb-8">
@@ -447,7 +416,7 @@ const IndianaHome = () => {
                 </h2>
                 <p className="text-gray-500 mt-1">Shop the products you already love — every purchase makes a difference</p>
               </div>
-              <Link to="/category/electronics" className="hidden md:flex items-center gap-1 font-semibold hover:opacity-70 transition-opacity" style={{ color: IU_CRIMSON }}>
+              <Link to="/indiana/category/electronics" className="hidden md:flex items-center gap-1 font-semibold hover:opacity-70 transition-opacity" style={{ color: IU_CRIMSON }}>
                 View All <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -463,7 +432,7 @@ const IndianaHome = () => {
                     <h3 className="font-semibold text-gray-900 mb-2">{product.name}</h3>
                     <div className="flex items-center justify-between">
                       <span className="text-xl font-bold" style={{ color: IU_CRIMSON }}>{product.price}</span>
-                      <span className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Supports Indiana NIL</span>
+                      <span className="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">{product.nilContribution} NIL</span>
                     </div>
                   </div>
                 </Link>
@@ -471,14 +440,14 @@ const IndianaHome = () => {
             </div>
 
             <div className="text-center mt-8 md:hidden">
-              <Link to="/category/electronics" className="inline-flex items-center gap-1 font-semibold" style={{ color: IU_CRIMSON }}>
+              <Link to="/indiana/category/electronics" className="inline-flex items-center gap-1 font-semibold" style={{ color: IU_CRIMSON }}>
                 View All Products <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* ===== 4. INDIANA FAN IMPACT TRACKER ===== */}
+        {/* ===== 4. NIL IMPACT TRACKER ===== */}
         <section id="nil-impact" className="py-14 lg:py-20" style={{ backgroundColor: IU_CRIMSON }}>
           <div className="container mx-auto px-4 text-center">
             <h2 className="font-display text-3xl md:text-4xl text-white mb-3">
@@ -517,56 +486,7 @@ const IndianaHome = () => {
           </div>
         </section>
 
-        {/* ===== 5. HOW FANPACT WORKS ===== */}
-        <section id="how-it-works" className="py-12 lg:py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: IU_CRIMSON }}>
-                How FanPact Works
-              </h2>
-              <p className="text-gray-500">Three simple steps to support Indiana athletes</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {[
-                {
-                  step: 1,
-                  icon: ShoppingBag,
-                  title: "Shop Everyday Products",
-                  desc: "Browse thousands of everyday consumer products from trusted brands.",
-                },
-                {
-                  step: 2,
-                  icon: Users,
-                  title: "Buy Through Your School Storefront",
-                  desc: "Purchases are attributed to the Indiana FanPact storefront.",
-                },
-                {
-                  step: 3,
-                  icon: DollarSign,
-                  title: "Revenue Supports Indiana Athletes",
-                  desc: "A portion of every purchase supports NIL opportunities for Hoosier student-athletes.",
-                },
-              ].map((item) => {
-                const IconComp = item.icon;
-                return (
-                  <div key={item.step} className="text-center bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                    <div className="w-14 h-14 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}12` }}>
-                      <IconComp className="w-7 h-7" style={{ color: IU_CRIMSON }} />
-                    </div>
-                    <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: IU_CRIMSON }}>
-                      Step {item.step}
-                    </div>
-                    <h3 className="text-base font-bold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ===== 6. TRENDING FOR INDIANA FANS ===== */}
+        {/* ===== 5. TRENDING FOR INDIANA FANS ===== */}
         <section className="py-14 lg:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
@@ -598,103 +518,48 @@ const IndianaHome = () => {
           </div>
         </section>
 
-        {/* ===== TRUST & CONVENIENCE STRIP ===== */}
-        <section className="py-6 border-y border-gray-100 bg-gray-50">
+        {/* ===== 6. HOW FANPACT WORKS ===== */}
+        <section id="how-it-works" className="py-12 lg:py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-center gap-3 justify-center md:justify-start">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}10` }}>
-                  <Truck className="w-5 h-5" style={{ color: IU_CRIMSON }} />
-                </div>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: IU_CRIMSON }}>Free Shipping on Orders Over $59</p>
-                  <p className="text-xs text-gray-500">Fast delivery to your door</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 justify-center">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}10` }}>
-                  <Star className="w-5 h-5" style={{ color: IU_CRIMSON }} />
-                </div>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: IU_CRIMSON }}>Fan Rewards Program</p>
-                  <p className="text-xs text-gray-500">Earn points on every purchase</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 justify-center md:justify-end">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}10` }}>
-                  <Award className="w-5 h-5" style={{ color: IU_CRIMSON }} />
-                </div>
-                <div>
-                  <p className="font-bold text-sm" style={{ color: IU_CRIMSON }}>Every Purchase Funds Indiana NIL</p>
-                  <p className="text-xs text-gray-500">Support Hoosier student-athletes</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ===== NEWS & BLOGS (de-emphasized) ===== */}
-        <section id="news" className="py-10 lg:py-14 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-8">
-              <h2 className="font-display text-2xl md:text-3xl mb-1 text-gray-700">
-                Indiana Sports News
+            <div className="text-center mb-10">
+              <h2 className="font-display text-3xl md:text-4xl mb-2" style={{ color: IU_CRIMSON }}>
+                How FanPact Works
               </h2>
-              <p className="text-gray-400 text-sm">Stay up to date with the latest from Hoosier athletics</p>
+              <p className="text-gray-500">Three simple steps to support Indiana athletes</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {[
-                {
-                  image: newsFootball,
-                  title: "Hoosiers Dominate in Big Ten Opener with Record-Breaking Performance",
-                  date: "March 15, 2026",
-                  category: "Football",
-                },
-                {
-                  image: newsBasketball,
-                  title: "Indiana Basketball Secures Top Seed Heading into Conference Tournament",
-                  date: "March 12, 2026",
-                  category: "Basketball",
-                },
-                {
-                  image: newsVolleyball,
-                  title: "Volleyball Team Celebrates Historic Season with NCAA Tournament Berth",
-                  date: "March 10, 2026",
-                  category: "Volleyball",
-                },
-                {
-                  image: newsTrack,
-                  title: "Track & Field Star Sets New School Record at Big Ten Championships",
-                  date: "March 8, 2026",
-                  category: "Track & Field",
-                },
-              ].map((story, i) => (
-                <a key={i} href="#" className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img src={story.image} alt={story.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                  <div className="p-3">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-white px-1.5 py-0.5 rounded" style={{ backgroundColor: IU_CRIMSON }}>{story.category}</span>
-                      <span className="text-[10px] text-gray-400">{story.date}</span>
+                { step: 1, icon: ShoppingBag, title: "Shop Everyday Products", desc: "Browse thousands of everyday consumer products from trusted brands." },
+                { step: 2, icon: Users, title: "Buy Through Your School Storefront", desc: "Purchases are attributed to the Indiana FanPact storefront." },
+                { step: 3, icon: DollarSign, title: "Revenue Supports Indiana Athletes", desc: "A portion of every purchase supports NIL opportunities for Hoosier student-athletes." },
+              ].map((item) => {
+                const IconComp = item.icon;
+                return (
+                  <div key={item.step} className="text-center bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <div className="w-14 h-14 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: `${IU_CRIMSON}12` }}>
+                      <IconComp className="w-7 h-7" style={{ color: IU_CRIMSON }} />
                     </div>
-                    <h3 className="font-semibold text-gray-700 text-sm leading-snug group-hover:opacity-70 transition-opacity">{story.title}</h3>
+                    <div className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: IU_CRIMSON }}>
+                      Step {item.step}
+                    </div>
+                    <h3 className="text-base font-bold text-gray-900 mb-1">{item.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
                   </div>
-                </a>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* ===== CTA / EMAIL ===== */}
-        <section className="py-14 bg-gray-50">
+        <section className="py-14 bg-white">
           <div className="container mx-auto px-4 text-center max-w-2xl">
             <h2 className="font-display text-3xl md:text-4xl mb-3" style={{ color: IU_CRIMSON }}>
               Join the Hoosier Nation
             </h2>
             <p className="text-gray-500 mb-6">
-              Get exclusive deals, track your fan impact, and stay connected with Indiana athletics. Every purchase makes a difference.
+              Get exclusive deals, track your fan impact, and stay connected with Indiana athletics.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
