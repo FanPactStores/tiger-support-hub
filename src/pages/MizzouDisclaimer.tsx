@@ -17,7 +17,7 @@ const MizzouDisclaimer = () => {
 
           <h2 className="text-xl font-display font-bold text-foreground mt-8 mb-4">Donation Model</h2>
           <p>
-            We are a private company that donates <strong>80%</strong> of net operating earnings from qualifying purchases made through this platform to support University of Missouri student-athletes and athletics programs (via NIL collectives or other permissible channels).
+            We are a private company that donates <strong>50%</strong> of net operating earnings from qualifying purchases made through this platform to support University of Missouri student-athletes and athletics programs (via NIL collectives or other permissible channels).
           </p>
 
           <h2 className="text-xl font-display font-bold text-foreground mt-8 mb-4">Storefront Disclaimer</h2>

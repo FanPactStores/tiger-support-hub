@@ -444,7 +444,7 @@ export default function MizzouCategoryPage() {
           <p className="text-lg font-bold text-white">
             600+ Missouri Athletes across 20 Sports
           </p>
-          <p className="text-xs mt-1" style={{ color: MZ_GOLD }}>~3.5% of every order goes directly to Mizzou NIL</p>
+          <p className="text-xs mt-1" style={{ color: MZ_GOLD }}>Every order directly supports Missouri NIL</p>
         </div>
       </div>
 
