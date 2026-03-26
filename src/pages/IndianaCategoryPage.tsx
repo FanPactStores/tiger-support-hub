@@ -420,7 +420,7 @@ export default function IndianaCategoryPage() {
           <p className="text-lg font-bold text-white">
             500+ Indiana Athletes across 24 Sports
           </p>
-          <p className="text-xs mt-1 text-yellow-300">~3.5% of every order goes directly to Indiana NIL</p>
+          <p className="text-xs mt-1 text-yellow-300">Every order directly supports Indiana NIL</p>
         </div>
       </div>
 

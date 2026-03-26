@@ -12,7 +12,7 @@ export const MizzouDisclaimerBanner = () => {
         <div className="flex items-center gap-3">
           <div className="flex-1 min-w-0">
             <p className="text-background/95 text-sm md:text-base font-semibold leading-relaxed">
-              We donate <span className="text-primary font-bold">80%</span> of net earnings from qualifying purchases to support Missouri student-athletes. Thank you for shopping with purpose!{" "}
+              We donate <span className="text-primary font-bold">50%</span> of net earnings from qualifying purchases to support Missouri student-athletes. Thank you for shopping with purpose!{" "}
               <Link to="/mizzou/disclaimer" className="text-primary underline hover:text-background transition-colors">(full disclaimer)</Link>
             </p>
           </div>
