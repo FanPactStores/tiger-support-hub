@@ -19,7 +19,7 @@ export function Header() {
         <div className="container mx-auto flex items-center justify-between h-16 px-4 gap-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl font-display font-bold text-primary">FanPact</span>
+            <img src={fanpactLogo} alt="FanPact" className="h-10 w-auto object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
