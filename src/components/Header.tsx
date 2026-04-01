@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Trophy, ChevronDown } from "lucide-react";
 import { getSchoolsByConference, getShortName } from "@/data/schools";
+import fanpactLogo from "@/assets/FanPact_Logo1.png";
 import {
   HoverCard,
   HoverCardContent,
@@ -18,7 +19,7 @@ export function Header() {
         <div className="container mx-auto flex items-center justify-between h-16 px-4 gap-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl font-display font-bold text-primary">FanPact</span>
+            <img src={fanpactLogo} alt="FanPact" className="h-10 w-auto object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
