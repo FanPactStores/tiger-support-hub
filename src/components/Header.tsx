@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Trophy, ChevronDown } from "lucide-react";
 import { getSchoolsByConference, getShortName } from "@/data/schools";
+import fanpactLogo from "@/assets/FanPact_Logo1.png";
 import {
   HoverCard,
   HoverCardContent,
