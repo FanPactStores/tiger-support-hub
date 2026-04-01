@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
-import fanpactPennantMark from "@/assets/fanpact-pennant-mark.png";
+import fanpactLogo from "@/assets/FanPact_Logo1.png";
 import { sportRosters } from "@/data/sportsRosters";
 
 const sportsData = [
