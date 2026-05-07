@@ -2,6 +2,7 @@ import { useState } from "react";
 import fanpactLogo from "@/assets/FanPact_Logo1.png";
 import LedgerTab from "@/components/mizzou/nil/LedgerTab";
 import NSSTab from "@/components/mizzou/nil/NSSTab";
+import NILGoTab from "@/components/mizzou/nil/NILGoTab";
 
 type Player = {
   id: string;
