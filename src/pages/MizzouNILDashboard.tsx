@@ -4,6 +4,7 @@ import LedgerTab from "@/components/mizzou/nil/LedgerTab";
 import NSSTab from "@/components/mizzou/nil/NSSTab";
 import NILGoTab from "@/components/mizzou/nil/NILGoTab";
 import EnterpriseTab from "@/components/mizzou/nil/EnterpriseTab";
+import TeamRosterReport from "@/components/mizzou/nil/TeamRosterReport";
 
 type Player = {
   id: string;
