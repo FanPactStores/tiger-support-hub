@@ -151,7 +151,16 @@ export default function MizzouNILDashboard() {
             }
           />
         )}
-        {activeTab !== "ledger" && (
+        {activeTab === "nss" && (
+          <NSSTab
+            playerName={
+              rosterSelected
+                ? "Team Roster"
+                : `${selectedPlayer?.firstName} ${selectedPlayer?.lastName}`
+            }
+          />
+        )}
+        {(activeTab === "nilgo" || activeTab === "enterprise") && (
           <div className="rounded-md border border-dashed border-slate-300 bg-white p-8 text-center text-sm text-slate-400">
             {TABS.find((t) => t.key === activeTab)?.label} content coming next.
           </div>
