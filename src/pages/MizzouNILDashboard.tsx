@@ -16,7 +16,7 @@ type Player = {
 };
 
 const PLAYERS: Player[] = [
-  { id: "kr", initials: "KR", firstName: "Kaylen", lastName: "Rush", position: "WR", sport: "Football" },
+  { id: "kr", initials: "KR", firstName: "Kaylen", lastName: "Rush", position: "Defensive Specialist", sport: "Women's Volleyball" },
   { id: "mt", initials: "MT", firstName: "Marcus", lastName: "Thompson", position: "PG", sport: "Basketball" },
   { id: "dw", initials: "DW", firstName: "D.", lastName: "Washington", position: "DT", sport: "Football" },
   { id: "as", initials: "AS", firstName: "Aaliyah", lastName: "Simmons", position: "MF", sport: "Soccer" },
