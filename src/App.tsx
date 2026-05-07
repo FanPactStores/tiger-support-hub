@@ -20,6 +20,7 @@ import IndianaHome from "./pages/IndianaHome";
 import IndianaDisclaimer from "./pages/IndianaDisclaimer";
 import IndianaCategoryPage from "./pages/IndianaCategoryPage";
 import IndianaCart from "./pages/IndianaCart";
+import MizzouNILDashboard from "./pages/MizzouNILDashboard";
 import SearchResults from "./pages/SearchResults";
 import ProductDetail from "./pages/ProductDetail";
 
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="/mizzou/sponsors" element={<MizzouSponsors />} />
             <Route path="/mizzou/cart" element={<MizzouCart />} />
             <Route path="/mizzou/disclaimer" element={<MizzouDisclaimer />} />
+            <Route path="/mizzou/nil-dashboard" element={<MizzouNILDashboard />} />
 
             {/* Indiana storefront */}
             <Route path="/indiana" element={<IndianaHome />} />
