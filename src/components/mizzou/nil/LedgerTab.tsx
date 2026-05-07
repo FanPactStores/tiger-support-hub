@@ -65,7 +65,7 @@ function StatusBadge({ tx }: { tx: LedgerTransaction }) {
 }
 
 export default function LedgerTab({ playerName }: { playerName: string }) {
-  const transactions = KAYLEN_TX; // mock — same set for all players for now
+  const transactions = KAYLEN_TX_EXPORT;
 
   const gross = transactions.reduce((s, t) => s + t.amount, 0);
   const settledTokenAthlete = transactions
