@@ -171,11 +171,7 @@ export default function MizzouNILDashboard() {
             }
           />
         )}
-        {activeTab === "enterprise" && (
-          <div className="rounded-md border border-dashed border-slate-300 bg-white p-8 text-center text-sm text-slate-400">
-            Enterprise content coming next.
-          </div>
-        )}
+        {activeTab === "enterprise" && <EnterpriseTab />}
       </main>
 
       {/* Bottom nav */}
