@@ -1,5 +1,6 @@
 import { useState } from "react";
 import fanpactLogo from "@/assets/FanPact_Logo1.png";
+import LedgerTab from "@/components/mizzou/nil/LedgerTab";
 
 type Player = {
   id: string;
@@ -129,22 +130,31 @@ export default function MizzouNILDashboard() {
 
       {/* Content */}
       <main className="px-4 py-4">
-        <div className="rounded-lg border border-slate-200 bg-white p-4">
-          <div className="text-xs uppercase tracking-wide text-slate-400">
+        <div className="mb-3 rounded-lg border border-slate-200 bg-white px-4 py-3">
+          <div className="text-[10px] uppercase tracking-wide text-slate-400 font-semibold">
             {rosterSelected ? "View" : "Selected Athlete"}
           </div>
-          <div className="mt-1 text-lg font-semibold text-slate-900">
+          <div className="mt-0.5 text-base font-semibold text-slate-900">
             {rosterSelected
               ? "Team Roster Report"
               : `${selectedPlayer?.firstName} ${selectedPlayer?.lastName} · ${selectedPlayer?.position} · ${selectedPlayer?.sport}`}
           </div>
-          <div className="mt-3 text-sm text-slate-500">
-            Active tab: <span className="font-medium text-slate-700">{TABS.find((t) => t.key === activeTab)?.label}</span>
-          </div>
-          <div className="mt-6 rounded-md border border-dashed border-slate-300 p-6 text-center text-sm text-slate-400">
-            Tab content coming next.
-          </div>
         </div>
+
+        {activeTab === "ledger" && (
+          <LedgerTab
+            playerName={
+              rosterSelected
+                ? "the roster"
+                : `${selectedPlayer?.firstName} ${selectedPlayer?.lastName}`
+            }
+          />
+        )}
+        {activeTab !== "ledger" && (
+          <div className="rounded-md border border-dashed border-slate-300 bg-white p-8 text-center text-sm text-slate-400">
+            {TABS.find((t) => t.key === activeTab)?.label} content coming next.
+          </div>
+        )}
       </main>
 
       {/* Bottom nav */}
