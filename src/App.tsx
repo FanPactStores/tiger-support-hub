@@ -20,6 +20,7 @@ import IndianaHome from "./pages/IndianaHome";
 import IndianaDisclaimer from "./pages/IndianaDisclaimer";
 import IndianaCategoryPage from "./pages/IndianaCategoryPage";
 import IndianaCart from "./pages/IndianaCart";
+import MizzouNILDashboard from "./pages/MizzouNILDashboard";
 import SearchResults from "./pages/SearchResults";
 import ProductDetail from "./pages/ProductDetail";
 
