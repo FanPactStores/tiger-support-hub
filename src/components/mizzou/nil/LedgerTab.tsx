@@ -13,7 +13,7 @@ export type LedgerTransaction = {
   groupName?: string;
 };
 
-const KAYLEN_TX: LedgerTransaction[] = [
+export const KAYLEN_TX_EXPORT: LedgerTransaction[] = [
   { id: "1", date: "Mar 19, 2:41 PM", product: "NIL Platform — Protein supplement (12-pack)", entry: "QR code · player bio page", type: "token", amount: 89.99, status: "settled", daysHeld: 32 },
   { id: "2", date: "Mar 18, 11:08 AM", product: "NIL Platform — Game-day T-shirt", entry: "Player bio page", type: "token", amount: 34.99, status: "settled", daysHeld: 33 },
   { id: "3", date: "Mar 15, 6:22 PM", product: "NIL Platform — Nutrition bundle", entry: "Coupon code KR7", type: "token", amount: 124.99, status: "settled", daysHeld: 36 },
