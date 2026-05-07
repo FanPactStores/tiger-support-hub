@@ -97,6 +97,7 @@ const MizzouHeader = () => {
               </DropdownMenu>
 
               <Link to="/mizzou/sponsors" className="px-4 py-2 text-foreground hover:text-primary font-medium transition-colors duration-200">Sponsors</Link>
+              <Link to="/mizzou/nil-dashboard" className="px-4 py-2 text-foreground hover:text-primary font-medium transition-colors duration-200">NIL Dashboard</Link>
             </nav>
 
             <div className="hidden md:flex items-center gap-2">
