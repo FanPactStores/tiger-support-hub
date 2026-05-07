@@ -145,34 +145,34 @@ export default function MizzouNILDashboard() {
           </div>
         </div>
 
-        {activeTab === "ledger" && (
-          <LedgerTab
-            playerName={
-              rosterSelected
-                ? "the roster"
-                : `${selectedPlayer?.firstName} ${selectedPlayer?.lastName}`
-            }
+        {rosterSelected ? (
+          <TeamRosterReport
+            onSelectPlayer={(id) => {
+              setSelectedPlayerId(id);
+              setRosterSelected(false);
+              setActiveTab("ledger");
+            }}
           />
+        ) : (
+          <>
+            {activeTab === "ledger" && (
+              <LedgerTab
+                playerName={`${selectedPlayer?.firstName} ${selectedPlayer?.lastName}`}
+              />
+            )}
+            {activeTab === "nss" && (
+              <NSSTab
+                playerName={`${selectedPlayer?.firstName} ${selectedPlayer?.lastName}`}
+              />
+            )}
+            {activeTab === "nilgo" && (
+              <NILGoTab
+                playerName={`${selectedPlayer?.firstName} ${selectedPlayer?.lastName}`}
+              />
+            )}
+            {activeTab === "enterprise" && <EnterpriseTab />}
+          </>
         )}
-        {activeTab === "nss" && (
-          <NSSTab
-            playerName={
-              rosterSelected
-                ? "Team Roster"
-                : `${selectedPlayer?.firstName} ${selectedPlayer?.lastName}`
-            }
-          />
-        )}
-        {activeTab === "nilgo" && (
-          <NILGoTab
-            playerName={
-              rosterSelected
-                ? "Team Roster"
-                : `${selectedPlayer?.firstName} ${selectedPlayer?.lastName}`
-            }
-          />
-        )}
-        {activeTab === "enterprise" && <EnterpriseTab />}
       </main>
 
       {/* Bottom nav */}
