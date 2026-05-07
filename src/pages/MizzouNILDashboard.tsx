@@ -1,6 +1,7 @@
 import { useState } from "react";
 import fanpactLogo from "@/assets/FanPact_Logo1.png";
 import LedgerTab from "@/components/mizzou/nil/LedgerTab";
+import NSSTab from "@/components/mizzou/nil/NSSTab";
 
 type Player = {
   id: string;
@@ -150,7 +151,16 @@ export default function MizzouNILDashboard() {
             }
           />
         )}
-        {activeTab !== "ledger" && (
+        {activeTab === "nss" && (
+          <NSSTab
+            playerName={
+              rosterSelected
+                ? "Team Roster"
+                : `${selectedPlayer?.firstName} ${selectedPlayer?.lastName}`
+            }
+          />
+        )}
+        {(activeTab === "nilgo" || activeTab === "enterprise") && (
           <div className="rounded-md border border-dashed border-slate-300 bg-white p-8 text-center text-sm text-slate-400">
             {TABS.find((t) => t.key === activeTab)?.label} content coming next.
           </div>
