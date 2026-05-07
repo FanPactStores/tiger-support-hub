@@ -8,6 +8,7 @@ const MizzouFooter = () => {
       { label: "Teams", href: "/mizzou/football" },
       { label: "Shop", href: "/mizzou#shop" },
       { label: "Sponsors", href: "/mizzou/sponsors" },
+      { label: "NIL Dashboard", href: "/mizzou/nil-dashboard" },
     ],
     Support: [
       { label: "FAQ", href: "#" },
