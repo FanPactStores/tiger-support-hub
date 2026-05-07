@@ -17,10 +17,16 @@ export function Footer() {
           <div>
             <h4 className="font-display font-bold text-sm uppercase tracking-wider text-primary mb-4">Navigate</h4>
             <ul className="space-y-2">
-              {["Home", "Shop", "Schools/Teams", "About"].map((link) => (
-                <li key={link}>
-                  <Link to={link === "Home" ? "/" : `/${link.toLowerCase().replace("/", "-")}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    {link}
+              {[
+                { label: "Home", to: "/" },
+                { label: "Shop", to: "/shop" },
+                { label: "Schools/Teams", to: "/schools-teams" },
+                { label: "About", to: "/about" },
+                { label: "NIL Dashboard", to: "/mizzou/nil-dashboard" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link to={link.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {link.label}
                   </Link>
                 </li>
               ))}
