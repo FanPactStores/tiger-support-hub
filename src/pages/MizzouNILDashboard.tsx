@@ -86,9 +86,10 @@ export default function MizzouNILDashboard() {
       <header className="fixed top-0 left-0 right-0 z-40 bg-[#0f1c2e] text-white">
         <div className="flex items-center justify-between px-4 py-3">
           <div className="flex items-center gap-2">
+          <Link to="/mizzou" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <img src={fanpactLogo} alt="FanPact" className="h-8 w-auto object-contain" />
             <span className="font-semibold tracking-tight">FanPact</span>
-          </div>
+          </Link>
           <div className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium">
             Mizzou Collective · 2024–25
           </div>
