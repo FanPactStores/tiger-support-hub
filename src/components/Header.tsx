@@ -9,6 +9,13 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 
+const schoolStorefrontPath = (schoolId: string) => {
+  if (schoolId === "missouri") return "/mizzou";
+  if (schoolId === "indiana") return "/indiana";
+  if (schoolId === "butler") return "/butler";
+  return "#";
+};
+
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -66,7 +73,7 @@ export function Header() {
                         {conferenceSchools.map((school) => (
                           <Link
                             key={school.id}
-                            to={school.id === "missouri" ? "/mizzou" : school.id === "indiana" ? "/indiana" : "#"}
+                            to={schoolStorefrontPath(school.id)}
                             className="flex items-center gap-2 px-4 py-1.5 text-sm text-foreground/70 hover:text-primary hover:bg-primary/5 transition-colors"
                           >
                             <span
