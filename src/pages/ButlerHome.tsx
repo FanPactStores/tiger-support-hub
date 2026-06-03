@@ -489,7 +489,7 @@ const ButlerHome = () => {
           </div>
         </section>
 
-        {/* ===== 5. TRENDING FOR MISSOURI FANS ===== */}
+        {/* ===== 5. TRENDING FOR BUTLER FANS ===== */}
         <section className="py-14 lg:py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">

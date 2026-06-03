@@ -183,7 +183,7 @@ export default function ButlerCategoryPage() {
                     ? "text-black font-bold"
                     : "text-white/70 hover:text-white"
                 }`}
-                style={cat.href.endsWith(slug || "") ? { backgroundColor: BU_BLUE, color: BU_DARK } : {}}
+                style={cat.href.endsWith(slug || "") ? { backgroundColor: BU_BLUE, color: BU_WHITE } : {}}
               >
                 {cat.label}
               </Link>
@@ -238,7 +238,7 @@ export default function ButlerCategoryPage() {
                 ? "text-black border-transparent"
                 : "text-foreground border-border hover:border-foreground/40"
             }`}
-            style={activeSubcategory === "all" ? { backgroundColor: BU_BLUE, color: BU_DARK } : {}}
+            style={activeSubcategory === "all" ? { backgroundColor: BU_BLUE, color: BU_WHITE } : {}}
           >
             All {category.name}
           </Link>
@@ -251,7 +251,7 @@ export default function ButlerCategoryPage() {
                   ? "text-black border-transparent"
                   : "text-foreground border-border hover:border-foreground/40"
               }`}
-              style={activeSubcategory === sub.slug ? { backgroundColor: BU_BLUE, color: BU_DARK } : {}}
+              style={activeSubcategory === sub.slug ? { backgroundColor: BU_BLUE, color: BU_WHITE } : {}}
             >
               {sub.label}
             </Link>
@@ -397,7 +397,7 @@ export default function ButlerCategoryPage() {
                             className={`text-[11px] font-medium px-2.5 py-1 rounded-full border transition-colors ${
                               active ? "border-transparent" : "border-border"
                             }`}
-                            style={active ? { backgroundColor: BU_BLUE, color: BU_DARK } : {}}
+                            style={active ? { backgroundColor: BU_BLUE, color: BU_WHITE } : {}}
                           >
                             {opt}
                           </button>
