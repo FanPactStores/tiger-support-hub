@@ -158,13 +158,13 @@ const ButlerHome = () => {
                 </Link>
                 <Link to="/butler" className="hidden sm:flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <span className="font-display text-xl lg:text-2xl tracking-wide" style={{ color: BU_BLUE }}>
-                    MISSOURI
+                    BUTLER
                   </span>
                   <div
                     className="w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center font-bold text-lg"
                     style={{ backgroundColor: BU_BLUE, color: BU_WHITE }}
                   >
-                    MU
+                    BU
                   </div>
                 </Link>
               </div>
@@ -326,10 +326,10 @@ const ButlerHome = () => {
                 categories={butlerSearchCategories}
                 schoolPrefix="/butler"
                 accentColor={BU_BLUE}
-                accentTextColor={BU_DARK}
+                accentTextColor={BU_WHITE}
                 placeholder="Search 50,000+ products that support Butler athletes"
                 className="max-w-xl mb-8"
-                buttonStyle={{ backgroundColor: BU_BLUE, color: BU_DARK }}
+                buttonStyle={{ backgroundColor: BU_BLUE, color: BU_WHITE }}
               />
 
               <div className="flex flex-wrap gap-4 mb-6">
@@ -352,7 +352,7 @@ const ButlerHome = () => {
 
               {/* Disclaimer */}
               <p className="text-xs text-white/40 mt-2">
-                Unofficial Fan Support Site – Not affiliated with or endorsed by the Butler University.{" "}
+                Unofficial Fan Support Site – Not affiliated with or endorsed by Butler University.{" "}
                 <Link to="/butler/disclaimer" className="hover:underline transition-colors" style={{ color: `${BU_BLUE}99` }}>Full Disclaimer</Link>
               </p>
 
@@ -576,7 +576,7 @@ const ButlerHome = () => {
         <div className="py-3 text-center text-sm" style={{ backgroundColor: BU_DARK }}>
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-center gap-4 flex-wrap text-white/80">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs" style={{ backgroundColor: BU_BLUE, color: BU_WHITE }}>MU</div>
+              <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs" style={{ backgroundColor: BU_BLUE, color: BU_WHITE }}>BU</div>
               <a href="#shop-categories" className="hover:text-white transition-colors">Shop</a>
               <span className="text-white/30">|</span>
               <a href="#nil-impact" className="hover:text-white transition-colors">NIL Impact</a>
