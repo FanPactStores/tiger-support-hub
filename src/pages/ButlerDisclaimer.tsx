@@ -12,7 +12,7 @@ const ButlerDisclaimer = () => {
         <div className="prose prose-sm max-w-none space-y-6 text-foreground/80 font-body leading-relaxed">
           <h2 className="text-xl font-display font-bold text-foreground mt-0 mb-4">Independence & Non-Affiliation</h2>
           <p>
-            Fanpact is an <strong>INDEPENDENT, UNOFFICIAL</strong> eCommerce platform and is <strong>NOT</strong> affiliated with, endorsed by, licensed by, or operated by the Butler University, Butler Athletics, its athletic department, NIL collective, or any official university entity.
+            Fanpact is an <strong>INDEPENDENT, UNOFFICIAL</strong> eCommerce platform and is <strong>NOT</strong> affiliated with, endorsed by, licensed by, or operated by Butler University, Butler Athletics, its athletic department, NIL collective, or any official university entity.
           </p>
 
           <h2 className="text-xl font-display font-bold text-foreground mt-8 mb-4">Donation Model</h2>
