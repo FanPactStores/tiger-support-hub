@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { getCategoryBySlug as getMizzouCategory, allCategories as mizzouCategories } from "@/data/mizzouCategoryData";
 import { getCategoryBySlug as getIndianaCategory, allCategories as indianaCategories } from "@/data/indianaCategoryData";
+import { getCategoryBySlug as getButlerCategory, allCategories as butlerCategories } from "@/data/butlerCategoryData";
 import { getProductSpecifications } from "@/data/productSpecifications";
 import { useCart } from "@/contexts/CartContext";
 import {
@@ -10,7 +11,7 @@ import fanpactPennantMark from "@/assets/fanpact-pennant-mark.png";
 import { useState } from "react";
 
 interface ProductDetailProps {
-  school: "mizzou" | "indiana";
+  school: "mizzou" | "indiana" | "butler";
 }
 
 const SCHOOL_CONFIG = {
@@ -24,6 +25,7 @@ const SCHOOL_CONFIG = {
     categoryBase: "/mizzou/category",
     getCategory: getMizzouCategory,
     allCategories: mizzouCategories,
+    affiliation: "the University of Missouri",
   },
   indiana: {
     accent: "#990000",
@@ -35,6 +37,19 @@ const SCHOOL_CONFIG = {
     categoryBase: "/indiana/category",
     getCategory: getIndianaCategory,
     allCategories: indianaCategories,
+    affiliation: "Indiana University",
+  },
+  butler: {
+    accent: "#13294B",
+    accentFg: "#FFFFFF",
+    headerBg: "#061A2F",
+    label: "Butler",
+    homePath: "/butler",
+    cartPath: "/butler/cart",
+    categoryBase: "/butler/category",
+    getCategory: getButlerCategory,
+    allCategories: butlerCategories,
+    affiliation: "Butler University",
   },
 };
 
@@ -344,7 +359,7 @@ export default function ProductDetail({ school }: ProductDetailProps) {
       <footer className="bg-gray-900 text-white/60 py-8">
         <div className="container mx-auto px-4 text-center text-xs">
           <p className="mb-2">© {new Date().getFullYear()} FanPact — Shop everyday products. Support student-athletes.</p>
-          <p>Not affiliated with or endorsed by {config.label === "Missouri" ? "the University of Missouri" : "Indiana University"}.</p>
+          <p>Not affiliated with or endorsed by {config.affiliation}.</p>
         </div>
       </footer>
     </div>
