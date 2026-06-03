@@ -41,7 +41,7 @@ const ButlerFooter = () => {
               </div>
               <div>
                 <span className="font-display text-xl text-background tracking-wide">FANPACT</span>
-                <span className="block text-xs text-primary font-semibold -mt-1">MISSOURI</span>
+                <span className="block text-xs text-primary font-semibold -mt-1">BUTLER</span>
               </div>
             </div>
             <p className="text-background/60 text-sm mb-6">
@@ -74,7 +74,7 @@ const ButlerFooter = () => {
         </div>
         <div className="py-6 border-b border-background/10">
           <p className="text-background/50 text-xs font-semibold leading-relaxed text-center max-w-2xl mx-auto">
-            Unofficial Fan Support Site – Fanpact is not affiliated with or endorsed by the Butler University. We donate 50% of net earnings from purchases here to support Butler student-athletes.{" "}
+            Unofficial Fan Support Site – Fanpact is not affiliated with or endorsed by Butler University. We donate 50% of net earnings from purchases here to support Butler student-athletes.{" "}
             <Link to="/butler/disclaimer" className="text-primary hover:underline">Full Disclaimer →</Link>
           </p>
         </div>
