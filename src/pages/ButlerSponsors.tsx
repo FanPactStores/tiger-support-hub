@@ -16,10 +16,10 @@ const nationalBrands = [
 ];
 
 const localSponsors = [
-  { id: "shakespeares", name: "Shakespeare's Pizza", type: "Restaurant", location: "Columbia, MO" },
-  { id: "harpos", name: "Harpo's", type: "Entertainment", location: "Columbia, MO" },
-  { id: "bbq", name: "Booches Billiard Hall", type: "Restaurant", location: "Columbia, MO" },
-  { id: "campus-auto", name: "Bulldog Auto", type: "Automotive", location: "Columbia, MO" },
+  { id: "bazbeaux", name: "Bazbeaux Pizza", type: "Restaurant", location: "Indianapolis, IN" },
+  { id: "butler-tarkington", name: "Butler-Tarkington Market", type: "Retail", location: "Indianapolis, IN" },
+  { id: "canal-bistro", name: "Canal Bistro", type: "Restaurant", location: "Indianapolis, IN" },
+  { id: "campus-auto", name: "Bulldog Auto", type: "Automotive", location: "Indianapolis, IN" },
 ];
 
 const ButlerSponsors = () => (
