@@ -5,6 +5,7 @@ import type { SearchResult } from "@/lib/productSearch";
 import type { CategoryData, CategoryProduct } from "@/data/mizzouCategoryData";
 import { allCategories as mizzouCategories } from "@/data/mizzouCategoryData";
 import { allCategories as indianaCategories } from "@/data/indianaCategoryData";
+import { allCategories as butlerCategories } from "@/data/butlerCategoryData";
 import { useCart } from "@/contexts/CartContext";
 import SearchAutocomplete from "@/components/search/SearchAutocomplete";
 import {
@@ -17,7 +18,7 @@ import {
 import fanpactPennantMark from "@/assets/fanpact-pennant-mark.png";
 
 interface SearchResultsProps {
-  school: "mizzou" | "indiana";
+  school: "mizzou" | "indiana" | "butler";
 }
 
 const SCHOOLS = {
@@ -36,6 +37,18 @@ const SCHOOLS = {
     accentText: "#fff",
     bgDark: "#990000",
     categories: indianaCategories,
+    cartPath: "/indiana/cart",
+    affiliation: "Indiana University",
+  },
+  butler: {
+    name: "Butler",
+    prefix: "/butler",
+    accent: "#13294B",
+    accentText: "#fff",
+    bgDark: "#061A2F",
+    categories: butlerCategories,
+    cartPath: "/butler/cart",
+    affiliation: "Butler University",
   },
 };
 
