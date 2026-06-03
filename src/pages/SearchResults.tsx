@@ -5,6 +5,7 @@ import type { SearchResult } from "@/lib/productSearch";
 import type { CategoryData, CategoryProduct } from "@/data/mizzouCategoryData";
 import { allCategories as mizzouCategories } from "@/data/mizzouCategoryData";
 import { allCategories as indianaCategories } from "@/data/indianaCategoryData";
+import { allCategories as butlerCategories } from "@/data/butlerCategoryData";
 import { useCart } from "@/contexts/CartContext";
 import SearchAutocomplete from "@/components/search/SearchAutocomplete";
 import {
@@ -17,7 +18,7 @@ import {
 import fanpactPennantMark from "@/assets/fanpact-pennant-mark.png";
 
 interface SearchResultsProps {
-  school: "mizzou" | "indiana";
+  school: "mizzou" | "indiana" | "butler";
 }
 
 const SCHOOLS = {
@@ -28,6 +29,8 @@ const SCHOOLS = {
     accentText: "#000",
     bgDark: "#000000",
     categories: mizzouCategories,
+    cartPath: "/mizzou/cart",
+    affiliation: "the University of Missouri",
   },
   indiana: {
     name: "Indiana",
@@ -36,6 +39,18 @@ const SCHOOLS = {
     accentText: "#fff",
     bgDark: "#990000",
     categories: indianaCategories,
+    cartPath: "/indiana/cart",
+    affiliation: "Indiana University",
+  },
+  butler: {
+    name: "Butler",
+    prefix: "/butler",
+    accent: "#13294B",
+    accentText: "#fff",
+    bgDark: "#061A2F",
+    categories: butlerCategories,
+    cartPath: "/butler/cart",
+    affiliation: "Butler University",
   },
 };
 
@@ -124,10 +139,7 @@ export default function SearchResults({ school }: SearchResultsProps) {
             />
           </div>
 
-          <Link
-            to={school === "mizzou" ? "/mizzou/cart" : "/cart"}
-            className="relative text-white hover:opacity-80 transition-opacity shrink-0"
-          >
+          <Link to={config.cartPath} className="relative text-white hover:opacity-80 transition-opacity shrink-0">
             <ShoppingCart className="w-6 h-6" />
             {totalItems > 0 && (
               <span
@@ -301,7 +313,7 @@ export default function SearchResults({ school }: SearchResultsProps) {
       <footer className="bg-gray-900 text-white/60 py-8 mt-12">
         <div className="container mx-auto px-4 text-center text-xs">
           <p className="mb-2">© {new Date().getFullYear()} FanPact — Shop everyday products. Support student-athletes.</p>
-          <p>Not affiliated with or endorsed by {config.name === "Missouri" ? "the University of Missouri" : "Indiana University"}.</p>
+          <p>Not affiliated with or endorsed by {config.affiliation}.</p>
         </div>
       </footer>
     </div>

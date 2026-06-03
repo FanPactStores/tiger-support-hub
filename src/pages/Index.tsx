@@ -22,6 +22,13 @@ const conferences = [
   { name: "Big East", logo: logoBigeast, key: "Big East" },
 ];
 
+const schoolStorefrontPath = (schoolId: string) => {
+  if (schoolId === "missouri") return "/mizzou";
+  if (schoolId === "indiana") return "/indiana";
+  if (schoolId === "butler") return "/butler";
+  return "#";
+};
+
 const HomePage = () => {
   const schoolsByConference = getSchoolsByConference();
 
@@ -127,7 +134,7 @@ const HomePage = () => {
                     {confSchools.map((school) => (
                       <Link
                         key={school.id}
-                        to={school.id === "missouri" ? "/mizzou" : school.id === "indiana" ? "/indiana" : "#"}
+                        to={schoolStorefrontPath(school.id)}
                         className="flex items-center gap-2 px-2 py-1.5 text-sm text-foreground/70 hover:text-primary hover:bg-primary/5 rounded transition-colors"
                       >
                         <span
