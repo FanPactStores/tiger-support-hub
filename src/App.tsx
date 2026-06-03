@@ -20,6 +20,11 @@ import IndianaHome from "./pages/IndianaHome";
 import IndianaDisclaimer from "./pages/IndianaDisclaimer";
 import IndianaCategoryPage from "./pages/IndianaCategoryPage";
 import IndianaCart from "./pages/IndianaCart";
+import ButlerHome from "./pages/ButlerHome";
+import ButlerCategoryPage from "./pages/ButlerCategoryPage";
+import ButlerCart from "./pages/ButlerCart";
+import ButlerSponsors from "./pages/ButlerSponsors";
+import ButlerDisclaimer from "./pages/ButlerDisclaimer";
 import MizzouNILDashboard from "./pages/MizzouNILDashboard";
 import SearchResults from "./pages/SearchResults";
 import ProductDetail from "./pages/ProductDetail";
@@ -61,6 +66,16 @@ const App = () => (
             <Route path="/indiana/cart" element={<IndianaCart />} />
             <Route path="/indiana/search" element={<SearchResults school="indiana" />} />
             <Route path="/indiana/disclaimer" element={<IndianaDisclaimer />} />
+
+            {/* Butler storefront */}
+            <Route path="/butler" element={<ButlerHome />} />
+            <Route path="/butler/category/:slug" element={<ButlerCategoryPage />} />
+            <Route path="/butler/category/:slug/product/:productId" element={<ProductDetail school="butler" />} />
+            <Route path="/butler/category/:slug/:subcategory" element={<ButlerCategoryPage />} />
+            <Route path="/butler/cart" element={<ButlerCart />} />
+            <Route path="/butler/search" element={<SearchResults school="butler" />} />
+            <Route path="/butler/sponsors" element={<ButlerSponsors />} />
+            <Route path="/butler/disclaimer" element={<ButlerDisclaimer />} />
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
