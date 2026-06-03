@@ -54,7 +54,7 @@ const ButlerHeader = () => {
                 <img src={fanpactLogo} alt="FanPact" className="h-10 lg:h-14 w-auto object-contain" />
               </Link>
               <Link to="/butler" className="hidden sm:flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <span className="font-display text-xl lg:text-2xl text-foreground tracking-wide">MISSOURI</span>
+                <span className="font-display text-xl lg:text-2xl text-foreground tracking-wide">BUTLER</span>
               </Link>
             </div>
 
