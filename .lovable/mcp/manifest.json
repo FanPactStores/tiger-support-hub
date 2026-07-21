@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "fanpact-mcp",
+      "version": "0.1.0",
+      "title": "FanPact MCP"
+    },
+    "tools": [
+      {
+        "name": "list_schools",
+        "title": "List schools",
+        "description": "List all schools in the FanPact catalog. Optionally filter by conference (SEC, Big Ten, Big 12, ACC).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "conference": {
+              "type": "string",
+              "description": "Optional conference name to filter by, e.g. 'SEC' or 'Big Ten'."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_categories",
+        "title": "List product categories",
+        "description": "List product categories and subcategories for a FanPact storefront (missouri, indiana, or butler).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "school": {
+              "type": "string",
+              "enum": [
+                "missouri",
+                "mizzou",
+                "indiana",
+                "butler"
+              ],
+              "description": "Storefront to list categories for."
+            }
+          },
+          "required": [
+            "school"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "search_products",
+        "title": "Search products",
+        "description": "Search products in a FanPact storefront by keyword. Optionally filter by category slug. Returns up to 25 matches with NIL contribution amounts.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "school": {
+              "type": "string",
+              "enum": [
+                "missouri",
+                "mizzou",
+                "indiana",
+                "butler"
+              ],
+              "description": "Storefront to search."
+            },
+            "query": {
+              "type": "string",
+              "description": "Keyword to match against product name or brand."
+            },
+            "category": {
+              "type": "string",
+              "description": "Optional category slug to restrict the search."
+            }
+          },
+          "required": [
+            "school",
+            "query"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_roster",
+        "title": "Get sport roster",
+        "description": "Get the Missouri Tigers athlete roster for a given sport (e.g. football, mens-basketball, womens-basketball, baseball, softball, soccer, volleyball).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "sport": {
+              "type": "string",
+              "description": "Sport slug, e.g. 'football' or 'volleyball'."
+            }
+          },
+          "required": [
+            "sport"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "calculate_nil_contribution",
+        "title": "Calculate FanPact NIL contribution",
+        "description": "Calculate the FanPact NIL contribution for a purchase amount. Formula: 0.5 × (price × 0.25).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "price": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "description": "Item or cart subtotal price in USD."
+            }
+          },
+          "required": [
+            "price"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
