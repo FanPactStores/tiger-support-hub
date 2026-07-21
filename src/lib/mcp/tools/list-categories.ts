@@ -1,12 +1,12 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { mizzouCategories } from "@/data/mizzouCategoryData";
+import { allCategories as mizzouCategories } from "@/data/mizzouCategoryData";
 import { indianaCategories } from "@/data/indianaCategoryData";
 import { butlerCategories } from "@/data/butlerCategoryData";
 
 const bySchool = {
-  missouri: mizzouCategories,
-  mizzou: mizzouCategories,
+  missouri: allCategories as mizzouCategories,
+  mizzou: allCategories as mizzouCategories,
   indiana: indianaCategories,
   butler: butlerCategories,
 } as const;
