@@ -29,11 +29,12 @@ var list_schools_default = defineTool({
 // src/lib/mcp/tools/list-categories.ts
 import { defineTool as defineTool2 } from "npm:@lovable.dev/mcp-js@0.24.0";
 import { z as z2 } from "npm:zod@^3.25.76";
+import { allCategories as mizzouCategories } from "npm:@/data/mizzouCategoryData";
 import { allCategories as indianaCategories } from "npm:@/data/indianaCategoryData";
 import { allCategories as butlerCategories } from "npm:@/data/butlerCategoryData";
 var bySchool = {
-  missouri: allCategories,
-  mizzou: allCategories,
+  missouri: mizzouCategories,
+  mizzou: mizzouCategories,
   indiana: indianaCategories,
   butler: butlerCategories
 };
@@ -64,11 +65,12 @@ var list_categories_default = defineTool2({
 // src/lib/mcp/tools/search-products.ts
 import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.24.0";
 import { z as z3 } from "npm:zod@^3.25.76";
+import { allCategories as mizzouCategories2 } from "npm:@/data/mizzouCategoryData";
 import { allCategories as indianaCategories2 } from "npm:@/data/indianaCategoryData";
 import { allCategories as butlerCategories2 } from "npm:@/data/butlerCategoryData";
 var bySchool2 = {
-  missouri: allCategories,
-  mizzou: allCategories,
+  missouri: mizzouCategories2,
+  mizzou: mizzouCategories2,
   indiana: indianaCategories2,
   butler: butlerCategories2
 };

@@ -5,8 +5,8 @@ import { allCategories as indianaCategories } from "@/data/indianaCategoryData";
 import { allCategories as butlerCategories } from "@/data/butlerCategoryData";
 
 const bySchool = {
-  missouri: allCategories as mizzouCategories,
-  mizzou: allCategories as mizzouCategories,
+  missouri: mizzouCategories,
+  mizzou: mizzouCategories,
   indiana: indianaCategories,
   butler: butlerCategories,
 } as const;
