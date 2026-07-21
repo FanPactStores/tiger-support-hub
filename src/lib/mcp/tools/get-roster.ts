@@ -1,6 +1,6 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { sportRosters } from "@/data/sportsRosters";
+import { sportRosters } from "../../../data/sportsRosters";
 
 export default defineTool({
   name: "get_roster",

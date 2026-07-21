@@ -1,6 +1,6 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { schools } from "@/data/schools";
+import { schools } from "../../../data/schools";
 
 export default defineTool({
   name: "list_schools",
